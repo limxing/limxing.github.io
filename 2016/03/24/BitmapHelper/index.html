@@ -3,17 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Limxing Blog</title>
+    <title>BitmapHelper | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="我有一个梦想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Limxing Blog">
-<meta property="og:url" content="https://github.com/limxing/index.html">
+    <meta name="description" content="#####背景：调用相机拍照，结果返回时，导致内存迅速升高，内存不足时会导致OOM
+发现的原因：在相机拍照后，会生成很大的照片，分辨率也很高，因此占用的内存会很大，在网上找了一些同学的相机拍照代码块发现，使用到一个BitmapHelper的类，本类的主要作用是：分析拍摄的照片，如果有方向不对了对照片进行旋转，进行旋转需要吧图片加载到内存中，原尺寸的照片通常会很大，会占用两个Bitmap才能够完成旋">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BitmapHelper">
+<meta property="og:url" content="https://github.com/limxing/2016/03/24/BitmapHelper/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="我有一个梦想">
+<meta property="og:description" content="#####背景：调用相机拍照，结果返回时，导致内存迅速升高，内存不足时会导致OOM
+发现的原因：在相机拍照后，会生成很大的照片，分辨率也很高，因此占用的内存会很大，在网上找了一些同学的相机拍照代码块发现，使用到一个BitmapHelper的类，本类的主要作用是：分析拍摄的照片，如果有方向不对了对照片进行旋转，进行旋转需要吧图片加载到内存中，原尺寸的照片通常会很大，会占用两个Bitmap才能够完成旋">
+<meta property="og:updated_time" content="2016-03-24T06:55:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Limxing Blog">
-<meta name="twitter:description" content="我有一个梦想">
+<meta name="twitter:title" content="BitmapHelper">
+<meta name="twitter:description" content="#####背景：调用相机拍照，结果返回时，导致内存迅速升高，内存不足时会导致OOM
+发现的原因：在相机拍照后，会生成很大的照片，分辨率也很高，因此占用的内存会很大，在网上找了一些同学的相机拍照代码块发现，使用到一个BitmapHelper的类，本类的主要作用是：分析拍摄的照片，如果有方向不对了对照片进行旋转，进行旋转需要吧图片加载到内存中，原尺寸的照片通常会很大，会占用两个Bitmap才能够完成旋">
     
 
     
@@ -146,8 +150,7 @@
 </aside>
 
             
-            <section id="main">
-    <article id="post-BitmapHelper" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-BitmapHelper" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -155,8 +158,8 @@
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/24/BitmapHelper/">BitmapHelper</a>
+        <h1 class="article-title" itemprop="name">
+            BitmapHelper
         </h1>
     
 
@@ -274,386 +277,67 @@
         </footer>
     </div>
     
-</article>
-
-
-
-    <article id="post-自定义ProgressBar颜色" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
-        
-        
-            <header class="article-header">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/23/自定义ProgressBar颜色/">自定义ProgressBar颜色</a>
-        </h1>
     
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/23/自定义ProgressBar颜色/">
-            <time datetime="2016-03-23T12:31:48.000Z" itemprop="datePublished">2016-03-23</time>
+        <a href="/2016/03/23/自定义ProgressBar颜色/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">自定义ProgressBar颜色</div>
         </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>drawable文件夹中bacprogress.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置背景色（白色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/background&quot;&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#ffffff&quot;</span><br><span class="line">android:startColor=&quot;#ffffff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置进度条颜色（蓝色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/progress&quot;&gt;</span><br><span class="line">&lt;clip&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#5d9eff&quot;</span><br><span class="line">android:startColor=&quot;#5d9eff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/clip&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressBar</span><br><span class="line">android:id=&quot;@+id/download_item_size_pro&quot;</span><br><span class="line">style=&quot;?android:attr/progressBarStyleHorizontal&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;3dp&quot;</span><br><span class="line">android:max=&quot;100&quot;</span><br><span class="line">android:progress=&quot;0&quot;</span><br><span class="line">android:progressDrawable=&quot;@drawable/bacprogress&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/limxing/XListView">https://github.com/limxing/XListView</a> 仿iOS加载等待旋转图片放进这个项目中了，欢迎使用给星</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cim5xclys0008jj2tkpnwmsaa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/23/自定义ProgressBar颜色/">评论</a>
-    
+</nav>
 
-        </footer>
-    </div>
+
     
 </article>
 
 
-
-    <article id="post-单例模式" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/23/单例模式/">单例模式</a>
-        </h1>
+    <section id="comments">
     
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/23/单例模式/">
-            <time datetime="2016-03-23T08:16:03.000Z" itemprop="datePublished">2016-03-23</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                </div>
-            </header>
         
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>####懒汉式单例模式最佳写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private volatile static Singleton singleton;</span><br><span class="line">        private Singleton()&#123;&#125;;</span><br><span class="line">        public static Singleton getSingleton()&#123;</span><br><span class="line">            if(singleton==null) &#123;</span><br><span class="line">                synchronized (Singleton.class) &#123;</span><br><span class="line">                if (singleton == null) &#123;</span><br><span class="line">                singleton = new Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cim5xclyl0003jj2tshiy479d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
+    <div class="ds-thread" data-thread-key="2016/03/24/BitmapHelper/" data-title="BitmapHelper" data-url="https://github.com/limxing/2016/03/24/BitmapHelper/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
         }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://github.com/limxing/2016/03/23/单例模式/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/23/单例模式/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Hello-Word" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/21/Hello-Word/">Handler引起Activity不能释放导致OOM</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/21/Hello-Word/">
-            <time datetime="2016-03-21T13:31:52.000Z" itemprop="datePublished">2016-03-21</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class SampleActivity extends Activity &#123;</span><br><span class="line">private static class MyHandler extends Handler &#123;</span><br><span class="line">private final WeakReference&lt;MainActivity&gt; mActivity;</span><br><span class="line"></span><br><span class="line">public MyHandler(MainActivity activity) &#123;</span><br><span class="line">mActivity = new WeakReference&lt;MainActivity&gt;(activity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">MainActivity activity = mActivity.get();</span><br><span class="line">if (activity != null) &#123;</span><br><span class="line">// ...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private final MyHandler mHandler = new MyHandler(this);</span><br><span class="line"></span><br><span class="line">private static final Runnable sRunnable = new Runnable() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123; /* ... */ &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">super.onCreate(savedInstanceState);</span><br><span class="line">// Post a message and delay its execution for 10 minutes.</span><br><span class="line">mHandler.postDelayed(sRunnable, 1000 * 60 * 10);</span><br><span class="line"></span><br><span class="line">// Go back to the previous Activity.</span><br><span class="line">finish();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://colobu.com/2015/01/04/How-to-Leak-a-Context-Handlers-Inner-Classes/" target="_blank" rel="external">相关链接</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cim5xclyp0005jj2txx0wt2ns" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
         }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="https://github.com/limxing/2016/03/21/Hello-Word/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/21/Hello-Word/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
+    </section>
 
 </section>
             
