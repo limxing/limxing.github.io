@@ -189,6 +189,10 @@
 <p>一张100<em>100的图片占用内存的大小:<br>100</em>100*4=40000字节</p>
 <p>另外，需要注意这里的图片占用内存是指在Navtive中占用的内存，当然BitMap使用的绝大多数内存就是该内存。因为我们可以简单的认为它就是BitMap所占用的内存。</p>
 <p>在Android4.0之前，Bitmap的内存是分配在Native堆中，调用recycle()可以立即释放Native内存。<br>从Android4.0开始，Bitmap的内存就是分配在dalvik堆中，即JAVA堆中的,调用recycle()并不能立即释放Native内存。但是调用recycle()也是一个良好的习惯。</p>
+<p>=================<br>资源文件中图片占用内存大小：<br>1b=8位<br>1kb=1024b<br>1mb=1024kb<br>1gb=1024mb</p>
+<p>图片占用内存大小计算公式：</p>
+<p>图片的像素长度width<br>图片的像素高度height<br>存放android手机drawable目录：dpi<br>    mdpi=160<br>    hdpi=240<br>    xhdpi=320<br>    xxhdpi=480<br>    xxxhdpi=640<br>手机像素密度：phoneDpi</p>
+<p>公式：width <em> height</em>(dpi/phoneDpi+0.5)2</p>
 
         
         </div>
@@ -199,7 +203,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cim7a06dz0004iv2tce79k20k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cim7b3j5x0002kd2t5c6jsfd5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -330,7 +334,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cim7a06dm0000iv2tzo6ehj56" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cim7b3j5r0000kd2t41likl18" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -457,7 +461,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cim7a06dw0003iv2t6uy0f4be" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cim7b3j650007kd2tobdtgghj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -582,7 +586,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cim7a06dr0001iv2tljwlb4dy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cim7b3j620005kd2ti8y6d48v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -708,7 +712,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cim7a06et000biv2t0ueuy3kq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cim7b3j670009kd2t9cq7hady" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
