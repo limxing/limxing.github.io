@@ -115,7 +115,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                7
+                8
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -147,6 +147,132 @@
 
             
             <section id="main">
+    <article id="post-android资源文件查找顺序" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/06/android资源文件查找顺序/">android资源文件查找顺序</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/06/android资源文件查找顺序/">
+            <time datetime="2016-04-06T00:50:08.000Z" itemprop="datePublished">2016-04-06</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>结论：手机会先找自己对应的layout-dpi文件，如果没有就会先向高精度的文件夹下查找，高的都没有就会想精度低的查找。</p>
+<p>drawable-ldip<br>drawable-mdip<br>drawable-hdip<br>drawable-xhdip<br>drawable-xxhdip<br>drawable-xxxhdip<br>手机对应hdip，如果没有相应的文件：顺序是xh–xxh–xxxh–m-l;同样的values同理。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cimo52ppz0000aj2t1j1ts16l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://github.com/limxing/2016/04/06/android资源文件查找顺序/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/04/06/android资源文件查找顺序/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Fragment" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -196,7 +322,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimbma7an00006l2tfuzxxek5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimo52pqf0007aj2tu3d8y87s" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -321,7 +447,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimbma7c0000e6l2t9knktdxu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimo52pqt000haj2tzi65wzkx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -456,7 +582,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimbma7bi00036l2trui3zdvr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimo52pqp000caj2ttk64muw4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -587,7 +713,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimbma7bq00086l2tu1l351kc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimo52pqk000aaj2tigniquzk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -714,7 +840,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimbma7c3000g6l2teusj16a1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimo52pqc0005aj2tjdzodqrw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -839,7 +965,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimbma7bv000b6l2tv66wwn9n" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimo52pqr000faj2tz1qjbxtz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -965,7 +1091,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cimbma7bn00056l2t5648a1p6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cimo52pq50002aj2tu9l9hiqm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1055,6 +1181,24 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/04/06/android资源文件查找顺序/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/04/06/android资源文件查找顺序/" class="title">android资源文件查找顺序</a></p>
+                            <p class="item-date"><time datetime="2016-04-06T00:50:08.000Z" itemprop="datePublished">2016-04-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/03/28/Fragment/" class="thumbnail">
     
     
@@ -1124,24 +1268,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/03/23/自定义ProgressBar颜色/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/03/23/自定义ProgressBar颜色/" class="title">自定义ProgressBar颜色</a></p>
-                            <p class="item-date"><time datetime="2016-03-23T12:31:48.000Z" itemprop="datePublished">2016-03-23</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1153,7 +1279,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -1162,7 +1288,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">7</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">8</span></li></ul>
         </div>
     </div>
 
