@@ -115,11 +115,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                9
+                10
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                2
+                3
                 <span>标签</span>
             </div>
         </div>
@@ -147,6 +147,137 @@
 
             
             <section id="main">
+    <article id="post-Java操作excel" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/12/Java操作excel/">Java操作excel</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/12/Java操作excel/">
+            <time datetime="2016-04-12T03:02:08.000Z" itemprop="datePublished">2016-04-12</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JAVA/">JAVA</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>JAVA操作excel表格：<br>表格内容的复制（从一个文件复制某表格到另一个文件中）：</p>
+<p>步骤一：获得两个文件对象，其中book2是打开book1的缓冲</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">book = Workbook.getWorkbook(file);</span><br><span class="line">book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;));</span><br><span class="line">book2 = Workbook.createWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;), book1);</span><br></pre></td></tr></table></figure>
+<p>步骤二：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取原文件中的某表格对象</span><br><span class="line"> Sheet sheet = book.getSheet(0);</span><br><span class="line">//获取写入文件中的某表格对象</span><br><span class="line"> WritableSheet sheet2 = book2.getSheet(sheetLocation);</span><br></pre></td></tr></table></figure>
+<p>步骤三：获取表格中的内容，并把内容写进表2中(icolumn是某列，row是某行)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cell cell = sheet.getCell(column, row);</span><br><span class="line">//1、把字符串写入表中</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Label(column, row, result));</span><br><span class="line">//2、把Number写入表中：</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Number(column, row, Double.parseDouble(result)));</span><br><span class="line">//2、把日期格式的内容写入表中：</span><br><span class="line">DateCell dc = (DateCell) cell;</span><br><span class="line">sheet2.addCell(new DateTime(dc).copyTo(column,row));</span><br></pre></td></tr></table></figure></p>
+<p>步骤四：最后关闭表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if (book2 != null) &#123;</span><br><span class="line">book2.write();</span><br><span class="line">book2.close();</span><br><span class="line">&#125;</span><br><span class="line">if (book1 != null) &#123;</span><br><span class="line">book1.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (book != null) &#123;</span><br><span class="line">book.close();</span><br><span class="line">&#125;</span><br><span class="line">if</span><br></pre></td></tr></table></figure></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cimwut4xb000aov2thwx35bjq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://github.com/limxing/2016/04/12/Java操作excel/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/04/12/Java操作excel/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Mac终端命令" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -199,7 +330,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cimo55mco0007c02tz1ipajqv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cimwut4xf000cov2t1sqvrtye" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -325,7 +456,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cimo55mcw000bc02t4y39hjfa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cimwut4xi000fov2tt7724glt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -452,7 +583,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimo55mcl0005c02tcjia8frq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimwut4x10005ov2tl8821i1x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -577,7 +708,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimo55md3000jc02t8l25o468" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimwut4xq000mov2to4uhfoe9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -712,7 +843,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimo55mcf0002c02tatvp5b66" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimwut4wo0000ov2tpz174h61" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -843,7 +974,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimo55mca0000c02twooxzc4m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimwut4wu0002ov2t4krxfdjw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -970,7 +1101,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimo55md1000gc02tomuv0osx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimwut4xn000kov2tt18v9gdj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1095,7 +1226,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimo55md0000ec02tei71rugk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimwut4xl000hov2tc7sph5ny" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1221,7 +1352,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cimo55mcr0009c02ti6rg2xb0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cimwut4x50007ov2t141e0ptp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1311,6 +1442,24 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/04/12/Java操作excel/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/04/12/Java操作excel/" class="title">Java操作excel</a></p>
+                            <p class="item-date"><time datetime="2016-04-12T03:02:08.000Z" itemprop="datePublished">2016-04-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/04/06/Mac终端命令/" class="thumbnail">
     
     
@@ -1380,24 +1529,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/03/25/Bitmap图片占用内存大小/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/03/25/Bitmap图片占用内存大小/" class="title">Bitmap图片占用内存大小</a></p>
-                            <p class="item-date"><time datetime="2016-03-25T05:33:25.000Z" itemprop="datePublished">2016-03-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1409,7 +1540,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -1418,7 +1549,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1427,7 +1558,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a>
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a>
         </div>
     </div>
 
