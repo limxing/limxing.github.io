@@ -6,21 +6,18 @@
     <title>Java操作excel | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="JAVA操作excel表格：表格内容的复制（从一个文件复制某表格到另一个文件中）：
-步骤一：获得两个文件对象，其中book2是打开book1的缓冲
-123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_c">
+步骤一：获得两个文件对象，其中book2是打开book1的缓冲123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_ch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java操作excel">
 <meta property="og:url" content="https://github.com/limxing/2016/04/12/Java操作excel/index.html">
 <meta property="og:site_name" content="Limxing Blog">
 <meta property="og:description" content="JAVA操作excel表格：表格内容的复制（从一个文件复制某表格到另一个文件中）：
-步骤一：获得两个文件对象，其中book2是打开book1的缓冲
-123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_c">
-<meta property="og:updated_time" content="2016-04-12T03:13:44.000Z">
+步骤一：获得两个文件对象，其中book2是打开book1的缓冲123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_ch">
+<meta property="og:updated_time" content="2016-04-12T03:15:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java操作excel">
 <meta name="twitter:description" content="JAVA操作excel表格：表格内容的复制（从一个文件复制某表格到另一个文件中）：
-步骤一：获得两个文件对象，其中book2是打开book1的缓冲
-123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_c">
+步骤一：获得两个文件对象，其中book2是打开book1的缓冲123book = Workbook.getWorkbook(file);book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &amp;quot;_ch">
     
 
     
@@ -190,12 +187,10 @@
         
             
             <p>JAVA操作excel表格：<br>表格内容的复制（从一个文件复制某表格到另一个文件中）：</p>
-<p>步骤一：获得两个文件对象，其中book2是打开book1的缓冲</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">book = Workbook.getWorkbook(file);</span><br><span class="line">book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;));</span><br><span class="line">book2 = Workbook.createWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;), book1);</span><br></pre></td></tr></table></figure>
-<p>步骤二：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取原文件中的某表格对象</span><br><span class="line"> Sheet sheet = book.getSheet(0);</span><br><span class="line">//获取写入文件中的某表格对象</span><br><span class="line"> WritableSheet sheet2 = book2.getSheet(sheetLocation);</span><br></pre></td></tr></table></figure>
+<p>步骤一：获得两个文件对象，其中book2是打开book1的缓冲<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">book = Workbook.getWorkbook(file);</span><br><span class="line">book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;));</span><br><span class="line">book2 = Workbook.createWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;), book1);</span><br></pre></td></tr></table></figure></p>
+<p>步骤二：获取表格对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取原文件中的某表格对象</span><br><span class="line"> Sheet sheet = book.getSheet(0);</span><br><span class="line">//获取写入文件中的某表格对象</span><br><span class="line"> WritableSheet sheet2 = book2.getSheet(sheetLocation);</span><br></pre></td></tr></table></figure></p>
 <p>步骤三：获取表格中的内容，并把内容写进表2中(icolumn是某列，row是某行)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cell cell = sheet.getCell(column, row);</span><br><span class="line">//1、把字符串写入表中</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Label(column, row, result));</span><br><span class="line">//2、把Number写入表中：</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Number(column, row, Double.parseDouble(result)));</span><br><span class="line">//2、把日期格式的内容写入表中：</span><br><span class="line">DateCell dc = (DateCell) cell;</span><br><span class="line">sheet2.addCell(new DateTime(dc).copyTo(column,row));</span><br></pre></td></tr></table></figure></p>
-<p>步骤四：最后关闭表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if (book2 != null) &#123;</span><br><span class="line">book2.write();</span><br><span class="line">book2.close();</span><br><span class="line">&#125;</span><br><span class="line">if (book1 != null) &#123;</span><br><span class="line">book1.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (book != null) &#123;</span><br><span class="line">book.close();</span><br><span class="line">&#125;</span><br><span class="line">if</span><br></pre></td></tr></table></figure></p>
+<p>步骤四：最后关闭表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (book2 != null) &#123;</span><br><span class="line">book2.write();</span><br><span class="line">book2.close();</span><br><span class="line">&#125;</span><br><span class="line">if (book1 != null) &#123;</span><br><span class="line">book1.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (book != null) &#123;</span><br><span class="line">book.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -206,7 +201,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cimwut4xb000aov2thwx35bjq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cimwuvs5t0004pw2tczmhnyal" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
