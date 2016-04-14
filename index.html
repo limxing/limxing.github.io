@@ -184,6 +184,8 @@
         
             
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">String s1 = &quot;善南街道善国苑善国苑24号楼12单元14层1402&quot;;</span><br><span class="line">String s2 = &quot;枣庄滕州市龙泉街道苹果花园苹果花园9号楼3单元18层144023&quot;;</span><br><span class="line">String s3 = &quot;枣庄滕州市张汪镇邱仓/闫道沟邱仓/闫道沟&quot;;</span><br><span class="line">String s = &quot;枣庄滕州市西岗镇西岗镇沿街市场西岗镇沿街市场423号楼34单元12342号箱10235&quot;;</span><br><span class="line">int l = 2;</span><br><span class="line">String congfu=&quot;&quot;;</span><br><span class="line">for (int i = 0; i &lt; s.length() - l; i++) &#123;</span><br><span class="line">String ss = s.substring(i, i + l + 1);</span><br><span class="line">String sss = s.replaceFirst(ss, &quot;&quot;);</span><br><span class="line">if (sss.contains(ss)) &#123;</span><br><span class="line">congfu=ss;</span><br><span class="line">l++;</span><br><span class="line">i--;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(congfu);</span><br><span class="line">s=s.replaceFirst(congfu, &quot;&quot;);</span><br><span class="line">System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：字符串中含有“\”时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string.contains(&quot;\\&quot;);</span><br><span class="line">string.replace(&quot;\\\\&quot;,&quot;&quot;);</span><br></pre></td></tr></table></figure></p>
+
         
         </div>
         <footer class="article-footer">
@@ -193,7 +195,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="cimzx9e5g0000302tmuo4xflm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="cimzylncr00017r2tntmyf62r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -323,7 +325,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cimzx9e6k000c302tb5091tdg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cimzylncy00047r2tgo4v0ubr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -453,7 +455,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cimzx9e74000n302t3q37cavu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cimzylndb000d7r2tko0iubb8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -579,7 +581,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cimzx9e78000p302tzm2q3rk6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cimzylnd200087r2t6rg3w77y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -706,7 +708,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimzx9e5s0004302tkvv34yqy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cimzylnd6000a7r2tohj63fqh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -831,7 +833,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimzx9e7b000r302tm8kpq0xm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cimzylne2000n7r2t9okzhm4f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -966,7 +968,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimzx9e5q0003302tauxvty3t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cimzylncm00007r2tagujp4yd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1097,7 +1099,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimzx9e5l0001302tk2slqsc0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cimzylncw00037r2tjtq4acve" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1224,7 +1226,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimzx9e71000k302t3oynoig8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cimzylne0000l7r2t2szdstba" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1349,7 +1351,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimzx9e6x000h302tj5j7zzhg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cimzylne5000q7r2tu8lccvdu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
