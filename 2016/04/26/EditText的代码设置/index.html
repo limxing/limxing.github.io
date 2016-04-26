@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>tags | Limxing Blog</title>
+    <title>EditText的代码设置 | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="我有一个梦想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://github.com/limxing/tags/index.html">
+    <meta name="description" content="最近工作中用到了动态设置EditText控件的内容：
+动态设置EditText的输入格式需要在最后设置：123456789101112131415161718192021222324252627282930editText = new EditText(context);editText.setBackground(null);editText.addTextChangedListener(thi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EditText的代码设置">
+<meta property="og:url" content="https://github.com/limxing/2016/04/26/EditText的代码设置/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="我有一个梦想">
-<meta property="og:updated_time" content="2016-03-22T01:40:32.000Z">
+<meta property="og:description" content="最近工作中用到了动态设置EditText控件的内容：
+动态设置EditText的输入格式需要在最后设置：123456789101112131415161718192021222324252627282930editText = new EditText(context);editText.setBackground(null);editText.addTextChangedListener(thi">
+<meta property="og:updated_time" content="2016-04-26T12:32:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="我有一个梦想">
+<meta name="twitter:title" content="EditText的代码设置">
+<meta name="twitter:description" content="最近工作中用到了动态设置EditText控件的内容：
+动态设置EditText的输入格式需要在最后设置：123456789101112131415161718192021222324252627282930editText = new EditText(context);editText.setBackground(null);editText.addTextChangedListener(thi">
     
 
     
@@ -147,7 +150,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-EditText的代码设置" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +159,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            tags
+            EditText的代码设置
         </h1>
     
 
@@ -164,21 +167,28 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/tags/index.html">
-            <time datetime="2016-03-22T01:40:32.000Z" itemprop="datePublished">2016-03-22</time>
+        <a href="/2016/04/26/EditText的代码设置/">
+            <time datetime="2016-04-26T12:30:37.000Z" itemprop="datePublished">2016-04-26</time>
         </a>
     </div>
 
 
                     
                     
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
                 </div>
             </header>
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p>最近工作中用到了动态设置EditText控件的内容：</p>
+<p>动态设置EditText的输入格式需要在最后设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">editText = new EditText(context);</span><br><span class="line">editText.setBackground(null);</span><br><span class="line">editText.addTextChangedListener(this);</span><br><span class="line">editText.setHint(mHint);</span><br><span class="line">editText.setHintTextColor(getResources().getColor(R.color.cellview_edite_texthintcolor));</span><br><span class="line">editText.setTextColor(getResources().getColor(R.color.cellview_edite_textcolor));</span><br><span class="line">editText.setTextSize(DisplayUtil.dip2px(context, DEFALT_TEXT_SIZE));</span><br><span class="line">editText.setGravity(Gravity.RIGHT);</span><br><span class="line"></span><br><span class="line">if (length &gt; 0) &#123;</span><br><span class="line">editText.setFilters(new InputFilter[]&#123;new InputFilter.LengthFilter(length)&#125;);</span><br><span class="line">&#125;</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">editText.setSingleLine();</span><br><span class="line">editText.measure(0, 0);</span><br><span class="line">w = DisplayUtil.getScreenWith(context) - w - 2 * padLeft;</span><br><span class="line">h = editText.getMeasuredHeight();</span><br><span class="line">MarginLayoutParams editTextmp = new MarginLayoutParams(w</span><br><span class="line">, h);  //item的宽高</span><br><span class="line">editTextmp.setMargins(0, mt, padLeft, 0);//分别是margin_top那四个属性</span><br><span class="line">RelativeLayout.LayoutParams editeparams = new RelativeLayout.LayoutParams(editTextmp);</span><br><span class="line">editeparams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);</span><br><span class="line">//        editeparams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);</span><br><span class="line">editText.setLayoutParams(editeparams);</span><br><span class="line">if (isPassword) &#123;</span><br><span class="line">//                editText.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);</span><br><span class="line">editText.setTransformationMethod(PasswordTransformationMethod.getInstance());</span><br><span class="line">&#125;</span><br><span class="line">addView(editText);</span><br></pre></td></tr></table></figure></p>
+
         
         </div>
         <footer class="article-footer">
@@ -188,7 +198,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/tags/index.html" data-id="cinhexizf000862fydukg27qj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/" data-id="cinhexiyu000062fyquyshctp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -256,13 +266,23 @@
 
             
     
-        <a href="https://github.com/limxing/tags/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="tags/index.html">评论</a>
+        <a href="https://github.com/limxing/2016/04/26/EditText的代码设置/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/04/26/EditText的代码设置/">评论</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2016/04/14/JAVA去除字符串中重复字段/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">JAVA去除字符串中重复字段</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -272,7 +292,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="tags/index.html" data-title="tags" data-url="https://github.com/limxing/tags/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/04/26/EditText的代码设置/" data-title="EditText的代码设置" data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
