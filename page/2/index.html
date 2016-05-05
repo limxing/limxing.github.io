@@ -115,7 +115,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                13
+                14
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -147,6 +147,137 @@
 
             
             <section id="main">
+    <article id="post-BitmapHelper" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/24/BitmapHelper/">BitmapHelper</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/24/BitmapHelper/">
+            <time datetime="2016-03-24T06:54:34.000Z" itemprop="datePublished">2016-03-24</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>#####背景：调用相机拍照，结果返回时，导致内存迅速升高，内存不足时会导致OOM</p>
+<p>发现的原因：在相机拍照后，会生成很大的照片，分辨率也很高，因此占用的内存会很大，在网上找了一些同学的相机拍照代码块发现，使用到一个BitmapHelper的类，本类的主要作用是：分析拍摄的照片，如果有方向不对了对照片进行旋转，进行旋转需要吧图片加载到内存中，原尺寸的照片通常会很大，会占用两个Bitmap才能够完成旋转，因此bitmap helper在旋转之前进行了尺寸的压缩。<br>不同的手机或者pad对尺寸进行修改会造成所放的比例计算差异。。。好多废话，下面是我对Bitmap Helper类的简单修改，能够让不同的尺寸或方向的照片进行正确的缩放。</p>
+<p>Bitmap Helper能够将拍摄的照片缩放后保存在某个目录中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br></pre></td><td class="code"><pre><span class="line">public class BitmapHelper &#123;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* get the orientation of the bitmap &#123;@link ExifInterface&#125;</span><br><span class="line">*</span><br><span class="line">* @param path</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static int getDegress(String path) &#123;</span><br><span class="line">int degree = 0;</span><br><span class="line">try &#123;</span><br><span class="line">ExifInterface exifInterface = new ExifInterface(path);</span><br><span class="line">int orientation = exifInterface.getAttributeInt(</span><br><span class="line">ExifInterface.TAG_ORIENTATION,</span><br><span class="line">ExifInterface.ORIENTATION_NORMAL);</span><br><span class="line">switch (orientation) &#123;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_90:</span><br><span class="line">degree = 90;</span><br><span class="line">break;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_180:</span><br><span class="line">degree = 180;</span><br><span class="line">break;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_270:</span><br><span class="line">degree = 270;</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">return degree;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* rotate the bitmap</span><br><span class="line">*</span><br><span class="line">* @param bitmap</span><br><span class="line">* @param degress</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap rotateBitmap(Bitmap bitmap, int degress) &#123;</span><br><span class="line">if (bitmap != null) &#123;</span><br><span class="line">Matrix m = new Matrix();</span><br><span class="line">m.postRotate(degress);</span><br><span class="line">bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* caculate the bitmap sampleSize</span><br><span class="line">*</span><br><span class="line">* @param</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static int caculateInSampleSize(Options options, int rqsW, int rqsH) &#123;</span><br><span class="line">int height = options.outHeight;</span><br><span class="line">int width = options.outWidth;</span><br><span class="line">//主要修改这里，让最宽的对应设定的宽，高同理</span><br><span class="line">if (width &gt; height) &#123;</span><br><span class="line">int temp = width;</span><br><span class="line">width = height;</span><br><span class="line">height = temp;</span><br><span class="line">&#125;</span><br><span class="line">if (rqsW &gt; rqsH) &#123;</span><br><span class="line">int rqsT = rqsH;</span><br><span class="line">rqsH = rqsW;</span><br><span class="line">rqsW = rqsT;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int inSampleSize = 1;</span><br><span class="line">if (rqsW == 0 || rqsH == 0) return 1;</span><br><span class="line">if (height &gt; rqsH || width &gt; rqsW) &#123;</span><br><span class="line">int heightRatio = Math.round((float) height / (float) rqsH);</span><br><span class="line">int widthRatio = Math.round((float) width / (float) rqsW);</span><br><span class="line">inSampleSize = heightRatio &lt; widthRatio ? heightRatio : widthRatio;</span><br><span class="line">&#125;</span><br><span class="line">return inSampleSize;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 根据需要压缩到某尺寸压缩指定路径的图片，并得到图片对象</span><br><span class="line">*</span><br><span class="line">* @param path</span><br><span class="line">* @param rqsW</span><br><span class="line">* @param rqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(String path, int rqsW, int rqsH) &#123;</span><br><span class="line">Options options = getBitmapOptions(path);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, rqsW, rqsH);</span><br><span class="line">return BitmapFactory.decodeFile(path, options);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩指定路径图片，并将其保存在缓存目录中，通过isDelSrc判定是否删除源文件，并获取到缓存后的图片路径</span><br><span class="line">*</span><br><span class="line">* @param context</span><br><span class="line">* @param srcPath</span><br><span class="line">* @param rqsW</span><br><span class="line">* @param rqsH</span><br><span class="line">* @param isDelSrc</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static String compressBitmap(Context context, String srcPath, int rqsW, int rqsH, boolean isDelSrc) &#123;</span><br><span class="line">int degree = getDegress(srcPath);</span><br><span class="line">Bitmap bitmap = compressBitmap(srcPath, rqsW, rqsH);//根据长宽以及图片的长宽得到缩放图片</span><br><span class="line">File srcFile = new File(srcPath);</span><br><span class="line">String desPath = getImageCacheDir(context) + srcFile.getName();</span><br><span class="line">try &#123;</span><br><span class="line">if (degree != 0) bitmap = rotateBitmap(bitmap, degree);</span><br><span class="line">File file = new File(desPath);</span><br><span class="line">FileOutputStream fos = new FileOutputStream(file);</span><br><span class="line">bitmap.compress(CompressFormat.JPEG, 80, fos);//80是图片质量</span><br><span class="line">fos.close();</span><br><span class="line">if (isDelSrc) srcFile.deleteOnExit();</span><br><span class="line"></span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bitmap.recycle();</span><br><span class="line">System.gc();</span><br><span class="line"></span><br><span class="line">return desPath;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩某个输入流中的图片，可以解决网络输入流压缩问题，并得到图片对象</span><br><span class="line">*</span><br><span class="line">* @return Bitmap &#123;@link Bitmap&#125;</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(InputStream is, int reqsW, int reqsH) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">ReadableByteChannel channel = Channels.newChannel(is);</span><br><span class="line">ByteBuffer buffer = ByteBuffer.allocate(1024);</span><br><span class="line">while (channel.read(buffer) != -1) &#123;</span><br><span class="line">buffer.flip();</span><br><span class="line">while (buffer.hasRemaining()) baos.write(buffer.get());</span><br><span class="line">buffer.clear();</span><br><span class="line">&#125;</span><br><span class="line">byte[] bts = baos.toByteArray();</span><br><span class="line">Bitmap bitmap = compressBitmap(bts, reqsW, reqsH);</span><br><span class="line">is.close();</span><br><span class="line">channel.close();</span><br><span class="line">baos.close();</span><br><span class="line">return bitmap;</span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">// TODO: handle exception</span><br><span class="line">e.printStackTrace();</span><br><span class="line">return null;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩指定byte[]图片，并得到压缩后的图像</span><br><span class="line">*</span><br><span class="line">* @param bts</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(byte[] bts, int reqsW, int reqsH) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeByteArray(bts, 0, bts.length, options);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, reqsW, reqsH);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return BitmapFactory.decodeByteArray(bts, 0, bts.length, options);</span><br><span class="line">｝</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩已存在的图片对象，并返回压缩后的图片</span><br><span class="line">*</span><br><span class="line">* @param bitmap</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(Bitmap bitmap, int reqsW, int reqsH) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">bitmap.compress(CompressFormat.PNG, 100, baos);</span><br><span class="line">byte[] bts = baos.toByteArray();</span><br><span class="line">Bitmap res = compressBitmap(bts, reqsW, reqsH);</span><br><span class="line">baos.close();</span><br><span class="line">return res;</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">// TODO Auto-generated catch block</span><br><span class="line">e.printStackTrace();</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩资源图片，并返回图片对象</span><br><span class="line">*</span><br><span class="line">* @param res   &#123;@link Resources&#125;</span><br><span class="line">* @param resID</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(Resources res, int resID, int reqsW, int reqsH) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeResource(res, resID, options);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, reqsW, reqsH);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return BitmapFactory.decodeResource(res, resID, options);</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 得到指定路径图片的options</span><br><span class="line">*</span><br><span class="line">* @param srcPath</span><br><span class="line">* @return Options &#123;@link Options&#125;</span><br><span class="line">*/</span><br><span class="line">public static Options getBitmapOptions(String srcPath) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeFile(srcPath, options);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return options;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 获取图片缓存路径</span><br><span class="line">*</span><br><span class="line">* @param context</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">private static String getImageCacheDir(Context context) &#123;</span><br><span class="line">String dir = FileUtils.getCacheDir() + &quot;Image&quot; + File.separator;</span><br><span class="line">File file = new File(dir);</span><br><span class="line">if (!file.exists()) file.mkdirs();</span><br><span class="line">return dir;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###压缩的方式<br>上面不仅用到尺寸压缩，而且用到了图片质量压缩<br>bitmap.compress(CompressFormat.JPEG, 80, fos);//80是图片质量<br>这个就是质量压缩。<br>质量压缩需要把文件加载到内存中，因此大图片质量压缩也会瞬间占用大量内存，因此我使用的是先尺寸压缩，再质量压缩的方式。</p>
+<p>####关于质量压缩<br>质量压缩android比IOS的质量压缩采用的据说是同一个压缩方式，但是压缩中的一个参数，android默认设置为false，IOS默认设置为true，结果是设置为相同质量压缩下，iOS文件占用的空间比android少。因此我们可以把压缩的源代码搞过来，把false改为true。<br>我的实际测试，质量的压缩，true的比false仅仅小了30K～100k（图片越小越不明显） 。<br>使用方式就是：倒入.so文件和NativeUtil</p>
+<p><a href="http://download.csdn.net/detail/olimxing/9451709" target="_blank" rel="external">so文件下载地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class NativeUtil &#123;</span><br><span class="line">private static int DEFAULT_QUALITY = 95;</span><br><span class="line"></span><br><span class="line">public static void compressBitmap(Bitmap bit, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">compressBitmap(bit, DEFAULT_QUALITY, fileName, optimize);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void compressBitmap(Bitmap bit, int quality, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">Log.d(&quot;native&quot;, &quot;compress of native&quot;);</span><br><span class="line">if (bit.getConfig() != Config.ARGB_8888) &#123;</span><br><span class="line">Bitmap result = Bitmap.createBitmap(bit.getWidth(), bit.getHeight(),</span><br><span class="line">Config.ARGB_8888);</span><br><span class="line">Canvas canvas = new Canvas(result);</span><br><span class="line">Rect rect = new Rect(0, 0, bit.getWidth(), bit.getHeight());</span><br><span class="line">canvas.drawBitmap(bit, null, rect, null);</span><br><span class="line">saveBitmap(result, quality, fileName, optimize);</span><br><span class="line">result.recycle();</span><br><span class="line">&#125; else &#123;</span><br><span class="line">saveBitmap(bit, quality, fileName, optimize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void saveBitmap(Bitmap bit, int quality, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">compressBitmap(bit, bit.getWidth(), bit.getHeight(), quality,</span><br><span class="line">fileName.getBytes(), optimize);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static native String compressBitmap(Bitmap bit, int w, int h,</span><br><span class="line">int quality, byte[] fileNameBytes, boolean optimize);</span><br><span class="line"></span><br><span class="line">static &#123;</span><br><span class="line">System.loadLibrary(&quot;jpegbither&quot;);</span><br><span class="line">System.loadLibrary(&quot;bitherjni&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>博主github主页：<a href="https://github.com/limxing">Github主页</a> 有一个仿IOS的旋转等待View，欢迎使用点星星</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://github.com/limxing/2016/03/24/BitmapHelper/" data-id="cintw4p0c00014vfyqd7ie974" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://github.com/limxing/2016/03/24/BitmapHelper/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/24/BitmapHelper/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-自定义ProgressBar颜色" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -196,7 +327,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cinsgazpu000tutfyrjfav6pw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cintw4p2i000u4vfyss7yv0th" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -321,7 +452,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cinsgazpx000vutfys8ztiw8a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/23/单例模式/" data-id="cintw4p2f000r4vfy05b3z66q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -447,7 +578,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cinsgazpc000gutfym45uacm6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cintw4p0p00084vfydnu1gcsb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -541,6 +672,24 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/05/05/动态设置控件的大小文本的大小/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/05/05/动态设置控件的大小文本的大小/" class="title">动态设置控件的大小文本的大小</a></p>
+                            <p class="item-date"><time datetime="2016-05-05T06:06:09.000Z" itemprop="datePublished">2016-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/05/04/xutils传递json串作为请求体中文编码错误/" class="thumbnail">
     
     
@@ -610,24 +759,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/04/06/Mac终端命令/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/04/06/Mac终端命令/" class="title">Mac终端命令</a></p>
-                            <p class="item-date"><time datetime="2016-04-06T00:52:40.000Z" itemprop="datePublished">2016-04-06</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -639,7 +770,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -648,7 +779,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
