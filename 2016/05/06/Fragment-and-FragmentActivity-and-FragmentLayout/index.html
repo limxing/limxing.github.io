@@ -13,7 +13,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 <meta property="og:site_name" content="Limxing Blog">
 <meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
-<meta property="og:updated_time" content="2016-05-06T02:23:23.000Z">
+<meta property="og:updated_time" content="2016-05-06T02:26:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
 <meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
@@ -193,7 +193,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 <p><b>manager.remve(fragment):</b></p>
 <p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
 <p><b>manager.add(fragment):</b></p>
-<p><b>manager.replace:</b></p>
+<p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
 <h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
 
         
@@ -205,7 +205,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3ks9h0005jqfy4lz73r8c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3ov4g000dkbfyddg0ucfm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
