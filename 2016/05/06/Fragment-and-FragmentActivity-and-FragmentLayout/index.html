@@ -13,7 +13,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 <meta property="og:site_name" content="Limxing Blog">
 <meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
-<meta property="og:updated_time" content="2016-05-06T02:22:08.000Z">
+<meta property="og:updated_time" content="2016-05-06T02:23:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
 <meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
@@ -188,11 +188,11 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
             
             <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
 <h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
-<p>生命周期：<br>new Fragement();</p>
+<p>####生命周期：<br><b>new Fragement():</b></p>
 <p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<p>manager.remve(fragment):</p>
+<p><b>manager.remve(fragment):</b></p>
 <p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
-<p>manager.add(fragment):</p>
+<p><b>manager.add(fragment):</b></p>
 <p><b>manager.replace:</b></p>
 <h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
 
@@ -205,7 +205,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3j7b60000izfyf62ismm8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3ks9h0005jqfy4lz73r8c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
