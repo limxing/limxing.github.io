@@ -13,7 +13,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 <meta property="og:site_name" content="Limxing Blog">
 <meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
-<meta property="og:updated_time" content="2016-05-06T02:27:08.000Z">
+<meta property="og:updated_time" content="2016-05-06T02:27:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
 <meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。
@@ -190,7 +190,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 <h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
 <h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><p><b>new Fragement():</b></p>
 <p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<p><b>manager.remve(fragment):</b></p>
+<p><b>manager.remove(fragment):</b></p>
 <p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
 <p><b>manager.add(fragment):</b></p>
 <p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
@@ -205,7 +205,7 @@ Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够�
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3pmma0006knfyksx5zjh4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3qk9j0007kzfy76xzm96x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
