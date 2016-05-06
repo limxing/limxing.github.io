@@ -115,7 +115,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                15
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -147,6 +147,139 @@
 
             
             <section id="main">
+    <article id="post-Fragment-and-FragmentActivity-and-FragmentLayout" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">Fragment and FragmentActivity and FragmLayout</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
+            <time datetime="2016-05-06T02:00:13.000Z" itemprop="datePublished">2016-05-06</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
+<h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
+<p>生命周期：<br>new Fragement();</p>
+<p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
+<p>manager.remve(fragment):</p>
+<p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
+<p>manager.add(fragment):</p>
+<p><b>manager.replace:</b></p>
+<h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cinv3j7b60000izfyf62ismm8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-动态设置控件的大小文本的大小" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -194,7 +327,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/05/动态设置控件的大小文本的大小/" data-id="cintw4p28000m4vfyqdzyitaj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/05/动态设置控件的大小文本的大小/" data-id="cinv3j7cx000qizfylh8kfre6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -320,7 +453,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/" data-id="cintw4p2p000z4vfyjpnnpvo6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/" data-id="cinv3j7d1000tizfyp6bku1jp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -446,7 +579,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/" data-id="cintw4p0h00034vfyaxixlfa0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/" data-id="cinv3j7bg0003izfymv5vxroj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -572,7 +705,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="cintw4p0k00064vfypifgg9ov" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="cinv3j7bu000dizfyijnfayln" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -702,7 +835,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cintw4p0v000b4vfyshhcj8rb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cinv3j7bp000bizfy3969375z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -832,7 +965,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cintw4p0z000d4vfyrzn8cy3l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="cinv3j7ck000lizfy4qnwbl4l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -958,7 +1091,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cintw4p2a000o4vfyqdzd9vl4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/06/android资源文件查找顺序/" data-id="cinv3j7cq000nizfyv3tl3wnp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1085,7 +1218,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cintw4p0i00044vfyvq89v13l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/28/Fragment/" data-id="cinv3j7bm0008izfyg2w4ni4a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1210,7 +1343,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cintw4p2m000x4vfyj5jpwuwq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cinv3j7d90010izfy17tgjat7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1288,141 +1421,6 @@
 
 
 
-    <article id="post-Bitmap图片占用内存大小" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/25/Bitmap图片占用内存大小/">Bitmap图片占用内存大小</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/25/Bitmap图片占用内存大小/">
-            <time datetime="2016-03-25T05:33:25.000Z" itemprop="datePublished">2016-03-25</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>一张图片（BitMap）占用的内存=图片长度<em>图片宽度</em>单位像素占用的字节数</p>
-<p>创建一个BitMap时，其单位像素占用的字节数由其参数BitmapFactory.Options的inPreferredConfig变量决定。<br>inPreferredConfig为Bitmap.Config类型，Bitmap.Config类是个枚举类型，它可以为以下值:</p>
-<p>Bitmap.Config : ARGB_8888<br>一个像素占用4个字节，alpha(A)值，Red（R）值，Green(G)值，Blue（B）值各占8个bites<br>共32bites,即4个字节</p>
-<p>一张100<em>100的图片占用内存的大小:<br>100</em>100*4=40000字节</p>
-<p>另外，需要注意这里的图片占用内存是指在Navtive中占用的内存，当然BitMap使用的绝大多数内存就是该内存。因为我们可以简单的认为它就是BitMap所占用的内存。</p>
-<p>在Android4.0之前，Bitmap的内存是分配在Native堆中，调用recycle()可以立即释放Native内存。<br>从Android4.0开始，Bitmap的内存就是分配在dalvik堆中，即JAVA堆中的,调用recycle()并不能立即释放Native内存。但是调用recycle()也是一个良好的习惯。</p>
-<p>=================<br>资源文件中图片占用内存大小：<br>1b=8位<br>1kb=1024b<br>1mb=1024kb<br>1gb=1024mb</p>
-<p>图片占用内存大小计算公式：</p>
-<p>图片的像素长度width<br>图片的像素高度height<br>存放android手机drawable目录：dpi<br>    mdpi=160<br>    hdpi=240<br>    xhdpi=320<br>    xxhdpi=480<br>    xxxhdpi=640<br>手机像素密度：phoneDpi</p>
-<p>公式：width <em> height </em> (dpi/phoneDpi+0.5)2 * 4</p>
-<p>总结，把图片生成Bitmap则和手机像素密度无关了，<br>因此公式为：width <em> heigth </em> 4</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/" data-id="cintw4p0700004vfy8ikxdp84" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://github.com/limxing/2016/03/25/Bitmap图片占用内存大小/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/25/Bitmap图片占用内存大小/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1435,6 +1433,24 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" class="title">Fragment and FragmentActivity and FragmLayout</a></p>
+                            <p class="item-date"><time datetime="2016-05-06T02:00:13.000Z" itemprop="datePublished">2016-05-06</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1508,24 +1524,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/04/12/Java操作excel/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/04/12/Java操作excel/" class="title">Java操作excel</a></p>
-                            <p class="item-date"><time datetime="2016-04-12T03:02:08.000Z" itemprop="datePublished">2016-04-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1537,7 +1535,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -1546,7 +1544,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
