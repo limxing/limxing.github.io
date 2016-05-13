@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Handler引起Activity不能释放导致OOM | Limxing Blog</title>
+    <title>Android ViewPager左右滑动取消的方法 | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下12345678910111213">
+    <meta name="description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Handler引起Activity不能释放导致OOM">
-<meta property="og:url" content="https://github.com/limxing/2016/03/21/Hello-Word/index.html">
+<meta property="og:title" content="Android ViewPager左右滑动取消的方法">
+<meta property="og:url" content="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下12345678910111213">
-<meta property="og:updated_time" content="2016-03-22T01:51:20.000Z">
+<meta property="og:description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
+<meta property="og:updated_time" content="2016-05-13T09:31:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Handler引起Activity不能释放导致OOM">
-<meta name="twitter:description" content="继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下12345678910111213">
+<meta name="twitter:title" content="Android ViewPager左右滑动取消的方法">
+<meta name="twitter:description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
     
 
     
@@ -147,7 +147,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Hello-Word" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Android-ViewPager左右滑动取消的方法" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +156,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Handler引起Activity不能释放导致OOM
+            Android ViewPager左右滑动取消的方法
         </h1>
     
 
@@ -164,8 +164,8 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/21/Hello-Word/">
-            <time datetime="2016-03-21T13:31:52.000Z" itemprop="datePublished">2016-03-21</time>
+        <a href="/2016/05/13/Android-ViewPager左右滑动取消的方法/">
+            <time datetime="2016-05-13T09:30:14.000Z" itemprop="datePublished">2016-05-13</time>
         </a>
     </div>
 
@@ -183,8 +183,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class SampleActivity extends Activity &#123;</span><br><span class="line">private static class MyHandler extends Handler &#123;</span><br><span class="line">private final WeakReference&lt;MainActivity&gt; mActivity;</span><br><span class="line"></span><br><span class="line">public MyHandler(MainActivity activity) &#123;</span><br><span class="line">mActivity = new WeakReference&lt;MainActivity&gt;(activity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">MainActivity activity = mActivity.get();</span><br><span class="line">if (activity != null) &#123;</span><br><span class="line">// ...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private final MyHandler mHandler = new MyHandler(this);</span><br><span class="line"></span><br><span class="line">private static final Runnable sRunnable = new Runnable() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123; /* ... */ &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">super.onCreate(savedInstanceState);</span><br><span class="line">// Post a message and delay its execution for 10 minutes.</span><br><span class="line">mHandler.postDelayed(sRunnable, 1000 * 60 * 10);</span><br><span class="line"></span><br><span class="line">// Go back to the previous Activity.</span><br><span class="line">finish();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://colobu.com/2015/01/04/How-to-Leak-a-Context-Handlers-Inner-Classes/" target="_blank" rel="external">相关链接</a></p>
+            <p>Android ViewPager左右滑动取消的方法是重写子View<br>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean onInterceptTouchEvent(MotionEvent ev) &#123;</span><br><span class="line">if (getScrollX()&lt;0) &#123;</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &lt;= 0&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(false);</span><br><span class="line">return false;</span><br><span class="line">&#125; else if (getScrollX() &gt;= computeHorizontalScrollRange()) &#123;  //- getWidth()</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &gt;= computeHorizontalScrollRange()&quot;);</span><br><span class="line">return false;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">LogUtils.w(computeHorizontalScrollRange()+&quot;--&quot;+getScrollX()+&quot;==&quot;+&quot;WifiCustomWebView---&gt; true&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(true);  //子view中,可以中断pager获取到事件</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">//        return super.onInterceptTouchEvent(ev);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -195,7 +194,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cio5ixu37000ee2fyebndrbil" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/" data-id="cio5ixu1z0000e2fyi552fhg2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -263,7 +262,7 @@
 
             
     
-        <a href="https://github.com/limxing/2016/03/21/Hello-Word/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/21/Hello-Word/">评论</a>
+        <a href="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/05/13/Android-ViewPager左右滑动取消的方法/">评论</a>
     
 
         </footer>
@@ -272,15 +271,11 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/03/23/单例模式/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    单例模式
-                
-            </div>
-        </a>
     
+        <a href="/2016/05/06/EventBus的使用/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">EventBus的使用</div>
+        </a>
     
 </nav>
 
@@ -293,7 +288,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/03/21/Hello-Word/" data-title="Handler引起Activity不能释放导致OOM" data-url="https://github.com/limxing/2016/03/21/Hello-Word/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/13/Android-ViewPager左右滑动取消的方法/" data-title="Android ViewPager左右滑动取消的方法" data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
