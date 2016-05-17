@@ -3,18 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>自定义View仿IOS等待圈 | Limxing Blog</title>
+    <title>使用RadioButton图片选中切换的问题 | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/*** Created by limxing on 16/1/7.*/public class LoadView extends ImageView &amp;#123;private float deg">
+    <meta name="description" content="在使用RadioButton的时候在选择图片切换的时候出现的一个问题：12&amp;lt;item android:drawable=&amp;quot;@drawable/my_on&amp;quot; android:state_checked=&amp;quot;true&amp;quot; /&amp;gt;&amp;lt;item android:drawable=&amp;quot;@drawable/my_off&amp;quot; /&amp;gt;
+不能添加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义View仿IOS等待圈">
-<meta property="og:url" content="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/index.html">
+<meta property="og:title" content="使用RadioButton图片选中切换的问题">
+<meta property="og:url" content="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/*** Created by limxing on 16/1/7.*/public class LoadView extends ImageView &amp;#123;private float deg">
-<meta property="og:updated_time" content="2016-03-27T07:22:12.000Z">
+<meta property="og:description" content="在使用RadioButton的时候在选择图片切换的时候出现的一个问题：12&amp;lt;item android:drawable=&amp;quot;@drawable/my_on&amp;quot; android:state_checked=&amp;quot;true&amp;quot; /&amp;gt;&amp;lt;item android:drawable=&amp;quot;@drawable/my_off&amp;quot; /&amp;gt;
+不能添加">
+<meta property="og:updated_time" content="2016-05-17T02:45:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义View仿IOS等待圈">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/*** Created by limxing on 16/1/7.*/public class LoadView extends ImageView &amp;#123;private float deg">
+<meta name="twitter:title" content="使用RadioButton图片选中切换的问题">
+<meta name="twitter:description" content="在使用RadioButton的时候在选择图片切换的时候出现的一个问题：12&amp;lt;item android:drawable=&amp;quot;@drawable/my_on&amp;quot; android:state_checked=&amp;quot;true&amp;quot; /&amp;gt;&amp;lt;item android:drawable=&amp;quot;@drawable/my_off&amp;quot; /&amp;gt;
+不能添加">
     
 
     
@@ -147,7 +150,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-自定义View仿IOS等待圈" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-使用RadioButton图片选中切换的问题" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +159,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            自定义View仿IOS等待圈
+            使用RadioButton图片选中切换的问题
         </h1>
     
 
@@ -164,8 +167,8 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/27/自定义View仿IOS等待圈/">
-            <time datetime="2016-03-27T07:20:23.000Z" itemprop="datePublished">2016-03-27</time>
+        <a href="/2016/05/17/使用RadioButton图片选中切换的问题/">
+            <time datetime="2016-05-17T02:42:17.000Z" itemprop="datePublished">2016-05-17</time>
         </a>
     </div>
 
@@ -183,7 +186,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line">* Created by limxing on 16/1/7.</span><br><span class="line">*/</span><br><span class="line">public class LoadView extends ImageView &#123;</span><br><span class="line">private float degrees = 0f;</span><br><span class="line">private Matrix max;</span><br><span class="line">private int width;</span><br><span class="line">private int height;</span><br><span class="line">private Bitmap bitmap;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context) &#123;</span><br><span class="line">super(context);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs) &#123;</span><br><span class="line">super(context, attrs);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs, int defStyleAttr) &#123;</span><br><span class="line">super(context, attrs, defStyleAttr);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Handler handler = new Handler() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">degrees += 30f;</span><br><span class="line">max.setRotate(degrees, width, height);</span><br><span class="line">setImageMatrix(max);</span><br><span class="line">if(degrees==360)&#123;</span><br><span class="line">degrees=0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">private void init() &#123;</span><br><span class="line">setScaleType(ScaleType.MATRIX);</span><br><span class="line">bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);</span><br><span class="line">setImageBitmap(bitmap);</span><br><span class="line">max = new Matrix();</span><br><span class="line"></span><br><span class="line">width = bitmap.getWidth() / 2;</span><br><span class="line">height = bitmap.getHeight() / 2;</span><br><span class="line">Timer time=new Timer();</span><br><span class="line">time.schedule(new TimerTask() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">handler.sendEmptyMessage(0);</span><br><span class="line">&#125;</span><br><span class="line">&#125;,0,80);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>在使用RadioButton的时候在选择图片切换的时候出现的一个问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;item android:drawable=&quot;@drawable/my_on&quot; android:state_checked=&quot;true&quot; /&gt;</span><br><span class="line">&lt;item android:drawable=&quot;@drawable/my_off&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>不能添加state_pressed的状态，否则就出现了不能够正常切换DrawableTop图片</p>
 
         
         </div>
@@ -194,7 +198,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/" data-id="cioau79w00014v4fys69yl1me" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/" data-id="cioau79vl000rv4fy7yhxrxoy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -262,7 +266,7 @@
 
             
     
-        <a href="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/27/自定义View仿IOS等待圈/">评论</a>
+        <a href="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/05/17/使用RadioButton图片选中切换的问题/">评论</a>
     
 
         </footer>
@@ -271,19 +275,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/03/28/Fragment/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Fragment
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/03/25/Bitmap图片占用内存大小/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/05/13/Android-ViewPager左右滑动取消的方法/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Bitmap图片占用内存大小</div>
+            <div class="article-nav-title">Android ViewPager左右滑动取消的方法</div>
         </a>
     
 </nav>
@@ -297,7 +292,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/03/27/自定义View仿IOS等待圈/" data-title="自定义View仿IOS等待圈" data-url="https://github.com/limxing/2016/03/27/自定义View仿IOS等待圈/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/17/使用RadioButton图片选中切换的问题/" data-title="使用RadioButton图片选中切换的问题" data-url="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
