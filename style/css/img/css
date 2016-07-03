@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Signika'), local('Signika-Regular'), url(https://fonts.gstatic.com/s/signika/v6/CIKqu0ZApWLrJojeHmT3SQ.woff) format('woff');
+}
