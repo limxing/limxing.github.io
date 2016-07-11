@@ -863,7 +863,6 @@ a.article-title:hover {
   content: "#";
 }
 .article-entry {
-  height: 200px;
   color: #565a5f;
   padding: 0 20px;
   line-height: 1.6em;
@@ -1953,6 +1952,8 @@ ol.toc {
   padding-right: 20px;
 }
 .article-entry .highlight {
+  height: 200px;
+  
   margin: 1.6em 0;
 }
 .highlight {
