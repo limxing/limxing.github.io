@@ -794,6 +794,7 @@ code {
 }
 .article {
   margin: 40px 0;
+  height: 400px;
 }
 .article-inner {
   overflow: hidden;
