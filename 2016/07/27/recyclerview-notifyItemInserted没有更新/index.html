@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Android ViewPager左右滑动取消的方法 | Limxing Blog</title>
+    <title>recyclerview notifyItemInserted没有更新 | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
+    <meta name="description" content="在使用RecyclerView过程中使用 notifyItemInserted notifyItemRangeRemoved等方法时，还要调用notifyItemRangeChanged(position,list.size());1234list.add(0, &amp;quot;leefeng.me&amp;quot; + &amp;quot;==onRefresh&amp;quot;);recycleview.stopRe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android ViewPager左右滑动取消的方法">
-<meta property="og:url" content="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/index.html">
+<meta property="og:title" content="recyclerview notifyItemInserted没有更新">
+<meta property="og:url" content="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
-<meta property="og:updated_time" content="2016-05-13T09:31:01.000Z">
+<meta property="og:description" content="在使用RecyclerView过程中使用 notifyItemInserted notifyItemRangeRemoved等方法时，还要调用notifyItemRangeChanged(position,list.size());1234list.add(0, &amp;quot;leefeng.me&amp;quot; + &amp;quot;==onRefresh&amp;quot;);recycleview.stopRe">
+<meta property="og:updated_time" content="2016-07-27T08:37:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android ViewPager左右滑动取消的方法">
-<meta name="twitter:description" content="Android ViewPager左右滑动取消的方法是重写子View实现：12345678910111213141516@Overridepublic boolean onInterceptTouchEvent(MotionEvent ev) &amp;#123;if (getScrollX()&amp;lt;0) &amp;#123;LogUtils.w(&amp;quot;WifiCustomWebView---&amp;gt; g">
+<meta name="twitter:title" content="recyclerview notifyItemInserted没有更新">
+<meta name="twitter:description" content="在使用RecyclerView过程中使用 notifyItemInserted notifyItemRangeRemoved等方法时，还要调用notifyItemRangeChanged(position,list.size());1234list.add(0, &amp;quot;leefeng.me&amp;quot; + &amp;quot;==onRefresh&amp;quot;);recycleview.stopRe">
     
 
     
@@ -147,7 +147,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Android-ViewPager左右滑动取消的方法" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-recyclerview-notifyItemInserted没有更新" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +156,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Android ViewPager左右滑动取消的方法
+            recyclerview notifyItemInserted没有更新
         </h1>
     
 
@@ -164,8 +164,8 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/05/13/Android-ViewPager左右滑动取消的方法/">
-            <time datetime="2016-05-13T09:30:14.000Z" itemprop="datePublished">2016-05-13</time>
+        <a href="/2016/07/27/recyclerview-notifyItemInserted没有更新/">
+            <time datetime="2016-07-27T08:26:35.000Z" itemprop="datePublished">2016-07-27</time>
         </a>
     </div>
 
@@ -183,7 +183,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>Android ViewPager左右滑动取消的方法是重写子View<br>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean onInterceptTouchEvent(MotionEvent ev) &#123;</span><br><span class="line">if (getScrollX()&lt;0) &#123;</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &lt;= 0&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(false);</span><br><span class="line">return false;</span><br><span class="line">&#125; else if (getScrollX() &gt;= computeHorizontalScrollRange()) &#123;  //- getWidth()</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &gt;= computeHorizontalScrollRange()&quot;);</span><br><span class="line">return false;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">LogUtils.w(computeHorizontalScrollRange()+&quot;--&quot;+getScrollX()+&quot;==&quot;+&quot;WifiCustomWebView---&gt; true&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(true);  //子view中,可以中断pager获取到事件</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">//        return super.onInterceptTouchEvent(ev);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <p>在使用RecyclerView过程中使用 notifyItemInserted notifyItemRangeRemoved等<br>方法时，还要调用notifyItemRangeChanged(position,list.size());<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list.add(0, &quot;leefeng.me&quot; + &quot;==onRefresh&quot;);</span><br><span class="line">recycleview.stopRefresh(b);</span><br><span class="line">adapter.notifyItemInserted(0);</span><br><span class="line">adapter.notifyItemRangeChanged(0,list.size());</span><br></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -194,7 +194,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/" data-id="cir4n1pfp00003gfyd5vzoagk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/" data-id="cir4n1pif00153gfylnsjf5u1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -262,7 +262,7 @@
 
             
     
-        <a href="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/05/13/Android-ViewPager左右滑动取消的方法/">评论</a>
+        <a href="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/07/27/recyclerview-notifyItemInserted没有更新/">评论</a>
     
 
         </footer>
@@ -271,19 +271,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/05/17/使用RadioButton图片选中切换的问题/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    使用RadioButton图片选中切换的问题
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/05/06/EventBus的使用/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/05/17/使用RadioButton图片选中切换的问题/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">EventBus的使用</div>
+            <div class="article-nav-title">使用RadioButton图片选中切换的问题</div>
         </a>
     
 </nav>
@@ -297,7 +288,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/05/13/Android-ViewPager左右滑动取消的方法/" data-title="Android ViewPager左右滑动取消的方法" data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/"></div>
+    <div class="ds-thread" data-thread-key="2016/07/27/recyclerview-notifyItemInserted没有更新/" data-title="recyclerview notifyItemInserted没有更新" data-url="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;

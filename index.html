@@ -115,7 +115,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                18
+                19
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -147,6 +147,131 @@
 
             
             <section id="main">
+    <article id="post-recyclerview-notifyItemInserted没有更新" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/27/recyclerview-notifyItemInserted没有更新/">recyclerview notifyItemInserted没有更新</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/27/recyclerview-notifyItemInserted没有更新/">
+            <time datetime="2016-07-27T08:26:35.000Z" itemprop="datePublished">2016-07-27</time>
+        </a>
+    </div>
+
+
+                    
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>在使用RecyclerView过程中使用 notifyItemInserted notifyItemRangeRemoved等<br>方法时，还要调用notifyItemRangeChanged(position,list.size());<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list.add(0, &quot;leefeng.me&quot; + &quot;==onRefresh&quot;);</span><br><span class="line">recycleview.stopRefresh(b);</span><br><span class="line">adapter.notifyItemInserted(0);</span><br><span class="line">adapter.notifyItemRangeChanged(0,list.size());</span><br></pre></td></tr></table></figure></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/" data-id="cir4n1pif00153gfylnsjf5u1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://github.com/limxing/2016/07/27/recyclerview-notifyItemInserted没有更新/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/07/27/recyclerview-notifyItemInserted没有更新/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-使用RadioButton图片选中切换的问题" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -195,7 +320,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/" data-id="ciqvoli1d000ozkfyo46tdaec" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/17/使用RadioButton图片选中切换的问题/" data-id="cir4n1pi2000x3gfylz7sjvod" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -320,7 +445,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/" data-id="ciqvolhzm0000zkfy55svsdr9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/13/Android-ViewPager左右滑动取消的方法/" data-id="cir4n1pfp00003gfyd5vzoagk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -481,7 +606,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/06/EventBus的使用/" data-id="ciqvoli0j000azkfy7zlq3m96" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/06/EventBus的使用/" data-id="cir4n1pgx000c3gfyjr4f03au" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -614,7 +739,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="ciqvoli0w000fzkfykm997nme" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cir4n1pgh00073gfy1nvcsov4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -739,7 +864,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/05/动态设置控件的大小文本的大小/" data-id="ciqvoli1n000vzkfy81hf74x0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/05/动态设置控件的大小文本的大小/" data-id="cir4n1phv000t3gfyy340mpvt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -865,7 +990,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/" data-id="ciqvoli1g000rzkfycbx5xtku" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/" data-id="cir4n1php000r3gfypnjk8cmd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -991,7 +1116,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/" data-id="ciqvoli090007zkfyjhlcsal2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/26/EditText的代码设置/" data-id="cir4n1pg000023gfyl3d287qc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1117,7 +1242,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="ciqvoli14000hzkfyx4o9qb08" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/14/JAVA去除字符串中重复字段/" data-id="cir4n1pi900113gfy2zy8nwda" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1247,7 +1372,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="ciqvoli17000jzkfywye61ny7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/04/12/Java操作excel/" data-id="cir4n1phf000m3gfy8aa9m4l7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1325,136 +1450,6 @@
 
 
 
-    <article id="post-Mac终端命令" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/04/06/Mac终端命令/">Mac终端命令</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/04/06/Mac终端命令/">
-            <time datetime="2016-04-06T00:52:40.000Z" itemprop="datePublished">2016-04-06</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MacOS/">MacOS</a>
-    </div>
-
-                </div>
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Mac终端的命令</p>
-<p>lilifengdeMacBook-Pro:Library limxing$ cd Android  ／／进入某个文件夹</p>
-<p>lilifengdeMacBook-Pro:tools limxing$ sudo -s  ／／获取权限</p>
-<p>bash-3.2# ls  ／／获取这个目录下的所有文件</p>
-<p>bash-3.2# chmod +x * //获取这个目录的权限解决Permission denied的问题<br>bash-3.2# ./android sdk</p>
-<p>2、终端的使用环境配置<br>echo $PATH   查看PATH<br>touch .bash_profile<br>open .bash_profile<br>export PATH=”$HOME/.rbenv/bin:$PATH”  添加修改配置，完成后保存<br>source .bash_profile  生效</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://github.com/limxing/2016/04/06/Mac终端命令/" data-id="ciqvoli1y0011zkfyzbbooj3r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://github.com/limxing/2016/04/06/Mac终端命令/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/04/06/Mac终端命令/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1467,6 +1462,24 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/27/recyclerview-notifyItemInserted没有更新/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/27/recyclerview-notifyItemInserted没有更新/" class="title">recyclerview notifyItemInserted没有更新</a></p>
+                            <p class="item-date"><time datetime="2016-07-27T08:26:35.000Z" itemprop="datePublished">2016-07-27</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1540,24 +1553,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/05/05/动态设置控件的大小文本的大小/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/05/05/动态设置控件的大小文本的大小/" class="title">动态设置控件的大小文本的大小</a></p>
-                            <p class="item-date"><time datetime="2016-05-05T06:06:09.000Z" itemprop="datePublished">2016-05-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1569,7 +1564,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -1578,7 +1573,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
