@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>自定义ProgressBar颜色 | Limxing Blog</title>
+    <title>OOM | Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="drawable文件夹中bacprogress.xml12345678910111213141516171819202122232425262728&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;layer-list xmlns:android=&amp;quot;http://schemas.android.com/">
+    <meta name="description" content="在最近的项目中，使用了ViewPager+ImageView进行图片的浏览，OOM的代码：1234567@Overridepublic Object instantiateItem(ViewGroup container, int position) &amp;#123;Work.Att att = list.get(position);PhotoView view = new PhotoView(con">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义ProgressBar颜色">
-<meta property="og:url" content="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/index.html">
+<meta property="og:title" content="OOM">
+<meta property="og:url" content="https://github.com/limxing/2016/08/31/OOM/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="drawable文件夹中bacprogress.xml12345678910111213141516171819202122232425262728&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;layer-list xmlns:android=&amp;quot;http://schemas.android.com/">
-<meta property="og:updated_time" content="2016-03-23T12:32:44.000Z">
+<meta property="og:description" content="在最近的项目中，使用了ViewPager+ImageView进行图片的浏览，OOM的代码：1234567@Overridepublic Object instantiateItem(ViewGroup container, int position) &amp;#123;Work.Att att = list.get(position);PhotoView view = new PhotoView(con">
+<meta property="og:updated_time" content="2016-08-31T09:21:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义ProgressBar颜色">
-<meta name="twitter:description" content="drawable文件夹中bacprogress.xml12345678910111213141516171819202122232425262728&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;lt;layer-list xmlns:android=&amp;quot;http://schemas.android.com/">
+<meta name="twitter:title" content="OOM">
+<meta name="twitter:description" content="在最近的项目中，使用了ViewPager+ImageView进行图片的浏览，OOM的代码：1234567@Overridepublic Object instantiateItem(ViewGroup container, int position) &amp;#123;Work.Att att = list.get(position);PhotoView view = new PhotoView(con">
     
 
     
@@ -147,7 +147,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-自定义ProgressBar颜色" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="viewpager+imageview-OOM" class="article article-type-viewpager+imageview" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +156,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            自定义ProgressBar颜色
+            OOM
         </h1>
     
 
@@ -164,28 +164,24 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/23/自定义ProgressBar颜色/">
-            <time datetime="2016-03-23T12:31:48.000Z" itemprop="datePublished">2016-03-23</time>
+        <a href="/2016/08/31/OOM/">
+            <time datetime="2016-08-31T09:12:10.000Z" itemprop="datePublished">2016-08-31</time>
         </a>
     </div>
 
 
                     
                     
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
                 </div>
             </header>
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>drawable文件夹中bacprogress.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置背景色（白色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/background&quot;&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#ffffff&quot;</span><br><span class="line">android:startColor=&quot;#ffffff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置进度条颜色（蓝色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/progress&quot;&gt;</span><br><span class="line">&lt;clip&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#5d9eff&quot;</span><br><span class="line">android:startColor=&quot;#5d9eff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/clip&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressBar</span><br><span class="line">android:id=&quot;@+id/download_item_size_pro&quot;</span><br><span class="line">style=&quot;?android:attr/progressBarStyleHorizontal&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;3dp&quot;</span><br><span class="line">android:max=&quot;100&quot;</span><br><span class="line">android:progress=&quot;0&quot;</span><br><span class="line">android:progressDrawable=&quot;@drawable/bacprogress&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/limxing/XListView">https://github.com/limxing/XListView</a> 仿iOS加载等待旋转图片放进这个项目中了，欢迎使用给星</p>
+            <p>在最近的项目中，使用了ViewPager+ImageView进行图片的浏览，OOM的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public Object instantiateItem(ViewGroup container, int position) &#123;</span><br><span class="line">Work.Att att = list.get(position);</span><br><span class="line">PhotoView view = new PhotoView(container.getContext());</span><br><span class="line">container.addView(view);</span><br><span class="line">return view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样会重复的创建ImageView，可能没有被回收，所以解决的方案是创建一个全局的集合，让图片都放进去，在使用的时候根据位置进行设置不同的图片去展示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public Object instantiateItem(ViewGroup container, int position) &#123;</span><br><span class="line">Work.Att att = list.get(position);</span><br><span class="line">PhotoView view = Application.getImageList().get(position);</span><br><span class="line">container.addView(view);</span><br><span class="line">return view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>####关键</p>
+<p>但是这样同样会让Viewpager指针指向了这个集合中的ImageView，因此在onDestory中添加：viewpager.removeAllViews();</p>
 
         
         </div>
@@ -196,7 +192,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/" data-id="cisip15d40012kjfy839jz3ne" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/08/31/OOM/" data-id="cisip15co000mkjfy7yh1jz1r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -264,7 +260,7 @@
 
             
     
-        <a href="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/23/自定义ProgressBar颜色/">评论</a>
+        <a href="https://github.com/limxing/2016/08/31/OOM/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/08/31/OOM/">评论</a>
     
 
         </footer>
@@ -273,19 +269,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/03/24/BitmapHelper/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    BitmapHelper
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/03/23/单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/07/27/recyclerview-notifyItemInserted没有更新/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">单例模式</div>
+            <div class="article-nav-title">recyclerview notifyItemInserted没有更新</div>
         </a>
     
 </nav>
@@ -299,7 +286,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/03/23/自定义ProgressBar颜色/" data-title="自定义ProgressBar颜色" data-url="https://github.com/limxing/2016/03/23/自定义ProgressBar颜色/"></div>
+    <div class="ds-thread" data-thread-key="2016/08/31/OOM/" data-title="OOM" data-url="https://github.com/limxing/2016/08/31/OOM/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
