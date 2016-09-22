@@ -3,21 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>xutils传递json串作为请求体中文编码错误 | Limxing Blog</title>
+    <title>Limxing Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="网络请求使用Xutils 3.0在传递JSON作为请求体的时候，中文乱码的结果解决：
-方案时自定义RequestParams，设置这个params.setAsJsonContent(true);">
-<meta property="og:type" content="article">
-<meta property="og:title" content="xutils传递json串作为请求体中文编码错误">
-<meta property="og:url" content="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/index.html">
+    <meta name="description" content="我有一个梦想">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Limxing Blog">
+<meta property="og:url" content="https://github.com/limxing/page/3/index.html">
 <meta property="og:site_name" content="Limxing Blog">
-<meta property="og:description" content="网络请求使用Xutils 3.0在传递JSON作为请求体的时候，中文乱码的结果解决：
-方案时自定义RequestParams，设置这个params.setAsJsonContent(true);">
-<meta property="og:updated_time" content="2016-05-04T05:56:20.000Z">
+<meta property="og:description" content="我有一个梦想">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xutils传递json串作为请求体中文编码错误">
-<meta name="twitter:description" content="网络请求使用Xutils 3.0在传递JSON作为请求体的时候，中文乱码的结果解决：
-方案时自定义RequestParams，设置这个params.setAsJsonContent(true);">
+<meta name="twitter:title" content="Limxing Blog">
+<meta name="twitter:description" content="我有一个梦想">
     
 
     
@@ -150,7 +146,8 @@
 </aside>
 
             
-            <section id="main"><article id="post-xutils传递json串作为请求体中文编码错误" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main">
+    <article id="post-Hello-Word" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -158,8 +155,8 @@
             <header class="article-header">
                 
     
-        <h1 class="article-title" itemprop="name">
-            xutils传递json串作为请求体中文编码错误
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/21/Hello-Word/">Handler引起Activity不能释放导致OOM</a>
         </h1>
     
 
@@ -167,8 +164,8 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/05/04/xutils传递json串作为请求体中文编码错误/">
-            <time datetime="2016-05-04T05:51:56.000Z" itemprop="datePublished">2016-05-04</time>
+        <a href="/2016/03/21/Hello-Word/">
+            <time datetime="2016-03-21T13:31:52.000Z" itemprop="datePublished">2016-03-21</time>
         </a>
     </div>
 
@@ -186,8 +183,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h3><p>使用Xutils 3.0在传递JSON作为请求体的时候，中文乱码的结果解决：</p>
-<p>方案时自定义RequestParams，设置这个params.setAsJsonContent(true);</p>
+            <p>继承Handler时，要么是放在单独的类文件中，要么就是使用静态内部类。因为静态的内部类不会持有外部类的引用，所以不会导致外部类实例的内存泄露。当你需要在静态内部类中调用外部的Activity时，我们可以使用弱引用来处理。另外关于同样也需要将Runnable设置为静态的成员属性。注意：一个静态的匿名内部类实例不会持有外部类的引用。 修改后不会导致内存泄露的代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class SampleActivity extends Activity &#123;</span><br><span class="line">private static class MyHandler extends Handler &#123;</span><br><span class="line">private final WeakReference&lt;MainActivity&gt; mActivity;</span><br><span class="line"></span><br><span class="line">public MyHandler(MainActivity activity) &#123;</span><br><span class="line">mActivity = new WeakReference&lt;MainActivity&gt;(activity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">MainActivity activity = mActivity.get();</span><br><span class="line">if (activity != null) &#123;</span><br><span class="line">// ...</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private final MyHandler mHandler = new MyHandler(this);</span><br><span class="line"></span><br><span class="line">private static final Runnable sRunnable = new Runnable() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123; /* ... */ &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">@Override</span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">super.onCreate(savedInstanceState);</span><br><span class="line">// Post a message and delay its execution for 10 minutes.</span><br><span class="line">mHandler.postDelayed(sRunnable, 1000 * 60 * 10);</span><br><span class="line"></span><br><span class="line">// Go back to the previous Activity.</span><br><span class="line">finish();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://colobu.com/2015/01/04/How-to-Leak-a-Context-Handlers-Inner-Classes/" target="_blank" rel="external">相关链接</a></p>
 
         
         </div>
@@ -198,7 +195,7 @@
 
 </div>
 
-    <a data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/" data-id="cite69t4200105cfystsimv9p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://github.com/limxing/2016/03/21/Hello-Word/" data-id="cite69t3m000m5cfy61rlu31g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -266,83 +263,19 @@
 
             
     
-        <a href="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/05/04/xutils传递json串作为请求体中文编码错误/">评论</a>
+        <a href="https://github.com/limxing/2016/03/21/Hello-Word/#comments" class="article-comment-link ds-thread-count" data-thread-key="2016/03/21/Hello-Word/">评论</a>
     
 
         </footer>
     </div>
     
-        
-<nav id="article-nav">
-    
-        <a href="/2016/05/05/动态设置控件的大小文本的大小/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    动态设置控件的大小文本的大小
-                
-            </div>
-        </a>
-    
-    
-        <a href="/2016/04/26/EditText的代码设置/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">EditText的代码设置</div>
-        </a>
-    
-</nav>
-
-
-    
 </article>
 
 
-    
-    <section id="comments">
-    
-        
-    <div class="ds-thread" data-thread-key="2016/05/04/xutils传递json串作为请求体中文编码错误/" data-title="xutils传递json串作为请求体中文编码错误" data-url="https://github.com/limxing/2016/05/04/xutils传递json串作为请求体中文编码错误/"></div>
-    <style>
-        #ds-thread #ds-reset .ds-textarea-wrapper {
-            background: none;
-        }
-        #ds-reset .ds-avatar img {
-            box-shadow: none;
-        }
-        #ds-reset .ds-gradient-bg {
-            background: #f7f7f7;
-        }
-        #ds-thread #ds-reset li.ds-tab a {
-            border-radius: 3px;
-        }
-        #ds-thread #ds-reset .ds-post-button {
-            color: white;
-            border: none;
-            box-shadow: none;
-            background: #d32;
-            text-shadow: none;
-            font-weight: normal;
-            font-family: 'Microsoft Yahei';
-        }
-        #ds-thread #ds-reset .ds-post-button:hover {
-            color: white;
-            background: #DE594C;
-        }
-        #ds-thread #ds-reset .ds-post-button:active {
-            background: #d32;
-        }
-        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
-            color: white;
-            background: #d32;
-            box-shadow: none;
-            text-shadow: none;
-            font-weight: normal;
-        }
-    </style>
 
-    
-    </section>
-
+    <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
 </section>
             
                 <aside id="sidebar">
