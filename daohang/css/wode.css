@@ -1,0 +1,25 @@
+@charset "utf-8";
+.wode {
+	font-size: 18px;
+	font-weight: normal;
+	color: #F0F;
+	width: 1000px;
+	display: table-row-group;
+	position: absolute;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	vertical-align: middle;
+}
+.skin-color-green div #layoutContainer hr {
+	color: #C0C0C0;
+}
+xiaozi {
+	color: #F09;
+	font-size: 12px;
+}
