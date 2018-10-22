@@ -3,20 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Fragment and FragmentActivity and FragmLayout | Leefeng Blog</title>
+    <title>归档: 2018/10 | Leefeng Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
-<meta name="keywords" content="Android">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta property="og:url" content="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Leefeng Blog">
+<meta property="og:url" content="/archives/2018/10/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
-<meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2016-05-06T02:27:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+<meta name="twitter:title" content="Leefeng Blog">
     
 
     
@@ -178,167 +173,45 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-Fragment-and-FragmentActivity-and-FragmentLayout" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+            <section id="main"><div class="timeline timeline-wrap">
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fas fa-calendar-alt"></i></span>
+                <h1 class="title">2018</h1>
+            </div>
         
-        
-            <header class="article-header">
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            Fragment and FragmentActivity and FragmLayout
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2018/10/22/Kotlin的一些扩展函数/">Kotlin的一些扩展函数</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
-            <time datetime="2016-05-06T02:00:13.000Z" itemprop="datePublished">2016-05-06</time>
+        <a href="/2018/10/22/Kotlin的一些扩展函数/">
+            <time datetime="2018-10-22T02:01:18.000Z" itemprop="datePublished">2018-10-22</time>
         </a>
     </div>
 
 
-                        
-                        
+                    
+                    
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
+        <a class="tag-link" href="/tags/Kotlin/">Kotlin</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
-<h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
-<h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><p><b>new Fragement():</b></p>
-<p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<p><b>manager.remove(fragment):</b></p>
-<p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
-<p><b>manager.add(fragment):</b></p>
-<p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cjnjno48s000aq21okwcritvr" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/05/06/EventBus的使用/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    EventBus的使用
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2016/05/05/动态设置控件的大小文本的大小/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">动态设置控件的大小文本的大小</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-	<div id="commentContainer"></div>
-</section>
-    
-
+</div>
 </section>
             
                 

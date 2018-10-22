@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Fragment and FragmentActivity and FragmLayout | Leefeng Blog</title>
+    <title>Kotlin的一些扩展函数 | Leefeng Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
-<meta name="keywords" content="Android">
+    <meta name="description" content="Kotlin的一些扩展函数标签（空格分隔）： Android Kotlin  StandardKt.class 通用函数repeat(Int){}代码块执行多少次123repeat(2)&amp;#123;println(&quot;This is $it time&quot;)&amp;#125; with(obj){}用法1：接收一个对象，在代码块中直接调用属性值赋值用法2：接收一个对象后，可使用其属性转换成另外一个对象返回12">
+<meta name="keywords" content="Kotlin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta property="og:url" content="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/index.html">
+<meta property="og:title" content="Kotlin的一些扩展函数">
+<meta property="og:url" content="/2018/10/22/Kotlin的一些扩展函数/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
-<meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+<meta property="og:description" content="Kotlin的一些扩展函数标签（空格分隔）： Android Kotlin  StandardKt.class 通用函数repeat(Int){}代码块执行多少次123repeat(2)&amp;#123;println(&quot;This is $it time&quot;)&amp;#125; with(obj){}用法1：接收一个对象，在代码块中直接调用属性值赋值用法2：接收一个对象后，可使用其属性转换成另外一个对象返回12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2016-05-06T02:27:53.000Z">
+<meta property="og:updated_time" content="2018-10-22T02:01:55.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+<meta name="twitter:title" content="Kotlin的一些扩展函数">
+<meta name="twitter:description" content="Kotlin的一些扩展函数标签（空格分隔）： Android Kotlin  StandardKt.class 通用函数repeat(Int){}代码块执行多少次123repeat(2)&amp;#123;println(&quot;This is $it time&quot;)&amp;#125; with(obj){}用法1：接收一个对象，在代码块中直接调用属性值赋值用法2：接收一个对象后，可使用其属性转换成另外一个对象返回12">
     
 
     
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-Fragment-and-FragmentActivity-and-FragmentLayout" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Kotlin的一些扩展函数" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -186,7 +186,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-            Fragment and FragmentActivity and FragmLayout
+            Kotlin的一些扩展函数
         </h1>
     
 
@@ -195,8 +195,8 @@ var _hmt = _hmt || [];
                         
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
-            <time datetime="2016-05-06T02:00:13.000Z" itemprop="datePublished">2016-05-06</time>
+        <a href="/2018/10/22/Kotlin的一些扩展函数/">
+            <time datetime="2018-10-22T02:01:18.000Z" itemprop="datePublished">2018-10-22</time>
         </a>
     </div>
 
@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
                         
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
+        <a class="tag-link" href="/tags/Kotlin/">Kotlin</a>
     </div>
 
                     </div>
@@ -216,15 +216,23 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
-<h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
-<h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><p><b>new Fragement():</b></p>
-<p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<p><b>manager.remove(fragment):</b></p>
-<p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
-<p><b>manager.add(fragment):</b></p>
-<p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
+            <h1 id="Kotlin的一些扩展函数"><a href="#Kotlin的一些扩展函数" class="headerlink" title="Kotlin的一些扩展函数"></a>Kotlin的一些扩展函数</h1><p>标签（空格分隔）： Android Kotlin</p>
+<hr>
+<h2 id="StandardKt-class-通用函数"><a href="#StandardKt-class-通用函数" class="headerlink" title="StandardKt.class 通用函数"></a>StandardKt.class 通用函数</h2><h3 id="repeat-Int"><a href="#repeat-Int" class="headerlink" title="repeat(Int){}"></a>repeat(Int){}</h3><p>代码块执行多少次<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat(<span class="number">2</span>)&#123;</span><br><span class="line">println(<span class="string">"This is <span class="variable">$it</span> time"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="with-obj"><a href="#with-obj" class="headerlink" title="with(obj){}"></a>with(obj){}</h3><p>用法1：接收一个对象，在代码块中直接调用属性值赋值<br>用法2：接收一个对象后，可使用其属性转换成另外一个对象返回<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">with(TextView(context)) &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> imageView = with(TextView(context)) &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">ImageView(context)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="run"><a href="#run" class="headerlink" title=".run{}"></a>.run{}</h3><p>与with类似，只不过是错用在对象上<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TextView(context).run &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="let"><a href="#let" class="headerlink" title=".let{}"></a>.let{}</h3><p>多用于执行依据代码块，用在可能为空的对象上<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> <span class="keyword">data</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">data</span>?.let &#123;</span><br><span class="line">println(<span class="string">"data is not null"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="apply"><a href="#apply" class="headerlink" title=".apply{}"></a>.apply{}</h3><p>对象的扩展方法，类似with<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> textView = TextView(context).apply &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span></span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="takeIf"><a href="#takeIf" class="headerlink" title=".takeIf{}"></a>.takeIf{}</h3><h3 id="takeUnless"><a href="#takeUnless" class="headerlink" title=".takeUnless{}"></a>.takeUnless{}</h3><h3 id="synchronized-Any"><a href="#synchronized-Any" class="headerlink" title="synchronized(Any){}"></a>synchronized(Any){}</h3><h2 id="CloseableKt-class"><a href="#CloseableKt-class" class="headerlink" title="CloseableKt.class"></a>CloseableKt.class</h2><h3 id="use"><a href="#use" class="headerlink" title=".use{}"></a>.use{}</h3><p>用于流操作，能够自动关闭流资源<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">assets.<span class="keyword">open</span>(<span class="string">"data.json"</span>).reader().use &#123;</span><br><span class="line"><span class="keyword">val</span> text = it.readText()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="closeFinally"><a href="#closeFinally" class="headerlink" title="closeFinally()"></a>closeFinally()</h3><h2 id="CollectionsKt-class"><a href="#CollectionsKt-class" class="headerlink" title="CollectionsKt.class"></a>CollectionsKt.class</h2><h3 id="groupBy"><a href="#groupBy" class="headerlink" title=".groupBy{}"></a>.groupBy{}</h3><p>用于对集合进行分组,返回的是Map集合,key是{条件},value是集合中的对象<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"abc"</span>, <span class="string">"fd"</span>, <span class="string">"edd"</span>, <span class="string">"zdc"</span>,<span class="string">"pkj"</span>)</span><br><span class="line">list.groupBy &#123; it.first() &#125;.forEach(::println)</span><br></pre></td></tr></table></figure></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title=".forEach{}"></a>.forEach{}</h3><p>对集合进行遍历，array,list,map…<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"abc"</span>, <span class="string">"fd"</span>, <span class="string">"edd"</span>, <span class="string">"zdc"</span>,<span class="string">"pkj"</span>)</span><br><span class="line">list.forEach (::println)</span><br><span class="line">list.forEach&#123; println(it) &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="forEachIndexed-index-T-gt"><a href="#forEachIndexed-index-T-gt" class="headerlink" title=".forEachIndexed{ index, T -&gt; }"></a>.forEachIndexed{ index, T -&gt; }</h3><p>对数组进行遍历，提供角标和对象<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.forEachIndexed &#123; index, s -&gt;</span><br><span class="line">println(<span class="string">"index:<span class="variable">$index</span> obj:<span class="variable">$s</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="filter"><a href="#filter" class="headerlink" title=".filter{}"></a>.filter{}</h3><p>筛选指定条件的对象返回List<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.filter &#123;</span><br><span class="line">it.first() == <span class="string">'a'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="reversed"><a href="#reversed" class="headerlink" title=".reversed()"></a>.reversed()</h3><p>返回集合的倒序<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.reversed()</span><br></pre></td></tr></table></figure></p>
+<h3 id="List-zip-List-List-lt-Pair-lt-T-R-gt-gt"><a href="#List-zip-List-List-lt-Pair-lt-T-R-gt-gt" class="headerlink" title="List.zip(List):List&lt;Pair&lt;T, R&gt;&gt;"></a>List<t>.zip(List<r>):List&lt;Pair&lt;T, R&gt;&gt;</r></t></h3><p>两个集合合并，返回Pair对象</p>
+<h3 id="average"><a href="#average" class="headerlink" title=".average()"></a>.average()</h3><p>返回集合内数的平均值</p>
+<h3 id="count"><a href="#count" class="headerlink" title=".count()"></a>.count()</h3><p>返回集合的个数</p>
+<p>…more collect</p>
 
         
         </div>
@@ -235,7 +243,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" data-id="cjnjno48s000aq21okwcritvr" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="cjnjno48x000fq21odysja6o5" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -310,19 +318,10 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
-        <a href="/2016/05/06/EventBus的使用/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    EventBus的使用
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/05/05/动态设置控件的大小文本的大小/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/08/24/Android-三个SDKVersion的含义/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">动态设置控件的大小文本的大小</div>
+            <div class="article-nav-title">Android 三个SDKVersion的含义</div>
         </a>
     
 </nav>
