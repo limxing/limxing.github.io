@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                37
+                38
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -174,6 +174,176 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-iphone6的切图如何适配Android" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2019/02/02/iphone6的切图如何适配Android/">iphone6的切图如何适配Android?</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2019/02/02/iphone6的切图如何适配Android/">
+            <time datetime="2019-02-02T05:40:01.000Z" itemprop="datePublished">2019-02-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Android/">Android</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？</p>
+<h5 id="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"><a href="#下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍" class="headerlink" title="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"></a>下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍</h5><h4 id="一、-将iPhone6的尺寸与Android-sw360dp-进行换算"><a href="#一、-将iPhone6的尺寸与Android-sw360dp-进行换算" class="headerlink" title="一、 将iPhone6的尺寸与Android sw360dp 进行换算"></a>一、 将iPhone6的尺寸与Android sw360dp 进行换算</h4><p>通常我们需要UI设计基于1920*1080的设计稿，宽度为360dp，将切图的三倍图放置xxhdpi，如果标注是px，那么我们自动除以3作为dp，如果直接是dp那我们直接拿来使用。</p>
+<table>
+<thead>
+<tr>
+<th>手机</th>
+<th style="text-align:right">屏幕分辨率</th>
+<th style="text-align:center">宽度DP(heightPixels/density)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone6</td>
+<td style="text-align:right">1334*750</td>
+<td style="text-align:center">375pt</td>
+</tr>
+<tr>
+<td>小米6</td>
+<td style="text-align:right">1920*1080</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td>华为荣耀8X</td>
+<td style="text-align:right">2045*1080</td>
+<td style="text-align:center">360dp</td>
+</tr>
+<tr>
+<td>锤子坚果Pro2</td>
+<td style="text-align:right">2070*1080</td>
+<td style="text-align:center">432dp</td>
+</tr>
+</tbody>
+</table>
+<p>假设：UI设计师以iPhone6为基准，标注中有一个为375pt宽的控件，实际像素为750px,如果我们直接用375dp拿到我们Android设备上，则 小米6、华为荣耀8X这两款手机会超出屏幕，而锤子坚果Pro2会小于屏幕，因此如果直接拿到标注进行设置，那么在锤子坚果Pro2手机上所有的控件都会显得比较小，而小米6略显一点大。<br>实验表明：小米6的控件比设计图大 1-375/360=0.041667，而坚果Pro2比设计图小1-375/432 = 0.131944。<br>因此我们换算iphone6与我们基准的360dp进行换算，得出更加近似的dp值：<br>| 手机 | 标注(换算) |换算公式|<br>| ——–   | —–:  |—–:|<br>| iPhone6| 1pt | 375/375=1|<br>| 小米6|0.96dp|360/375=0.96|<br>|华为荣耀8X|0.96dp|360/375=0.96|<br>|锤子坚果Pro2|1.152dp|432/375=1.152|</p>
+<h4 id="一、我们先使用Python对1-600常用的数值进行生成"><a href="#一、我们先使用Python对1-600常用的数值进行生成" class="headerlink" title="一、我们先使用Python对1~600常用的数值进行生成"></a>一、我们先使用Python对1~600常用的数值进行生成</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">    for i in range(1, 601):</span><br><span class="line">        dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">        dimen.attrib = &#123;&quot;name&quot;: &quot;pt_&quot; + str(i)&#125;</span><br><span class="line">        dimen.text = str(round(i * 0.96, 4)) + &quot;dp&quot;</span><br><span class="line">    ET.ElementTree(resources).write(&quot;dimens.xml&quot;)</span><br></pre></td></tr></table></figure>
+<p>dimens.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_1&quot;&gt;0.96dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_2&quot;&gt;1.92dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_3&quot;&gt;2.88dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_4&quot;&gt;3.84dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_5&quot;&gt;4.8dp&lt;/dimen&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、将dimens-xml或者里面的dimens复制到Android工程values下"><a href="#二、将dimens-xml或者里面的dimens复制到Android工程values下" class="headerlink" title="二、将dimens.xml或者里面的dimens复制到Android工程values下"></a>二、将dimens.xml或者里面的dimens复制到Android工程values下</h4><p>我们可以在此目录下编写我们其他自定义的一些dimens,例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    ....</span><br><span class="line">    &lt;item name=&quot;main_taotao_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.244&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;home_play_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.25&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;16&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;new_main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;24&lt;/item&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="三、正常的使用"><a href="#三、正常的使用" class="headerlink" title="三、正常的使用"></a>三、正常的使用</h4><p>在xml布局文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">   android:id=&quot;@+id/main_taotao_tell_bac&quot;</span><br><span class="line">   android:layout_width=&quot;@dimen/pt_124&quot;</span><br><span class="line">   android:layout_height=&quot;@dimen/pt_129&quot;</span><br><span class="line">   android:scaleType=&quot;fitXY&quot;</span><br><span class="line">   android:src=&quot;@drawable/main_taotao_tell_bac_phone&quot;</span><br><span class="line">   app:layout_constraintDimensionRatio=&quot;372:387&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在kotlin文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.resources.getDimension(R.dimen.pt_124)</span><br></pre></td></tr></table></figure></p>
+<h4 id="四、屏幕分辨率限定符文件的生产"><a href="#四、屏幕分辨率限定符文件的生产" class="headerlink" title="四、屏幕分辨率限定符文件的生产"></a>四、屏幕分辨率限定符文件的生产</h4><p>如果项目已经开发基本完成，不再添加新的dimens值，此时可以生成不同分辨率限定符文件，Python代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">import os</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    array = [384, 392, 400, 410, 432, 480, 533, 592]</span><br><span class="line">    for a in array:</span><br><span class="line">        resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">        path = &apos;values-sw&apos; + str(a) + &apos;dp&apos;</span><br><span class="line">        if not os.path.exists(path):</span><br><span class="line">            os.makedirs(path)</span><br><span class="line">        for e in ET.parse(&quot;dimens.xml&quot;).getroot():</span><br><span class="line">            dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">            t = e.text</span><br><span class="line">            if t[-1] == &apos;p&apos;:</span><br><span class="line">                dimen.attrib = &#123;&quot;name&quot;: e.attrib[&apos;name&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t[0:-2]) * a / 360, 4)) + &quot;dp&quot;</span><br><span class="line">            else:</span><br><span class="line">                dimen.attrib = &#123;&apos;name&apos;: e.attrib[&apos;name&apos;], &apos;format&apos;: e.attrib[&apos;format&apos;], &apos;type&apos;: e.attrib[&apos;type&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t) * a / 360, 4))</span><br><span class="line">        ET.ElementTree(resources).write(path + &quot;/dimens.xml&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>代码中，array数组中的值选取大于360dp，常用的手机就是代码中数组中的值，运行代码后会生成多个values-sw***dp的文件夹：<br><img src="img/WeChat2f394752492c87f09c7c0b2859b8932c.png" alt=""></p>
+<p>将这些文件直接复制到Android工程res文件夹下。</p>
+<p>适配结束。</p>
+<h4 id="五、适配前后对比"><a href="#五、适配前后对比" class="headerlink" title="五、适配前后对比"></a>五、适配前后对比</h4><p>设计稿：<br><img src="img/sheji.jpg" alt=""><br>适配后(锤子坚果Pro2)：<br><img src="img/shipeihou.jpg" alt=""><br>适配前(锤子坚果Pro2)：<br><img src="img/shipeiqian.jpg" alt=""></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjrn3t5ne001apb1otuvzfje4" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="/2019/02/02/iphone6的切图如何适配Android/#comments" id="sourceId::2019/02/02/iphone6的切图如何适配Android/" class="article-comment-link cy_cmt_count">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-My-2018-And-Coming-2019" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -226,7 +396,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2019/01/09/My-2018-And-Coming-2019/" data-id="cjqvrmxew000unp1otzaonwvc" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2019/01/09/My-2018-And-Coming-2019/" data-id="cjrn3t5n5000ypb1o16f0ncq9" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -357,7 +527,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-id="cjqvrmxe50003np1o0tdq2wv3" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-id="cjrn3t5m50003pb1o01pm3vpl" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -500,7 +670,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="cjqvrmxey000ynp1oggps9js2" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="cjrn3t5n3000wpb1o64qlf8xp" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -633,7 +803,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/08/24/Android-三个SDKVersion的含义/" data-id="cjqvrmxe10001np1orvszipl3" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/08/24/Android-三个SDKVersion的含义/" data-id="cjrn3t5m00001pb1o7e0zidf4" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -767,7 +937,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/" data-id="cjqvrmxem000jnp1ov2dojaxg" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/" data-id="cjrn3t5mp000jpb1ougwnw4ld" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -889,7 +1059,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2017/11/21/Mysql数据库的迁移/" data-id="cjqvrmxf00010np1ot8pmawcl" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/21/Mysql数据库的迁移/" data-id="cjrn3t5n70010pb1ohtxcxo2q" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1089,7 +1259,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 </div>
 
-    <a data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" data-id="cjqvrmxe70005np1o1s7nfx6i" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" data-id="cjrn3t5m80005pb1ot839jaxt" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1242,7 +1412,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 </div>
 
-    <a data-url="/2017/11/19/Linux安装Python3/" data-id="cjqvrmxev000tnp1oxroe7023" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/19/Linux安装Python3/" data-id="cjrn3t5n0000tpb1o4p701851" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1375,7 +1545,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 </div>
 
-    <a data-url="/2017/11/19/Linux-命令/" data-id="cjqvrmxet000qnp1ox75ns2s0" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/19/Linux-命令/" data-id="cjrn3t5mx000qpb1op9t3huw1" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1453,133 +1623,6 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 
 
-    <article id="post-Just-Do-It" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/11/04/Just-Do-It/">Just Do It</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2017/11/04/Just-Do-It/">
-            <time datetime="2017-11-04T09:22:29.000Z" itemprop="datePublished">2017-11-04</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <pre><code>最近的一段工作中，进入了大量学习的阶段，压力并不是外在的，而是自己强加给自己的，需要适度的适应。
-
-&lt;a&gt;此处删了100行&lt;/a&gt;
-Python，Kotlin,Swift,Java...
-
-Just Do It
-</code></pre>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2017/11/04/Just-Do-It/" data-id="cjqvrmxer000pnp1ody9kv0v1" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="/2017/11/04/Just-Do-It/#comments" id="sourceId::2017/11/04/Just-Do-It/" class="article-comment-link cy_cmt_count">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1593,6 +1636,25 @@ Just Do It
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/02/02/iphone6的切图如何适配Android/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/02/02/iphone6的切图如何适配Android/" class="title">iphone6的切图如何适配Android?</a></p>
+                            <p class="item-date"><time datetime="2019-02-02T05:40:01.000Z" itemprop="datePublished">2019-02-02</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1670,25 +1732,6 @@ Just Do It
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="title">IOS移动开发:数据库orm增删改查</a></p>
-                            <p class="item-date"><time datetime="2018-02-05T07:01:26.000Z" itemprop="datePublished">2018-02-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1700,7 +1743,7 @@ Just Do It
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li></ul>
         </div>
     </div>
 
@@ -1709,7 +1752,7 @@ Just Do It
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/能够一键导入代码的插件开发/">能够一键导入代码的插件开发</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/能够一键导入代码的插件开发/">能够一键导入代码的插件开发</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
