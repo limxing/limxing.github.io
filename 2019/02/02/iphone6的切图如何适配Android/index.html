@@ -17,7 +17,7 @@
 <meta property="og:image" content="/2019/02/02/iphone6的切图如何适配Android/img/sheji.jpg">
 <meta property="og:image" content="/2019/02/02/iphone6的切图如何适配Android/img/shipeihou.jpg">
 <meta property="og:image" content="/2019/02/02/iphone6的切图如何适配Android/img/shipeiqian.jpg">
-<meta property="og:updated_time" content="2019-02-02T06:35:54.289Z">
+<meta property="og:updated_time" content="2019-02-02T06:57:19.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iphone6的切图如何适配Android?">
 <meta name="twitter:description" content="Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？ 下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍一、 将iPhone6的尺寸与Android sw360dp 进行换算通常我们需要UI设计基于1">
@@ -254,7 +254,38 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<p>假设：UI设计师以iPhone6为基准，标注中有一个为375pt宽的控件，实际像素为750px,如果我们直接用375dp拿到我们Android设备上，则 小米6、华为荣耀8X这两款手机会超出屏幕，而锤子坚果Pro2会小于屏幕，因此如果直接拿到标注进行设置，那么在锤子坚果Pro2手机上所有的控件都会显得比较小，而小米6略显一点大。<br>实验表明：小米6的控件比设计图大 1-375/360=0.041667，而坚果Pro2比设计图小1-375/432 = 0.131944。<br>因此我们换算iphone6与我们基准的360dp进行换算，得出更加近似的dp值：<br>| 手机 | 标注(换算) |换算公式|<br>| ——–   | —–:  |—–:|<br>| iPhone6| 1pt | 375/375=1|<br>| 小米6|0.96dp|360/375=0.96|<br>|华为荣耀8X|0.96dp|360/375=0.96|<br>|锤子坚果Pro2|1.152dp|432/375=1.152|</p>
+<p>假设：UI设计师以iPhone6为基准，标注中有一个为375pt宽的控件，实际像素为750px,如果我们直接用375dp拿到我们Android设备上，则 小米6、华为荣耀8X这两款手机会超出屏幕，而锤子坚果Pro2会小于屏幕，因此如果直接拿到标注进行设置，那么在锤子坚果Pro2手机上所有的控件都会显得比较小，而小米6略显一点大。<br>实验表明：小米6的控件比设计图大 1-375/360=0.041667，而坚果Pro2比设计图小1-375/432 = 0.131944。<br>因此我们换算iphone6与我们基准的360dp进行换算，得出更加近似的dp值：</p>
+<table>
+<thead>
+<tr>
+<th>手机</th>
+<th style="text-align:right">标注(换算)</th>
+<th style="text-align:right">换算公式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone6</td>
+<td style="text-align:right">1pt</td>
+<td style="text-align:right">375/375=1</td>
+</tr>
+<tr>
+<td>小米6</td>
+<td style="text-align:right">0.96dp</td>
+<td style="text-align:right">360/375=0.96</td>
+</tr>
+<tr>
+<td>华为荣耀8X</td>
+<td style="text-align:right">0.96dp</td>
+<td style="text-align:right">360/375=0.96</td>
+</tr>
+<tr>
+<td>锤子坚果Pro2</td>
+<td style="text-align:right">1.152dp</td>
+<td style="text-align:right">432/375=1.152</td>
+</tr>
+</tbody>
+</table>
 <h4 id="一、我们先使用Python对1-600常用的数值进行生成"><a href="#一、我们先使用Python对1-600常用的数值进行生成" class="headerlink" title="一、我们先使用Python对1~600常用的数值进行生成"></a>一、我们先使用Python对1~600常用的数值进行生成</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">    for i in range(1, 601):</span><br><span class="line">        dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">        dimen.attrib = &#123;&quot;name&quot;: &quot;pt_&quot; + str(i)&#125;</span><br><span class="line">        dimen.text = str(round(i * 0.96, 4)) + &quot;dp&quot;</span><br><span class="line">    ET.ElementTree(resources).write(&quot;dimens.xml&quot;)</span><br></pre></td></tr></table></figure>
 <p>dimens.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_1&quot;&gt;0.96dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_2&quot;&gt;1.92dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_3&quot;&gt;2.88dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_4&quot;&gt;3.84dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_5&quot;&gt;4.8dp&lt;/dimen&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
 <h4 id="二、将dimens-xml或者里面的dimens复制到Android工程values下"><a href="#二、将dimens-xml或者里面的dimens复制到Android工程values下" class="headerlink" title="二、将dimens.xml或者里面的dimens复制到Android工程values下"></a>二、将dimens.xml或者里面的dimens复制到Android工程values下</h4><p>我们可以在此目录下编写我们其他自定义的一些dimens,例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    ....</span><br><span class="line">    &lt;item name=&quot;main_taotao_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.244&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;home_play_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.25&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;16&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;new_main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;24&lt;/item&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
@@ -275,7 +306,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjrn4gpvl001f271o0s2zib2z" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjrn4kobs00194n1onvi9gbxe" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
