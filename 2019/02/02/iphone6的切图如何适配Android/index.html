@@ -13,15 +13,15 @@
 <meta property="og:site_name" content="Leefeng Blog">
 <meta property="og:description" content="Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？ 下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍一、 将iPhone6的尺寸与Android sw360dp 进行换算通常我们需要UI设计基于1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/2019/02/02/iphone6的切图如何适配Android/img/WeChat2f394752492c87f09c7c0b2859b8932c.png">
+<meta property="og:image" content="/img/WeChat2f394752492c87f09c7c0b2859b8932c.png">
 <meta property="og:image" content="/img/sheji.jpg">
 <meta property="og:image" content="/img/shipeihou2.jpg">
 <meta property="og:image" content="/img/shipeiqian.jpg">
-<meta property="og:updated_time" content="2019-02-02T07:42:45.708Z">
+<meta property="og:updated_time" content="2019-02-02T07:48:45.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iphone6的切图如何适配Android?">
 <meta name="twitter:description" content="Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？ 下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍一、 将iPhone6的尺寸与Android sw360dp 进行换算通常我们需要UI设计基于1">
-<meta name="twitter:image" content="/2019/02/02/iphone6的切图如何适配Android/img/WeChat2f394752492c87f09c7c0b2859b8932c.png">
+<meta name="twitter:image" content="/img/WeChat2f394752492c87f09c7c0b2859b8932c.png">
     
 
     
@@ -292,7 +292,7 @@ var _hmt = _hmt || [];
 <h4 id="三、正常的使用"><a href="#三、正常的使用" class="headerlink" title="三、正常的使用"></a>三、正常的使用</h4><p>在xml布局文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">   android:id=&quot;@+id/main_taotao_tell_bac&quot;</span><br><span class="line">   android:layout_width=&quot;@dimen/pt_124&quot;</span><br><span class="line">   android:layout_height=&quot;@dimen/pt_129&quot;</span><br><span class="line">   android:scaleType=&quot;fitXY&quot;</span><br><span class="line">   android:src=&quot;@drawable/main_taotao_tell_bac_phone&quot;</span><br><span class="line">   app:layout_constraintDimensionRatio=&quot;372:387&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
 <p>在kotlin文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.resources.getDimension(R.dimen.pt_124)</span><br></pre></td></tr></table></figure></p>
 <h4 id="四、屏幕分辨率限定符文件的生产"><a href="#四、屏幕分辨率限定符文件的生产" class="headerlink" title="四、屏幕分辨率限定符文件的生产"></a>四、屏幕分辨率限定符文件的生产</h4><p>如果项目已经开发基本完成，不再添加新的dimens值，此时可以生成不同分辨率限定符文件，Python代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">import os</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    array = [384, 392, 400, 410, 432, 480, 533, 592]</span><br><span class="line">    for a in array:</span><br><span class="line">        resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">        path = &apos;values-sw&apos; + str(a) + &apos;dp&apos;</span><br><span class="line">        if not os.path.exists(path):</span><br><span class="line">            os.makedirs(path)</span><br><span class="line">        for e in ET.parse(&quot;dimens.xml&quot;).getroot():</span><br><span class="line">            dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">            t = e.text</span><br><span class="line">            if t[-1] == &apos;p&apos;:</span><br><span class="line">                dimen.attrib = &#123;&quot;name&quot;: e.attrib[&apos;name&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t[0:-2]) * a / 360, 4)) + &quot;dp&quot;</span><br><span class="line">            else:</span><br><span class="line">                dimen.attrib = &#123;&apos;name&apos;: e.attrib[&apos;name&apos;], &apos;format&apos;: e.attrib[&apos;format&apos;], &apos;type&apos;: e.attrib[&apos;type&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t) * a / 360, 4))</span><br><span class="line">        ET.ElementTree(resources).write(path + &quot;/dimens.xml&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>代码中，array数组中的值选取大于360dp，常用的手机就是代码中数组中的值，运行代码后会生成多个values-sw***dp的文件夹：<br><img src="img/WeChat2f394752492c87f09c7c0b2859b8932c.png" alt=""></p>
+<p>代码中，array数组中的值选取大于360dp，常用的手机就是代码中数组中的值，运行代码后会生成多个values-sw***dp的文件夹：<br><img src="/img/WeChat2f394752492c87f09c7c0b2859b8932c.png" alt=""></p>
 <p>将这些文件直接复制到Android工程res文件夹下。</p>
 <p>适配结束。</p>
 <h4 id="五、适配前后对比"><a href="#五、适配前后对比" class="headerlink" title="五、适配前后对比"></a>五、适配前后对比</h4><p>设计稿：<br><img src="/img/sheji.jpg" alt=""><br>适配后(锤子坚果Pro2)：<br><img src="/img/shipeihou2.jpg" alt=""><br>适配前(锤子坚果Pro2)：<br><img src="/img/shipeiqian.jpg" alt=""></p>
@@ -306,7 +306,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjrn673s40015rf1oz9zclkx9" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjrn6esdz001av91okex0f8wh" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
