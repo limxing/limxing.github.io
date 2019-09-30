@@ -1,9 +1,9 @@
  [
-	{
+  {
         "name": "导言",
-	   "course": "upscWWWg",
+     "course": "upscWWWg",
         "catelogue": 0,
-	   "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S00P00-300K.mp4"
+     "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S00P00-300K.mp4"
     },
     {
         "name": "1.1 C语言发展历史",
@@ -366,7 +366,280 @@
        "course": "upscWWWg",
         "catelogue": 6,
        "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P07-300K.mp4"
+    },
+    {
+        "name": "8.1 概述",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S01P00-300K.mp4"
+    },
+ {
+        "name": "8.2 函数定义的一般形式",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S02P00-300K.mp4"
+    },
+     {
+        "name": "8.3.1 形式参数和实际参数",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S03P01-300K.mp4"
+    },
+     {
+        "name": "8.3.2 函数的返回值",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S03P02-300K.mp4"
+    },
+     {
+        "name": "8.4.1 函数调用的一般形式",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S04P01-300K.mp4"
+    },
+     {
+        "name": "8.4.2 函数调用的方式",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S04P02-300K.mp4"
+    },
+     {
+        "name": "8.4.3 对被调用函数的声明和函数原型",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S04P03-300K.mp4"
+    },
+     {
+        "name": "8.5 函数的嵌套调用",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S05P00-300K.mp4"
+    },
+     {
+        "name": "8.6 函数的递归调用",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S06P00-300K.mp4"
+    },
+     {
+        "name": "8.7 数组作为函数参数",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S07P00-300K.mp4"
+    },
+     {
+        "name": "8.8 局部变量和全局变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S08P00-300K.mp4"
+    },
+     {
+        "name": "8.9.1 动态存储方式与静态存储方",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P01-300K.mp4"
+    },
+     {
+        "name": "8.9.2 auto变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P02-300K.mp4"
+    },
+     {
+        "name": "8.9.3 用static声明局部变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P03-300K.mp4"
+    },
+     {
+        "name": "8.9.4 register变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P04-300K.mp4"
+    },
+     {
+        "name": "8.9.5 用extern声明外部变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P05-300K.mp4"
+    },
+     {
+        "name": "8.9.6 用static声明外部变量",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P06-300K.mp4"
+    },
+     {
+        "name": "8.9.7 关于变量的声明和定义",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P07-300K.mp4"
+    },
+     {
+        "name": "8.9.8 存储类别小结",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S09P08-300K.mp4"
+    },
+     {
+        "name": "8.10 内部函数和外部函数",
+       "course": "upscWWWg",
+        "catelogue": 7,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C08S10P00-300K.mp4"
+    },
+    {
+        "name": "9.0 地址和指针的概念",
+       "course": "upscWWWg",
+        "catelogue": 8,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C09S00P00-300K.mp4"
+    },
+    {
+        "name": "9.1 宏定义",
+       "course": "upscWWWg",
+        "catelogue": 8,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C09S01P00-300K.mp4"
+    },
+    {
+        "name": "9.2 “文件包含”处理",
+       "course": "upscWWWg",
+        "catelogue": 8,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C09S02P00-300K.mp4"
+    },
+    {
+        "name": "9.3 条件编译",
+       "course": "upscWWWg",
+        "catelogue": 8,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C09S03P00-300K.mp4"
+    },
+     {
+        "name": "10.1 地址和指针的概念",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S01P00-300K.mp4"
+    },
+    {
+        "name": "10.2.1 变量的指针和指向变量的指针变量(上)",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S02P01-300K.mp4"
+    },{
+        "name": "10.2.2 变量的指针和指向变量的指针变量(中)",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S02P02-300K.mp4"
+    },{
+        "name": "10.2.3 变量的指针和指向变量的指针变量（下）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S02P03-300K.mp4"
+    },{
+        "name": "10.3.1 数组与指针（上）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S03P01-300K.mp4"
+    },{
+        "name": "10.3.2 数组与指针（中）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S03P02-300K.mp4"
+    },{
+        "name": "10.3.3 数组与指针（下）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S03P03-300K.mp4"
+    },{
+        "name": "10.4 字符串与指针",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S04P00-300K.mp4"
+    },{
+        "name": "10.5 指向函数的指针",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S05P00-300K.mp4"
+    },{
+        "name": "10.6 返回指针值的函数",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S06P00-300K.mp4"
+    },{
+        "name": "10.7.1 指针数组和指向指针的指针（上）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S07P01-300K.mp4"
+    },{
+        "name": "10.7.2 指针数组和指向指针的指针（下）",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S07P02-300K.mp4"
+    },{
+        "name": "10.8 有关指针的数据类型和指针运算的小结",
+       "course": "upscWWWg",
+        "catelogue": 9,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C10S08P00-300K.mp4"
+    },
+    
+    {
+        "name": "11.1 概述",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S01P00-300K.mp4"
+    },
+    {
+        "name": "11.2 定义结构体类型变量的方法",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S02P00-300K.mp4"
+    },
+    {
+        "name": "11.3 结构体变量的引用",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S03P00-300K.mp4"
+    },{
+        "name": "11.4 结构体变量的初始化",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S04P00-300K.mp4"
+    },{
+        "name": "11.5 结构体数组",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S05P00-300K.mp4"
+    },{
+        "name": "11.6 指向结构体类型数据的指针",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S06P00-300K.mp4"
+    },{
+        "name": "11.7.1 用指针处理链表（上）",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S07P01-300K.mp4"
+    },{
+        "name": "11.7.2 用指针处理链表（中）",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S07P02-300K.mp4"
+    },{
+        "name": "11.7.3 用指针处理链表（下）",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S07P03-300K.mp4"
+    },{
+        "name": "11.8 共用体",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S08P00-300K.mp4"
+    },{
+        "name": "11.9 枚举类型",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S09P00-300K.mp4"
+    },{
+        "name": "11.10 用typedef定义类型",
+       "course": "upscWWWg",
+        "catelogue": 10,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C11S10P00-300K.mp4"
     }
-
-	
 ]
