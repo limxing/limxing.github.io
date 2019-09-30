@@ -1,0 +1,372 @@
+ [
+	{
+        "name": "导言",
+	   "course": "upscWWWg",
+        "catelogue": 0,
+	   "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S00P00-300K.mp4"
+    },
+    {
+        "name": "1.1 C语言发展历史",
+       "course": "upscWWWg",
+        "catelogue": 0,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S01P00-300K.mp4"
+    },
+    {
+        "name": "1.2 C语言的特点",
+       "course": "upscWWWg",
+        "catelogue": 0,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S02P00-300K.mp4"
+    },
+    {
+        "name": "1.3 简单的C程序介绍",
+       "course": "upscWWWg",
+        "catelogue": 0,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S03P00-300K.mp4"
+    },
+    {
+        "name": "1.4 C程序的上机步骤",
+       "course": "upscWWWg",
+        "catelogue": 0,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S04P00-300K.mp4"
+    },
+    {
+        "name": "1.5 补充知识点",
+       "course": "upscWWWg",
+        "catelogue": 0,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C01S05P00-300K.mp4"
+    },
+    {
+        "name": "2.1 算法的概念",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S01P00-300K.mp4"
+    },
+    {
+        "name": "2.2 简单算法举例",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S02P00-300K.mp4"
+    },
+    {
+        "name": "2.3 算法的特性",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S03P00-300K.mp4"
+    },
+    {
+        "name": "2.4.1 用自然语言表示算法",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S04P01-300K.mp4"
+    },
+    
+    {
+        "name": "2.4.2 用流程图表示算法",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S04P02-300K.mp4"
+    },
+    {
+        "name": "2.4.3 三种基本结构和改进的流程图",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S04P03-300K.mp4"
+    },
+    {
+        "name": "2.4.4 S流程图表示算法",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S04P04-300K.mp4"
+    },
+    {
+        "name": "2.4.5 用位代码表示算法",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S04P05-300K.mp4"
+    },
+    {
+        "name": "2.5 结构化程序设计方法",
+       "course": "upscWWWg",
+        "catelogue": 1,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C02S05P00-300K.mp4"
+    },
+     {
+        "name": "3.1 C的数据类型",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S01P00-300K.mp4"
+    },
+    {
+        "name": "3.2 常量与变量",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S02P00-300K.mp4"
+    },
+    {
+        "name": "3.3 整型数据",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S03P00-300K.mp4"
+    },
+    {
+        "name": "3.4 浮点型数据运行",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S04P00-300K.mp4"
+    },
+    {
+        "name": "3.5 字符型数据",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S05P00-300K.mp4"
+    },
+    {
+        "name": "3.6 变量赋初值",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S06P00-300K.mp4"
+    },
+    {
+        "name": "3.7 各类数值型数据间的混合运算",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S07P00-300K.mp4"
+    },
+   
+    {
+        "name": "3.8 算术运算符和算术表达式",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S08P00-300K.mp4"
+    },
+    {
+        "name": "3.9 赋值运算符和赋值表达式",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S09P00-300K.mp4"
+    },
+     {
+        "name": "3.10 逗号运算符和逗号表达式",
+       "course": "upscWWWg",
+        "catelogue": 2,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C03S10P00-300K.mp4"
+    },
+     {
+        "name": "4.1 C语句概述",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S01P00-300K.mp4"
+    },
+    {
+        "name": "4.2 赋值语句",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S02P00-300K.mp4"
+    },
+    {
+        "name": "4.3 数据输入输出的概念及在C语言中的实现",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S03P00-300K.mp4"
+    },
+    {
+        "name": "4.4 字符数据的输入输出",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S04P00-300K.mp4"
+    },
+    {
+        "name": "4.5 格式输入与输出",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S05P00-300K.mp4"
+    },
+    {
+        "name": "4.6 顺序结构程序设计举例",
+       "course": "upscWWWg",
+        "catelogue": 3,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C04S06P00-300K.mp4"
+    },
+    {
+        "name": "5.1 关系运算符和关系表达式",
+       "course": "upscWWWg",
+        "catelogue": 4,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C05S01P00-300K.mp4"
+    },
+     {
+        "name": "5.2 逻辑运算符和逻辑表达式",
+       "course": "upscWWWg",
+        "catelogue": 4,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C05S02P00-300K.mp4"
+    },
+     {
+        "name": "5.3 if语句",
+       "course": "upscWWWg",
+        "catelogue": 4,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C05S03P00-300K.mp4"
+    },
+     {
+        "name": "5.4 switch语句",
+       "course": "upscWWWg",
+        "catelogue": 4,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C05S04P00-300K.mp4"
+    },
+     {
+        "name": "5.5 程序举例",
+       "course": "upscWWWg",
+        "catelogue": 4,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C05S05P00-300K.mp4"
+    },
+    {
+        "name": "6.1 概述",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S01P00-300K.mp4"
+    },
+    {
+        "name": "6.2 goto语句以及用goto语句构成循环",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S02P00-300K.mp4"
+    },
+    {
+        "name": "6.3 用while语句实现循环",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S03P00-300K.mp4"
+    },
+    {
+        "name": "6.4 while语句实现循环",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S04P00-300K.mp4"
+    },
+    {
+        "name": "6.5 用for语句实现循环",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S05P00-300K.mp4"
+    },
+    {
+        "name": "6.6 循环的嵌套",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S06P00-300K.mp4"
+    },
+    {
+        "name": "6.7 几种循环的比较",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S07P00-300K.mp4"
+    },
+    {
+        "name": "6.8 break语句和continue语句",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S08P00-300K.mp4"
+    },
+    {
+        "name": "6.9 程序举例",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S09P00-300K.mp4"
+    },
+    {
+        "name": "6.10 本章小结",
+       "course": "upscWWWg",
+        "catelogue": 5,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C06S10P00-300K.mp4"
+    },
+    {
+        "name": "7.1.1 一维数组的定义",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S01P01-300K.mp4"
+    },
+    {
+        "name": "7.1.2 一维数组元素的引用",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S01P02-300K.mp4"
+    },
+    {
+        "name": "7.1.3 一维数组的初始化",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S01P03-300K.mp4"
+    },
+    {
+        "name": "7.1.4 一维数组程序举例",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S01P04-300K.mp4"
+    },
+    {
+        "name": "7.2.1 二维数组的定义",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S02P01-300K.mp4"
+    },
+    {
+        "name": "7.2.2 二维数组的引用",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S02P02-300K.mp4"
+    },
+    {
+        "name": "7.2.3 二维数组的引用",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S02P03-300K.mp4"
+    },
+    {
+        "name": "7.2.4 二维数组程序举例",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S02P04-300K.mp4"
+    },
+    {
+        "name": "7.3.1 字符数组的定义",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P01-300K.mp4"
+    },
+    {
+        "name": "7.3.2 字符数组的初始化",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P02-300K.mp4"
+    },
+    {
+        "name": "7.3.3 字符数组的引用",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P03-300K.mp4"
+    },
+    {
+        "name": "7.3.4 字符串和字符串结束标志",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P04-300K.mp4"
+    },
+    {
+        "name": "7.3.5 字符数组的输入输出",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P05-300K.mp4"
+    },
+    {
+        "name": "7.3.6 字符串处理函数",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P06-300K.mp4"
+    },
+    {
+        "name": "7.3.7 字符数组应用举例",
+       "course": "upscWWWg",
+        "catelogue": 6,
+       "url": "http://wms2.pkudl.cn/jsj/08281014/video/300k/Vc08281014C07S03P07-300K.mp4"
+    }
+
+	
+]

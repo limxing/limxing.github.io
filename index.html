@@ -121,7 +121,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                38
+                39
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -174,6 +174,127 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-CustomView-a-Android-Picker" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2019/09/02/CustomView-a-Android-Picker/">CustomView-a Android Picker</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2019/09/02/CustomView-a-Android-Picker/">
+            <time datetime="2019-09-02T06:32:10.000Z" itemprop="datePublished">2019-09-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Android开发——写一个滚轮的选择器"><a href="#Android开发——写一个滚轮的选择器" class="headerlink" title="Android开发——写一个滚轮的选择器"></a>Android开发——写一个滚轮的选择器</h2>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="/2019/09/02/CustomView-a-Android-Picker/" data-id="ck167a70k001ksz1oc4f579ub" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="/2019/09/02/CustomView-a-Android-Picker/#comments" id="sourceId::2019/09/02/CustomView-a-Android-Picker/" class="article-comment-link cy_cmt_count">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-iphone6的切图如何适配Android" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -297,7 +418,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="cjvaj7d06001b1n1o92m0ibfe" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="ck167a70f001csz1oert70j9l" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -427,7 +548,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2019/01/09/My-2018-And-Coming-2019/" data-id="cjvaj7czt000z1n1ou3ctnbnc" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2019/01/09/My-2018-And-Coming-2019/" data-id="ck167a705000wsz1omaejmlwf" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -558,7 +679,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-id="cjvaj7cyx00041n1o09sxdheq" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-id="ck167a6z90005sz1o5c4nebp5" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -701,7 +822,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="cjvaj7czm000r1n1oytket656" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="ck167a6zu000qsz1o89uqvfzw" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -834,7 +955,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/08/24/Android-三个SDKVersion的含义/" data-id="cjvaj7cyl00001n1o2u1m2x08" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/08/24/Android-三个SDKVersion的含义/" data-id="ck167a6z70004sz1o6rjj8i3q" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -968,7 +1089,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/" data-id="cjvaj7czh000k1n1osm5l45mu" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/" data-id="ck167a6zq000isz1obbbwpiuf" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1090,7 +1211,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="/2017/11/21/Mysql数据库的迁移/" data-id="cjvaj7czu00111n1osaj1ndnr" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/21/Mysql数据库的迁移/" data-id="ck167a7090012sz1olc6m3m1h" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1290,7 +1411,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 </div>
 
-    <a data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" data-id="cjvaj7cz000061n1o0l9mqvgx" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" data-id="ck167a6za0006sz1odce9mob5" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1443,7 +1564,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 </div>
 
-    <a data-url="/2017/11/19/Linux安装Python3/" data-id="cjvaj7czp000v1n1ogv7z1ehn" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+    <a data-url="/2017/11/19/Linux安装Python3/" data-id="ck167a7080010sz1oy3hnp9d0" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1521,139 +1642,6 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
 
 
 
-    <article id="post-Linux-命令" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/11/19/Linux-命令/">Linux 命令</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2017/11/19/Linux-命令/">
-            <time datetime="2017-11-19T08:18:56.000Z" itemprop="datePublished">2017-11-19</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/">Linux</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>1.查找被占用的端口<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tln</span><br><span class="line">netstat -tln | grep 8083</span><br></pre></td></tr></table></figure></p>
-<pre><code>netstat -tln 查看端口使用情况，而netstat -tln | grep 8083 则是只查看端口8083的使用情况
-</code></pre><p>2.查看端口属于哪个程序？端口被哪个进程占用<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :8083</span><br></pre></td></tr></table></figure></p>
-<p>3.杀掉占用端口的进程<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 进程id</span><br></pre></td></tr></table></figure></p>
-<p>4、数据库备份<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果把文件从远程机器拷贝到本机当前目录用这个命令： </span><br><span class="line">    scp root@192.168.0.2:/home/a.tar.tz </span><br><span class="line">拷贝远程机器的整个目录下的文件</span><br><span class="line">   scp -r root@192.168.0.2：/home/* ./</span><br></pre></td></tr></table></figure></p>
-<p>5、添加全局环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/paths</span><br><span class="line"></span><br><span class="line">/usr/local/mysql/bin</span><br></pre></td></tr></table></figure></p>
-<p>6、数据库创建database<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE `mydb` CHARACTER SET utf8 COLLATE utf8_general_ci;</span><br></pre></td></tr></table></figure></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2017/11/19/Linux-命令/" data-id="cjvaj7czo000u1n1o0bb39c48" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="/2017/11/19/Linux-命令/#comments" id="sourceId::2017/11/19/Linux-命令/" class="article-comment-link cy_cmt_count">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
@@ -1667,6 +1655,25 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/02/CustomView-a-Android-Picker/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/09/02/CustomView-a-Android-Picker/" class="title">CustomView-a Android Picker</a></p>
+                            <p class="item-date"><time datetime="2019-09-02T06:32:10.000Z" itemprop="datePublished">2019-09-02</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1744,25 +1751,6 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/24/Android-三个SDKVersion的含义/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/24/Android-三个SDKVersion的含义/" class="title">Android 三个SDKVersion的含义</a></p>
-                            <p class="item-date"><time datetime="2018-08-24T02:27:14.000Z" itemprop="datePublished">2018-08-24</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1774,7 +1762,7 @@ mysql&gt;alter table &lt;表名&gt; character set utf8;
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li></ul>
         </div>
     </div>
 
