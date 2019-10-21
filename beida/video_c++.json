@@ -1,0 +1,144 @@
+[
+    {
+        "name":"课程提纲",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P01-1M.mp4"
+    },
+   {
+        "name":"C++语言概述",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P02-1M.mp4"
+    },{
+        "name":"变量 常量和表达式",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P03-1M.mp4"
+    },{
+        "name":"函数",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P04-1M.mp4"
+    },{
+        "name":"指针与引用",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P05-1M.mp4"
+    },{
+        "name":"类和简单对象（一）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P06-1M.mp4"
+    },{
+        "name":"类和简单对象（二）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P07-1M.mp4"
+    },{
+        "name":"类和简单对象（三）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P08-1M.mp4"
+    },{
+        "name":"复杂对象",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P09-1M.mp4"
+    },{
+        "name":"继承性和派生类（一）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P10-1M.mp4"
+    },{
+        "name":"继承性和派生类（二）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P11-1M.mp4"
+    },{
+        "name":"继承性和派生类（三）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P12-1M.mp4"
+    },{
+        "name":"多态性和虚函数（一）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P13-1M.mp4"
+    },{
+        "name":"多态性和虚函数（二）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P14-1M.mp4"
+    },{
+        "name":"C++的I/O流类库（一）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P15-1M.mp4"
+    },{
+        "name":"C++的I/O流类库（二）",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P16-1M.mp4"
+    },{
+        "name":"VC++ 开发环境",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P17-1M.mp4"
+    },{
+        "name":"VC++ MFC应用程序概述",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P18-1M.mp4"
+    },{
+        "name":"VC++ 图形和文本",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P19-1M.mp4"
+    },{
+        "name":"VC++ 菜单、工具栏与状态栏",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P20-1M.mp4"
+    },{
+        "name":"VC++ 对话框",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P21-1M.mp4"
+    },{
+        "name":"VC++ Windows常用控件",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P22-1M.mp4"
+    },{
+        "name":"VC++ 文档与视图",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P23-1M.mp4"
+    },{
+        "name":"VC++ 打印编程",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P24-1M.mp4"
+    },{
+        "name":"VC++ 动态链接库",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P25-1M.mp4"
+    },{
+        "name":"VC++ 多线程编程",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P26-1M.mp4"
+    },{
+        "name":"VC++ 数据库编程",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P27-1M.mp4"
+    },{
+        "name":"VC++ 调试技术与综合案例",
+        "course":"Ysat1114",
+        "catelogue":0,
+        "url":"http://wms2.pkudl.cn/jsj/08281003/video/1M/Vc08281003C00S00P28-1M.mp4"
+    }
+]
