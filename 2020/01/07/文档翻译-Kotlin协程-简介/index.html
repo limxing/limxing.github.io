@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2016/9 | Leefeng Blog</title>
+    <title>文档翻译-Kotlin协程 简介 | Leefeng Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Leefeng Blog">
-<meta property="og:url" content="/archives/2016/09/index.html">
+    <meta name="description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程简介Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。 Kotlin的协同程序是由Je">
+<meta name="keywords" content="kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文档翻译-Kotlin协程 简介">
+<meta property="og:url" content="/2020/01/07/文档翻译-Kotlin协程-简介/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程简介Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。 Kotlin的协同程序是由Je">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-07T03:48:49.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leefeng Blog">
+<meta name="twitter:title" content="文档翻译-Kotlin协程 简介">
+<meta name="twitter:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程简介Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。 Kotlin的协同程序是由Je">
     
 
     
@@ -173,45 +178,169 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fas fa-calendar-alt"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-文档翻译-Kotlin协程-简介" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/09/22/把项目发布到JCenter/">把项目发布到JCenter</a>
+        <h1 class="article-title" itemprop="name">
+            文档翻译-Kotlin协程 简介
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2016/09/22/把项目发布到JCenter/">
-            <time datetime="2016-09-22T09:59:36.000Z" itemprop="datePublished">2016-09-22</time>
+        <a href="/2020/01/07/文档翻译-Kotlin协程-简介/">
+            <time datetime="2020-01-07T03:47:57.000Z" itemprop="datePublished">2020-01-07</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
+        <a class="tag-link" href="/tags/kotlin/">kotlin</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
+<p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
+</blockquote>
+<h2 id="Kotlin协程简介"><a href="#Kotlin协程简介" class="headerlink" title="Kotlin协程简介"></a>Kotlin协程简介</h2><p>Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。</p>
+<p>Kotlin的协同程序是由JetBrains为协同程序而开发的功能丰富的库。它包括一些高水平可协同的操作符，例如，launch,async 等等。</p>
+<p>本文档主要包含核心工功能的一系列kotlin协程的举例，被分成若干个部分进行阐述。</p>
+<p>为了更好的使用本文档中协程的举例，你需要先添加kotlin协程核心库依赖，可参考项目中的README。</p>
+<h3 id="内容列表"><a href="#内容列表" class="headerlink" title="内容列表"></a>内容列表</h3><ul>
+<li>基本用法</li>
+<li>可取消和超时</li>
+<li>多个挂起的协程</li>
+<li>协程的上下文和调度</li>
+<li>异步流（发起很多异步的操作）</li>
+<li>通道</li>
+<li>异常的处理和管理</li>
+<li>共享可变的状态和并发操作</li>
+<li>选择表示（测试中）</li>
+</ul>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="/2020/01/07/文档翻译-Kotlin协程-简介/" data-id="ck53c6qxm001wgk1oass5yebj" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="/2020/01/07/文档翻译-Kotlin协程-简介/#comments" id="sourceId::2020/01/07/文档翻译-Kotlin协程-简介/" class="article-comment-link cy_cmt_count">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/02/02/iphone6的切图如何适配Android/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">iphone6的切图如何适配Android?</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="SOHUCS" sid="2020/01/07/文档翻译-Kotlin协程-简介/"></div>
+</section>
+    
+
 </section>
             
                 
