@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2018/2 | Leefeng Blog</title>
+    <title>文档翻译-Kotlin协程 基本用法 | Leefeng Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Leefeng Blog">
-<meta property="og:url" content="/archives/2018/02/index.html">
+    <meta name="description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
+<meta name="keywords" content="Kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文档翻译-Kotlin协程 基本用法">
+<meta property="og:url" content="/2020/01/07/文档翻译-Kotlin协程-基本用法/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-07T09:21:19.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leefeng Blog">
+<meta name="twitter:title" content="文档翻译-Kotlin协程 基本用法">
+<meta name="twitter:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
     
 
     
@@ -173,45 +178,171 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fas fa-calendar-alt"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-文档翻译-Kotlin协程-基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/05/IOS移动开发-数据库orm增删改查/">IOS移动开发:数据库orm增删改查</a>
+        <h1 class="article-title" itemprop="name">
+            文档翻译-Kotlin协程 基本用法
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/">
-            <time datetime="2018-02-05T07:01:26.000Z" itemprop="datePublished">2018-02-05</time>
+        <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">
+            <time datetime="2020-01-07T09:19:10.000Z" itemprop="datePublished">2020-01-07</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/ios/">ios</a>
+        <a class="tag-link" href="/tags/Kotlin/">Kotlin</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <blockquote>
+<p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
+</blockquote>
+<h2 id="Kotlin协程的基本用法"><a href="#Kotlin协程的基本用法" class="headerlink" title="Kotlin协程的基本用法"></a>Kotlin协程的基本用法</h2><p>这一篇我们学习协同程序的基本概念。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/docs/basics.md" target="_blank" rel="noopener">查看原文</a></p>
+<h4 id="你的第一个协同程序"><a href="#你的第一个协同程序" class="headerlink" title="你的第一个协同程序"></a>你的第一个协同程序</h4><p>复制下面的代码到你的程序中并运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line">fun main() &#123;</span><br><span class="line">    GlobalScope.launch &#123; // 启动一个新的后台协同程序，并继续</span><br><span class="line">        delay(1000L) // 非阻塞的延时1秒(默认时间单位是毫秒)</span><br><span class="line">        println(&quot;World!&quot;) // 延时结束打印</span><br><span class="line">    &#125;</span><br><span class="line">    println(&quot;Hello,&quot;) // 协同程序结束延时后，主线程继续执行</span><br><span class="line">    Thread.sleep(2000L) // 阻塞主线程2秒用来保持虚拟机运行中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-01.kt" target="_blank" rel="noopener">获取全部代码</a></p>
+</blockquote>
+<p>你将看到如下结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Hello,</span><br><span class="line">World!</span><br><span class="line">```  </span><br><span class="line">本质上，协同程序是轻量级线程。它们被启动在一些协同程序范围的上下文。现在我们启动一个新的协同程序在全局范围，这意味着这个新的协同程序的生命周期被整个应用的生命周期所限制。</span><br><span class="line"></span><br><span class="line">替换成 ==GlobalScope.launch &#123; ... &#125;== 与 ==thread &#123; ... &#125;== 和==delay(...)== 与 ==Thread.sleep(...)==， 你将能够得到同样的结果。试试吧（别忘记引入==kotlin.concurrent.thread==）。</span><br><span class="line"></span><br><span class="line">如果你用thread替换GlobalScope.launch，编译器将出现以下错误：</span><br></pre></td></tr></table></figure>
+<p>Error: Kotlin: Suspend functions are only allowed to be called from a coroutine or another suspend function<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">那是因为delay是一个特殊的挂起方法不会阻塞线程，但是挂起协同程序和它都只能在协同程序中使用。</span><br><span class="line">#### 桥接阻塞和非阻塞世界</span><br><span class="line">第一个例子将非阻塞的delay&#123;&#125; 和阻塞的Thread.sleep()混合在同一段代码中。这将很容易的忘记哪个是阻塞的哪个是非阻塞的。让我们使用runBlocking协程创建者明确关于阻塞：</span><br></pre></td></tr></table></figure></p>
+<p>import kotlinx.coroutines.*</p>
+<p>fun main() {<br>    GlobalScope.launch { // 启动一个新的后台协同程序，并继续<br>        delay(1000L)<br>        println(“World!”)<br>    }<br>    println(“Hello,”) // 主线程将立即执行<br>    runBlocking {     // 但是这个代码块阻塞在主线程<br>        delay(2000L)  // … 我们延时2秒保持虚拟机的运行<br>    }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; [获取全部代码](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02.kt)</span><br><span class="line"></span><br><span class="line">结果是一样的，但是这次的代码仅仅使用的是非阻塞的delay。在主线程唤起 runBlocking 阻塞直到runBlocking内的协程执行完成。  </span><br><span class="line"></span><br><span class="line">这个举例也能够使用更加通用的方式来重写，使用runBlocking去包裹主方法的执行：</span><br></pre></td></tr></table></figure></p>
+<p>import kotlinx.coroutines.*</p>
+<p>fun main() = runBlocking<unit> { // 开始主协程<br>    GlobalScope.launch { // 启动一个后台的协程<br>        delay(1000L)<br>        println(“World!”)<br>    }<br>    println(“Hello,”) // 主协程立即执行<br>    delay(2000L)      // 延时2秒保持虚拟机的运行<br>}<br><code>`</code></unit></p>
+<blockquote>
+<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02b.kt" target="_blank" rel="noopener">获取全部代码</a>  </p>
+</blockquote>
+<p>这里的runBlocking<unit> { … }作为一个被用于开始最高级的主协程（我们可以使用runBlocking开启一个最高等级的主协程）。</unit></p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="/2020/01/07/文档翻译-Kotlin协程-基本用法/" data-id="ck53nzyib001xbu1obzigr8py" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/#comments" id="sourceId::2020/01/07/文档翻译-Kotlin协程-基本用法/" class="article-comment-link cy_cmt_count">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/01/07/文档翻译-Kotlin协程-简介/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">文档翻译-Kotlin协程 简介</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="SOHUCS" sid="2020/01/07/文档翻译-Kotlin协程-基本用法/"></div>
+</section>
+    
+
 </section>
             
                 
