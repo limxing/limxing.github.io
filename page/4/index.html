@@ -1,950 +1,753 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Leefeng Blog">
-<meta property="og:url" content="/page/4/index.html">
-<meta property="og:site_name" content="Leefeng Blog">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leefeng Blog">
-
-<link rel="canonical" href="/page/4/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: true,
-    isPost: false
-  };
-</script>
-
-  <title>Leefeng Blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    
+    <title>
+          Leefeng Blog
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/style/style.css">
+  </head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
     </div>
-  </div>
-
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Leefeng Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
     </div>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div id="progress">
+      <div class="line"></div>
     </div>
-  </div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-  </ul>
-
-</nav>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/04/14/JAVA去除字符串中重复字段/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/14/JAVA去除字符串中重复字段/" class="post-title-link" itemprop="url">JAVA去除字符串中重复字段</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-04-14 14:44:15 / 修改时间：15:23:12" itemprop="dateCreated datePublished" datetime="2016-04-14T14:44:15+08:00">2016-04-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">String s1 = &quot;善南街道善国苑善国苑24号楼12单元14层1402&quot;;</span><br><span class="line">String s2 = &quot;枣庄滕州市龙泉街道苹果花园苹果花园9号楼3单元18层144023&quot;;</span><br><span class="line">String s3 = &quot;枣庄滕州市张汪镇邱仓/闫道沟邱仓/闫道沟&quot;;</span><br><span class="line">String s = &quot;枣庄滕州市西岗镇西岗镇沿街市场西岗镇沿街市场423号楼34单元12342号箱10235&quot;;</span><br><span class="line">int l = 2;</span><br><span class="line">String congfu=&quot;&quot;;</span><br><span class="line">for (int i = 0; i &lt; s.length() - l; i++) &#123;</span><br><span class="line">String ss = s.substring(i, i + l + 1);</span><br><span class="line">String sss = s.replaceFirst(ss, &quot;&quot;);</span><br><span class="line">if (sss.contains(ss)) &#123;</span><br><span class="line">congfu=ss;</span><br><span class="line">l++;</span><br><span class="line">i--;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(congfu);</span><br><span class="line">s=s.replaceFirst(congfu, &quot;&quot;);</span><br><span class="line">System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：字符串中含有“\”时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string.contains(&quot;\\&quot;);</span><br><span class="line">string.replace(&quot;\\\\&quot;,&quot;&quot;);</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/04/12/Java操作excel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/12/Java操作excel/" class="post-title-link" itemprop="url">Java操作excel</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-12 11:02:08" itemprop="dateCreated datePublished" datetime="2016-04-12T11:02:08+08:00">2016-04-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2016-04-14 09:14:05" itemprop="dateModified" datetime="2016-04-14T09:14:05+08:00">2016-04-14</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JAVA操作excel表格：<br>表格内容的复制（从一个文件复制某表格到另一个文件中）：</p>
-<p>步骤一：获得两个文件对象，其中book2是打开book1的缓冲<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">book = Workbook.getWorkbook(file);</span><br><span class="line">book1 = Workbook.getWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;));</span><br><span class="line">book2 = Workbook.createWorkbook(new File(FileUtils.getExternalStoragePath(), name + &quot;_changed.xls&quot;), book1);</span><br></pre></td></tr></table></figure></p>
-<p>步骤二：获取表格对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//获取原文件中的某表格对象</span><br><span class="line"> Sheet sheet = book.getSheet(0);</span><br><span class="line">//获取写入文件中的某表格对象</span><br><span class="line"> WritableSheet sheet2 = book2.getSheet(sheetLocation);</span><br></pre></td></tr></table></figure></p>
-<p>步骤三：获取表格中的内容，并把内容写进表2中(icolumn是某列，row是某行)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Cell cell = sheet.getCell(column, row);</span><br><span class="line">//1、把字符串写入表中</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Label(column, row, result));</span><br><span class="line">//2、把Number写入表中：</span><br><span class="line">String result = cell.getContents();</span><br><span class="line">sheet2.addCell(new Number(column, row, Double.parseDouble(result)));</span><br><span class="line">//2、把日期格式的内容写入表中：</span><br><span class="line">DateCell dc = (DateCell) cell;</span><br><span class="line">sheet2.addCell(new DateTime(dc).copyTo(column,row));</span><br></pre></td></tr></table></figure></p>
-<p>步骤四：最后关闭表格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (book2 != null) &#123;</span><br><span class="line">book2.write();</span><br><span class="line">book2.close();</span><br><span class="line">&#125;</span><br><span class="line">if (book1 != null) &#123;</span><br><span class="line">book1.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (book != null) &#123;</span><br><span class="line">book.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>附：给表格加边框<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//给表格加边框的format</span><br><span class="line">Label label = new Label(0, 0, &quot;&quot;);</span><br><span class="line">CellFormat s = label.getCellFormat();</span><br><span class="line">wcf = new WritableCellFormat(s);</span><br><span class="line">wcf.setBorder(jxl.format.Border.ALL, jxl.format.BorderLineStyle.THIN);</span><br><span class="line"></span><br><span class="line">//使用时：</span><br><span class="line">sheet2.addCell(new Label(column, row, result,wcf));</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/04/06/Mac终端命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/06/Mac终端命令/" class="post-title-link" itemprop="url">Mac终端命令</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-04-06 08:52:40 / 修改时间：08:53:27" itemprop="dateCreated datePublished" datetime="2016-04-06T08:52:40+08:00">2016-04-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Mac终端的命令</p>
-<p>lilifengdeMacBook-Pro:Library limxing$ cd Android  ／／进入某个文件夹</p>
-<p>lilifengdeMacBook-Pro:tools limxing$ sudo -s  ／／获取权限</p>
-<p>bash-3.2# ls  ／／获取这个目录下的所有文件</p>
-<p>bash-3.2# chmod +x * //获取这个目录的权限解决Permission denied的问题<br>bash-3.2# ./android sdk</p>
-<p>2、终端的使用环境配置<br>echo $PATH   查看PATH<br>touch .bash_profile<br>open .bash_profile<br>export PATH=”$HOME/.rbenv/bin:$PATH”  添加修改配置，完成后保存<br>source .bash_profile  生效</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/04/06/android资源文件查找顺序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/06/android资源文件查找顺序/" class="post-title-link" itemprop="url">android资源文件查找顺序</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-04-06 08:50:08 / 修改时间：08:51:12" itemprop="dateCreated datePublished" datetime="2016-04-06T08:50:08+08:00">2016-04-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>结论：手机会先找自己对应的layout-dpi文件，如果没有就会先向高精度的文件夹下查找，高的都没有就会想精度低的查找。</p>
-<p>drawable-ldip<br>drawable-mdip<br>drawable-hdip<br>drawable-xhdip<br>drawable-xxhdip<br>drawable-xxxhdip<br>手机对应hdip，如果没有相应的文件：顺序是xh–xxh–xxxh–m-l;同样的values同理。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/28/Fragment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/28/Fragment/" class="post-title-link" itemprop="url">Fragment</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-28 10:39:05 / 修改时间：14:31:53" itemprop="dateCreated datePublished" datetime="2016-03-28T10:39:05+08:00">2016-03-28</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="FragmentActivity与Activity"><a href="#FragmentActivity与Activity" class="headerlink" title="FragmentActivity与Activity"></a>FragmentActivity与Activity</h4><pre><code>FragmentActivity是为兼容4.0一下系统而需要的Activity类
-</code></pre><h4 id="Fragment类的生命周期"><a href="#Fragment类的生命周期" class="headerlink" title="Fragment类的生命周期"></a>Fragment类的生命周期</h4><p>new：onAttach()–&gt;onCreat()–&gt;onCreatView()–&gt;onStart()–&gt;onresume<br>remove:onPause()–&gt;onStop()–&gt;onDestoryView()–&gt;onDestory()–&gt;onDetach()</p>
-<p>使用：再Activity或FragmentActivity中获取FragmentManager</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/27/自定义View仿IOS等待圈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/27/自定义View仿IOS等待圈/" class="post-title-link" itemprop="url">自定义View仿IOS等待圈</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-27 15:20:23 / 修改时间：15:22:12" itemprop="dateCreated datePublished" datetime="2016-03-27T15:20:23+08:00">2016-03-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line">* Created by limxing on 16/1/7.</span><br><span class="line">*/</span><br><span class="line">public class LoadView extends ImageView &#123;</span><br><span class="line">private float degrees = 0f;</span><br><span class="line">private Matrix max;</span><br><span class="line">private int width;</span><br><span class="line">private int height;</span><br><span class="line">private Bitmap bitmap;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context) &#123;</span><br><span class="line">super(context);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs) &#123;</span><br><span class="line">super(context, attrs);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs, int defStyleAttr) &#123;</span><br><span class="line">super(context, attrs, defStyleAttr);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Handler handler = new Handler() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">degrees += 30f;</span><br><span class="line">max.setRotate(degrees, width, height);</span><br><span class="line">setImageMatrix(max);</span><br><span class="line">if(degrees==360)&#123;</span><br><span class="line">degrees=0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">private void init() &#123;</span><br><span class="line">setScaleType(ScaleType.MATRIX);</span><br><span class="line">bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);</span><br><span class="line">setImageBitmap(bitmap);</span><br><span class="line">max = new Matrix();</span><br><span class="line"></span><br><span class="line">width = bitmap.getWidth() / 2;</span><br><span class="line">height = bitmap.getHeight() / 2;</span><br><span class="line">Timer time=new Timer();</span><br><span class="line">time.schedule(new TimerTask() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">handler.sendEmptyMessage(0);</span><br><span class="line">&#125;</span><br><span class="line">&#125;,0,80);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/25/Bitmap图片占用内存大小/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/25/Bitmap图片占用内存大小/" class="post-title-link" itemprop="url">Bitmap图片占用内存大小</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-25 13:33:25 / 修改时间：14:11:43" itemprop="dateCreated datePublished" datetime="2016-03-25T13:33:25+08:00">2016-03-25</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一张图片（BitMap）占用的内存=图片长度<em>图片宽度</em>单位像素占用的字节数</p>
-<p>创建一个BitMap时，其单位像素占用的字节数由其参数BitmapFactory.Options的inPreferredConfig变量决定。<br>inPreferredConfig为Bitmap.Config类型，Bitmap.Config类是个枚举类型，它可以为以下值:</p>
-<p>Bitmap.Config : ARGB_8888<br>一个像素占用4个字节，alpha(A)值，Red（R）值，Green(G)值，Blue（B）值各占8个bites<br>共32bites,即4个字节</p>
-<p>一张100<em>100的图片占用内存的大小:<br>100</em>100*4=40000字节</p>
-<p>另外，需要注意这里的图片占用内存是指在Navtive中占用的内存，当然BitMap使用的绝大多数内存就是该内存。因为我们可以简单的认为它就是BitMap所占用的内存。</p>
-<p>在Android4.0之前，Bitmap的内存是分配在Native堆中，调用recycle()可以立即释放Native内存。<br>从Android4.0开始，Bitmap的内存就是分配在dalvik堆中，即JAVA堆中的,调用recycle()并不能立即释放Native内存。但是调用recycle()也是一个良好的习惯。</p>
-<p>=================<br>资源文件中图片占用内存大小：<br>1b=8位<br>1kb=1024b<br>1mb=1024kb<br>1gb=1024mb</p>
-<p>图片占用内存大小计算公式：</p>
-<p>图片的像素长度width<br>图片的像素高度height<br>存放android手机drawable目录：dpi<br>    mdpi=160<br>    hdpi=240<br>    xhdpi=320<br>    xxhdpi=480<br>    xxxhdpi=640<br>手机像素密度：phoneDpi</p>
-<p>公式：width <em> height </em> (dpi/phoneDpi+0.5)2 * 4</p>
-<p>总结，把图片生成Bitmap则和手机像素密度无关了，<br>因此公式为：width <em> heigth </em> 4</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/24/BitmapHelper/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/24/BitmapHelper/" class="post-title-link" itemprop="url">BitmapHelper</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-24 14:54:34 / 修改时间：14:55:06" itemprop="dateCreated datePublished" datetime="2016-03-24T14:54:34+08:00">2016-03-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>#####背景：调用相机拍照，结果返回时，导致内存迅速升高，内存不足时会导致OOM</p>
-<p>发现的原因：在相机拍照后，会生成很大的照片，分辨率也很高，因此占用的内存会很大，在网上找了一些同学的相机拍照代码块发现，使用到一个BitmapHelper的类，本类的主要作用是：分析拍摄的照片，如果有方向不对了对照片进行旋转，进行旋转需要吧图片加载到内存中，原尺寸的照片通常会很大，会占用两个Bitmap才能够完成旋转，因此bitmap helper在旋转之前进行了尺寸的压缩。<br>不同的手机或者pad对尺寸进行修改会造成所放的比例计算差异。。。好多废话，下面是我对Bitmap Helper类的简单修改，能够让不同的尺寸或方向的照片进行正确的缩放。</p>
-<p>Bitmap Helper能够将拍摄的照片缩放后保存在某个目录中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br></pre></td><td class="code"><pre><span class="line">public class BitmapHelper &#123;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* get the orientation of the bitmap &#123;@link ExifInterface&#125;</span><br><span class="line">*</span><br><span class="line">* @param path</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static int getDegress(String path) &#123;</span><br><span class="line">int degree = 0;</span><br><span class="line">try &#123;</span><br><span class="line">ExifInterface exifInterface = new ExifInterface(path);</span><br><span class="line">int orientation = exifInterface.getAttributeInt(</span><br><span class="line">ExifInterface.TAG_ORIENTATION,</span><br><span class="line">ExifInterface.ORIENTATION_NORMAL);</span><br><span class="line">switch (orientation) &#123;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_90:</span><br><span class="line">degree = 90;</span><br><span class="line">break;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_180:</span><br><span class="line">degree = 180;</span><br><span class="line">break;</span><br><span class="line">case ExifInterface.ORIENTATION_ROTATE_270:</span><br><span class="line">degree = 270;</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">return degree;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* rotate the bitmap</span><br><span class="line">*</span><br><span class="line">* @param bitmap</span><br><span class="line">* @param degress</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap rotateBitmap(Bitmap bitmap, int degress) &#123;</span><br><span class="line">if (bitmap != null) &#123;</span><br><span class="line">Matrix m = new Matrix();</span><br><span class="line">m.postRotate(degress);</span><br><span class="line">bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), m, true);</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* caculate the bitmap sampleSize</span><br><span class="line">*</span><br><span class="line">* @param</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static int caculateInSampleSize(Options options, int rqsW, int rqsH) &#123;</span><br><span class="line">int height = options.outHeight;</span><br><span class="line">int width = options.outWidth;</span><br><span class="line">//主要修改这里，让最宽的对应设定的宽，高同理</span><br><span class="line">if (width &gt; height) &#123;</span><br><span class="line">int temp = width;</span><br><span class="line">width = height;</span><br><span class="line">height = temp;</span><br><span class="line">&#125;</span><br><span class="line">if (rqsW &gt; rqsH) &#123;</span><br><span class="line">int rqsT = rqsH;</span><br><span class="line">rqsH = rqsW;</span><br><span class="line">rqsW = rqsT;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int inSampleSize = 1;</span><br><span class="line">if (rqsW == 0 || rqsH == 0) return 1;</span><br><span class="line">if (height &gt; rqsH || width &gt; rqsW) &#123;</span><br><span class="line">int heightRatio = Math.round((float) height / (float) rqsH);</span><br><span class="line">int widthRatio = Math.round((float) width / (float) rqsW);</span><br><span class="line">inSampleSize = heightRatio &lt; widthRatio ? heightRatio : widthRatio;</span><br><span class="line">&#125;</span><br><span class="line">return inSampleSize;</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 根据需要压缩到某尺寸压缩指定路径的图片，并得到图片对象</span><br><span class="line">*</span><br><span class="line">* @param path</span><br><span class="line">* @param rqsW</span><br><span class="line">* @param rqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(String path, int rqsW, int rqsH) &#123;</span><br><span class="line">Options options = getBitmapOptions(path);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, rqsW, rqsH);</span><br><span class="line">return BitmapFactory.decodeFile(path, options);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩指定路径图片，并将其保存在缓存目录中，通过isDelSrc判定是否删除源文件，并获取到缓存后的图片路径</span><br><span class="line">*</span><br><span class="line">* @param context</span><br><span class="line">* @param srcPath</span><br><span class="line">* @param rqsW</span><br><span class="line">* @param rqsH</span><br><span class="line">* @param isDelSrc</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static String compressBitmap(Context context, String srcPath, int rqsW, int rqsH, boolean isDelSrc) &#123;</span><br><span class="line">int degree = getDegress(srcPath);</span><br><span class="line">Bitmap bitmap = compressBitmap(srcPath, rqsW, rqsH);//根据长宽以及图片的长宽得到缩放图片</span><br><span class="line">File srcFile = new File(srcPath);</span><br><span class="line">String desPath = getImageCacheDir(context) + srcFile.getName();</span><br><span class="line">try &#123;</span><br><span class="line">if (degree != 0) bitmap = rotateBitmap(bitmap, degree);</span><br><span class="line">File file = new File(desPath);</span><br><span class="line">FileOutputStream fos = new FileOutputStream(file);</span><br><span class="line">bitmap.compress(CompressFormat.JPEG, 80, fos);//80是图片质量</span><br><span class="line">fos.close();</span><br><span class="line">if (isDelSrc) srcFile.deleteOnExit();</span><br><span class="line"></span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bitmap.recycle();</span><br><span class="line">System.gc();</span><br><span class="line"></span><br><span class="line">return desPath;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩某个输入流中的图片，可以解决网络输入流压缩问题，并得到图片对象</span><br><span class="line">*</span><br><span class="line">* @return Bitmap &#123;@link Bitmap&#125;</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(InputStream is, int reqsW, int reqsH) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">ReadableByteChannel channel = Channels.newChannel(is);</span><br><span class="line">ByteBuffer buffer = ByteBuffer.allocate(1024);</span><br><span class="line">while (channel.read(buffer) != -1) &#123;</span><br><span class="line">buffer.flip();</span><br><span class="line">while (buffer.hasRemaining()) baos.write(buffer.get());</span><br><span class="line">buffer.clear();</span><br><span class="line">&#125;</span><br><span class="line">byte[] bts = baos.toByteArray();</span><br><span class="line">Bitmap bitmap = compressBitmap(bts, reqsW, reqsH);</span><br><span class="line">is.close();</span><br><span class="line">channel.close();</span><br><span class="line">baos.close();</span><br><span class="line">return bitmap;</span><br><span class="line">&#125; catch (Exception e) &#123;</span><br><span class="line">// TODO: handle exception</span><br><span class="line">e.printStackTrace();</span><br><span class="line">return null;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩指定byte[]图片，并得到压缩后的图像</span><br><span class="line">*</span><br><span class="line">* @param bts</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(byte[] bts, int reqsW, int reqsH) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeByteArray(bts, 0, bts.length, options);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, reqsW, reqsH);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return BitmapFactory.decodeByteArray(bts, 0, bts.length, options);</span><br><span class="line">｝</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩已存在的图片对象，并返回压缩后的图片</span><br><span class="line">*</span><br><span class="line">* @param bitmap</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(Bitmap bitmap, int reqsW, int reqsH) &#123;</span><br><span class="line">try &#123;</span><br><span class="line">ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">bitmap.compress(CompressFormat.PNG, 100, baos);</span><br><span class="line">byte[] bts = baos.toByteArray();</span><br><span class="line">Bitmap res = compressBitmap(bts, reqsW, reqsH);</span><br><span class="line">baos.close();</span><br><span class="line">return res;</span><br><span class="line">&#125; catch (IOException e) &#123;</span><br><span class="line">// TODO Auto-generated catch block</span><br><span class="line">e.printStackTrace();</span><br><span class="line">return bitmap;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 压缩资源图片，并返回图片对象</span><br><span class="line">*</span><br><span class="line">* @param res   &#123;@link Resources&#125;</span><br><span class="line">* @param resID</span><br><span class="line">* @param reqsW</span><br><span class="line">* @param reqsH</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">public static Bitmap compressBitmap(Resources res, int resID, int reqsW, int reqsH) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeResource(res, resID, options);</span><br><span class="line">options.inSampleSize = caculateInSampleSize(options, reqsW, reqsH);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return BitmapFactory.decodeResource(res, resID, options);</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line">* 得到指定路径图片的options</span><br><span class="line">*</span><br><span class="line">* @param srcPath</span><br><span class="line">* @return Options &#123;@link Options&#125;</span><br><span class="line">*/</span><br><span class="line">public static Options getBitmapOptions(String srcPath) &#123;</span><br><span class="line">Options options = new Options();</span><br><span class="line">options.inJustDecodeBounds = true;</span><br><span class="line">BitmapFactory.decodeFile(srcPath, options);</span><br><span class="line">options.inJustDecodeBounds = false;</span><br><span class="line">return options;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* 获取图片缓存路径</span><br><span class="line">*</span><br><span class="line">* @param context</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">private static String getImageCacheDir(Context context) &#123;</span><br><span class="line">String dir = FileUtils.getCacheDir() + &quot;Image&quot; + File.separator;</span><br><span class="line">File file = new File(dir);</span><br><span class="line">if (!file.exists()) file.mkdirs();</span><br><span class="line">return dir;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>###压缩的方式<br>上面不仅用到尺寸压缩，而且用到了图片质量压缩<br>bitmap.compress(CompressFormat.JPEG, 80, fos);//80是图片质量<br>这个就是质量压缩。<br>质量压缩需要把文件加载到内存中，因此大图片质量压缩也会瞬间占用大量内存，因此我使用的是先尺寸压缩，再质量压缩的方式。</p>
-<p>####关于质量压缩<br>质量压缩android比IOS的质量压缩采用的据说是同一个压缩方式，但是压缩中的一个参数，android默认设置为false，IOS默认设置为true，结果是设置为相同质量压缩下，iOS文件占用的空间比android少。因此我们可以把压缩的源代码搞过来，把false改为true。<br>我的实际测试，质量的压缩，true的比false仅仅小了30K～100k（图片越小越不明显） 。<br>使用方式就是：倒入.so文件和NativeUtil</p>
-<p><a href="http://download.csdn.net/detail/olimxing/9451709" target="_blank" rel="noopener">so文件下载地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class NativeUtil &#123;</span><br><span class="line">private static int DEFAULT_QUALITY = 95;</span><br><span class="line"></span><br><span class="line">public static void compressBitmap(Bitmap bit, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">compressBitmap(bit, DEFAULT_QUALITY, fileName, optimize);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void compressBitmap(Bitmap bit, int quality, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">Log.d(&quot;native&quot;, &quot;compress of native&quot;);</span><br><span class="line">if (bit.getConfig() != Config.ARGB_8888) &#123;</span><br><span class="line">Bitmap result = Bitmap.createBitmap(bit.getWidth(), bit.getHeight(),</span><br><span class="line">Config.ARGB_8888);</span><br><span class="line">Canvas canvas = new Canvas(result);</span><br><span class="line">Rect rect = new Rect(0, 0, bit.getWidth(), bit.getHeight());</span><br><span class="line">canvas.drawBitmap(bit, null, rect, null);</span><br><span class="line">saveBitmap(result, quality, fileName, optimize);</span><br><span class="line">result.recycle();</span><br><span class="line">&#125; else &#123;</span><br><span class="line">saveBitmap(bit, quality, fileName, optimize);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void saveBitmap(Bitmap bit, int quality, String fileName,</span><br><span class="line">boolean optimize) &#123;</span><br><span class="line">compressBitmap(bit, bit.getWidth(), bit.getHeight(), quality,</span><br><span class="line">fileName.getBytes(), optimize);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static native String compressBitmap(Bitmap bit, int w, int h,</span><br><span class="line">int quality, byte[] fileNameBytes, boolean optimize);</span><br><span class="line"></span><br><span class="line">static &#123;</span><br><span class="line">System.loadLibrary(&quot;jpegbither&quot;);</span><br><span class="line">System.loadLibrary(&quot;bitherjni&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>博主github主页：<a href="https://github.com/limxing" target="_blank" rel="noopener">Github主页</a> 有一个仿IOS的旋转等待View，欢迎使用点星星</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/23/自定义ProgressBar颜色/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/23/自定义ProgressBar颜色/" class="post-title-link" itemprop="url">自定义ProgressBar颜色</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-23 20:31:48 / 修改时间：20:32:44" itemprop="dateCreated datePublished" datetime="2016-03-23T20:31:48+08:00">2016-03-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>drawable文件夹中bacprogress.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置背景色（白色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/background&quot;&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#ffffff&quot;</span><br><span class="line">android:startColor=&quot;#ffffff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置进度条颜色（蓝色） --&gt;</span><br><span class="line">&lt;item android:id=&quot;@android:id/progress&quot;&gt;</span><br><span class="line">&lt;clip&gt;</span><br><span class="line">&lt;shape&gt;</span><br><span class="line">&lt;corners android:radius=&quot;5dip&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;gradient</span><br><span class="line">android:endColor=&quot;#5d9eff&quot;</span><br><span class="line">android:startColor=&quot;#5d9eff&quot; /&gt;</span><br><span class="line">&lt;/shape&gt;</span><br><span class="line">&lt;/clip&gt;</span><br><span class="line">&lt;/item&gt;</span><br><span class="line"></span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressBar</span><br><span class="line">android:id=&quot;@+id/download_item_size_pro&quot;</span><br><span class="line">style=&quot;?android:attr/progressBarStyleHorizontal&quot;</span><br><span class="line">android:layout_width=&quot;match_parent&quot;</span><br><span class="line">android:layout_height=&quot;3dp&quot;</span><br><span class="line">android:max=&quot;100&quot;</span><br><span class="line">android:progress=&quot;0&quot;</span><br><span class="line">android:progressDrawable=&quot;@drawable/bacprogress&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/limxing/XListView" target="_blank" rel="noopener">https://github.com/limxing/XListView</a> 仿iOS加载等待旋转图片放进这个项目中了，欢迎使用给星</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="/2016/03/23/单例模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="李利锋">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/23/单例模式/" class="post-title-link" itemprop="url">单例模式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-23 16:16:03 / 修改时间：16:17:57" itemprop="dateCreated datePublished" datetime="2016-03-23T16:16:03+08:00">2016-03-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>####懒汉式单例模式最佳写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private volatile static Singleton singleton;</span><br><span class="line">        private Singleton()&#123;&#125;;</span><br><span class="line">        public static Singleton getSingleton()&#123;</span><br><span class="line">            if(singleton==null) &#123;</span><br><span class="line">                synchronized (Singleton.class) &#123;</span><br><span class="line">                if (singleton == null) &#123;</span><br><span class="line">                singleton = new Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return singleton;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-  </div>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
       </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="李利锋"
-      src="/css/images/avatar.png">
-  <p class="site-author-name" itemprop="name">李利锋</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
         
-          <span class="site-state-item-count">40</span>
-          <span class="site-state-item-name">日志</span>
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          友链
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">李利锋</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
         </a>
       </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-
-      </div>
-
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
       </div>
-    </main>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">李利锋</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
+        </div>
 
-    <footer class="footer">
-      <div class="footer-inner">
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            友链
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/limxing" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
         
-  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
-  </div>
+<div class="posts">
+  <ul>
+     
 
-<div class="copyright">
-  
-  &copy; 2016 – 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">李利锋</span>
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/04/14/JAVA去除字符串中重复字段/">JAVA去除字符串中重复字段</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/04/14</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/JAVA">JAVA</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/04/14/JAVA去除字符串中重复字段/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/04/14/JAVA去除字符串中重复字段/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/04/14/JAVA去除字符串中重复字段/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/04/12/Java操作excel/">Java操作excel</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/04/12</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/JAVA">JAVA</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/04/12/Java操作excel/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/04/12/Java操作excel/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/04/12/Java操作excel/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/04/06/Mac终端命令/">Mac终端命令</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/04/06</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/MacOS">MacOS</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/04/06/Mac终端命令/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/04/06/Mac终端命令/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/04/06/Mac终端命令/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/04/06/android资源文件查找顺序/">android资源文件查找顺序</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/04/06</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/04/06/android资源文件查找顺序/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/04/06/android资源文件查找顺序/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/04/06/android资源文件查找顺序/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/28/Fragment/">Fragment</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/28</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/28/Fragment/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/28/Fragment/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/28/Fragment/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/27/自定义View仿IOS等待圈/">自定义View仿IOS等待圈</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/27</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/27/自定义View仿IOS等待圈/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/27/自定义View仿IOS等待圈/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/27/自定义View仿IOS等待圈/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/25/Bitmap图片占用内存大小/">Bitmap图片占用内存大小</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/25</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/25/Bitmap图片占用内存大小/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/25/Bitmap图片占用内存大小/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/25/Bitmap图片占用内存大小/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/24/BitmapHelper/">BitmapHelper</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/24</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/24/BitmapHelper/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/24/BitmapHelper/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/24/BitmapHelper/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/23/自定义ProgressBar颜色/">自定义ProgressBar颜色</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/23</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/23/自定义ProgressBar颜色/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/23/自定义ProgressBar颜色/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/23/自定义ProgressBar颜色/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2016/03/23/单例模式/">单例模式</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>16/03/23</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/Android">Android</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2016/03/23/单例模式/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2016/03/23/单例模式/">
+                <a href="#">分享</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2016/03/23/单例模式/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
 </div>
 
-        
+<div class="paginator">
+  <a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+</div>
 
-
-
-
-
-
-
-
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="">李利锋</a> Powered by <a href="https://hexo.io">Hexo</a><br/>
+             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
+          </div>
+         <!--  
+          <div class="icp">
+             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
+          </div>
+           -->
+        </footer>
       </div>
-    </footer>
-  </div>
-
+    </div>
+  </body>
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
-<script src="/js/schemes/pisces.js"></script>
-<script src="/js/next-boot.js"></script>
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-</body>
 </html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"VnmkbK0E9LuxLYqLlol28pOY-gzGzoHsz\",\"API_KEY\":\"4oDJsdezLOaMCUlQq1K2E5sr\"},\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script>  
