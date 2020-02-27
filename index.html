@@ -1,521 +1,367 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    
-    <title>Leefeng Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Leefeng Blog">
 <meta property="og:url" content="/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leefeng Blog">
-    
 
-    
-        <link rel="alternate" href="/" title="Leefeng Blog" type="application/atom+xml" />
-    
+<link rel="canonical" href="/">
 
-    
 
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
-    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-    
-    
-    
-    
-        <script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?0e3cb8082ce80c6cd7dce60061ded335# enter Baidu Analytics hash key";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
 </script>
 
-    
+  <title>Leefeng Blog</title>
+  
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
-<body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">Leefeng Blog</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">Home</a>
-                
-                    <a class="main-nav-link" href="/archives">Archives</a>
-                
-                    <a class="main-nav-link" href="/about">About</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fas fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value=""></form>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leefeng Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
-        </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">About</a></td>
-                
-                <td>
-                    
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value=""></form>
 
-                </td>
-            </tr>
-        </table>
-    </div>
-</header>
 
-        <div class="outer">
-            
-                
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-<aside id="profile" class="">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">Limxing</h2>
-            <h3 id="title">Android &amp; IOS Developer</h3>
-            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>Beijing, China</span>
-            <a id="follow" target="_blank" href="https://github.com/limxing/">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                40
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                10
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="http://github.com/limxing/" target="_blank" title="github" class=tooltip>
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="twitter" class=tooltip>
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="facebook" class=tooltip>
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="dribbble" class=tooltip>
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="/" target="_blank" title="rss" class=tooltip>
-                            <i class="fab fa-rss"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
-            
-            <section id="main">
-    <article id="post-文档翻译-Kotlin协程-基本用法" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">文档翻译-Kotlin协程 基本用法</a>
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/" class="post-title-link" itemprop="url">文档翻译-Kotlin协程 基本用法</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 17:19:10" itemprop="dateCreated datePublished" datetime="2020-01-07T17:19:10+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:45:04" itemprop="dateModified" datetime="2020-02-27T15:45:04+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">
-            <time datetime="2020-01-07T09:19:10.000Z" itemprop="datePublished">2020-01-07</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Kotlin/">Kotlin</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <blockquote>
+      
+          <blockquote>
 <p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
 </blockquote>
 <h2 id="Kotlin协程的基本用法"><a href="#Kotlin协程的基本用法" class="headerlink" title="Kotlin协程的基本用法"></a>Kotlin协程的基本用法</h2><p>这一篇我们学习协同程序的基本概念。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/docs/basics.md" target="_blank" rel="noopener">查看原文</a></p>
 <h4 id="你的第一个协同程序"><a href="#你的第一个协同程序" class="headerlink" title="你的第一个协同程序"></a>你的第一个协同程序</h4><p>复制下面的代码到你的程序中并运行：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个新的后台协同程序，并继续</span></span><br><span class="line">        delay(<span class="number">1000</span>L) <span class="comment">// 非阻塞的延时1秒(默认时间单位是毫秒)</span></span><br><span class="line">        println(<span class="string">"World!"</span>) <span class="comment">// 延时结束打印</span></span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 协同程序结束延时后，主线程继续执行</span></span><br><span class="line">    Thread.sleep(<span class="number">2000</span>L) <span class="comment">// 阻塞主线程2秒用来保持虚拟机运行中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-01.kt" target="_blank" rel="noopener">查看全部代码</a></p>
-<p>你将看到如下结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello,</span><br><span class="line">World!</span><br></pre></td></tr></table></figure>
-<p>本质上，协同程序是轻量级线程。它们被启动在一些协同程序范围的上下文。现在我们启动一个新的协同程序在全局范围，这意味着这个新的协同程序的生命周期被整个应用的生命周期所限制。</p>
-<p>替换成 <code>GlobalScope.launch { ... }</code> 与 <code>thread { ... }</code> 和<code>delay(...)</code> 与 <code>Thread.sleep(...)</code>， 你将能够得到同样的结果。试试吧（别忘记引入<code>kotlin.concurrent.thread</code>）。</p>
-<p>如果你用thread替换GlobalScope.launch，编译器将出现以下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Kotlin: Suspend functions are only allowed to be called from a coroutine or another suspend function</span><br></pre></td></tr></table></figure>
-<p>那是因为delay是一个特殊的挂起方法不会阻塞线程，但是挂起协同程序和它都只能在协同程序中使用。</p>
-<h4 id="桥接阻塞和非阻塞世界"><a href="#桥接阻塞和非阻塞世界" class="headerlink" title="桥接阻塞和非阻塞世界"></a>桥接阻塞和非阻塞世界</h4><p>第一个例子将非阻塞的delay{} 和阻塞的Thread.sleep()混合在同一段代码中。这将很容易的忘记哪个是阻塞的哪个是非阻塞的。让我们使用runBlocking协程创建者明确关于阻塞：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123; </span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个新的后台协同程序，并继续</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 主线程将立即执行</span></span><br><span class="line">    runBlocking &#123;     <span class="comment">// 但是这个代码块阻塞在主线程</span></span><br><span class="line">        delay(<span class="number">2000</span>L)  <span class="comment">// ... 我们延时2秒保持虚拟机的运行</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02.kt" target="_blank" rel="noopener">查看全部代码</a></p>
-<p>结果是一样的，但是这次的代码仅仅使用的是非阻塞的delay。在主线程唤起 runBlocking 阻塞直到runBlocking内的协程执行完成。  </p>
-<p>这个举例也能够使用更加通用的方式来重写，使用runBlocking去包裹主方法的执行：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking&lt;<span class="built_in">Unit</span>&gt; &#123; <span class="comment">// 开始主协程</span></span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个后台的协程</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 主协程立即执行</span></span><br><span class="line">    delay(<span class="number">2000</span>L)      <span class="comment">// 延时2秒保持虚拟机的运行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02b.kt" target="_blank" rel="noopener">查看全部代码</a>  </p>
-<p>这里的runBlocking<unit> { … }作为一个被用于开始最高级的主协程（我们可以使用runBlocking开启一个最高等级的主协程）。我们明确指定它的返回类型<code>Unit</code>，因为一个好的主方法结构必须要返回<code>Unit</code>。<br>这也是写挂起方法的单元测试的一种方式。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">testMySuspendingFunction</span><span class="params">()</span></span> = runBlocking&lt;<span class="built_in">Unit</span>&gt; &#123;</span><br><span class="line">        <span class="comment">// 在这里我们可以使用我们喜欢的任何风格的挂起方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></unit></p>
-<h4 id="等待任务"><a href="#等待任务" class="headerlink" title="等待任务"></a>等待任务</h4><p>当其他协程正在执行时，我们等待一段时间并不是一个好的方式。让我们明确的等待直到我们开启的后台工作完成。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    <span class="keyword">val</span> job = GlobalScope.launch &#123; <span class="comment">// launch a new coroutine and keep a reference to its Job</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">    job.join() <span class="comment">// wait until child coroutine completes</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-03.kt" target="_blank" rel="noopener">查看完整代码</a><br>现在的结果仍然是一样的，但是主协程的代码不依赖于任何后台工作的时长。更加好。</p>
-<h4 id="结构并发"><a href="#结构并发" class="headerlink" title="结构并发"></a>结构并发</h4><p>我们仍然有一些期望更加实用的协程。当我们使用<code>GlobalScope.launch</code>，我们创建 一个顶级的协程。尽管这是轻量级的，它运行时仍然会消耗一些内存资源。如果我们忘了给它指向新的引用，那么它会一直运行。如果代码在协程中挂起（例如，我们错误的延时很长时间），如果我们开启了太多的协程导致超过内存限制会怎么样？不得不手动的保持所有开启的协程引用，链接他们是错误的想发（倾向）。  </p>
-<p>有一个更好的解决办法。我们可以使用并发结构的代码。为了如我们使用线程（线程都是全局的）一样的在全局启动协程，我们可以在一个我们能够控制的一个域中启动协程。</p>
-<p>回到我们的例子，我们由<code>main</code>方法已经被转变成使用runBlocking创建的协程。所有的协程创建方式，包括<code>runBlocking</code>，在代码块中添加了一个协程域的实例。我们能够在这个域中开启一个协程并且明确的没有<code>join</code>到域中，因为外层协程不会执行完成知道它的域开启的所有协程都完成。所以，我也可以类似的改造我们的例子：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123; <span class="comment">// 当前的协程域</span></span><br><span class="line">    launch &#123; <span class="comment">//在runVloacking下开启了一个新的协程</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-03s.kt" target="_blank" rel="noopener">查看所有代码</a>  </p>
-<h4 id="域的创建"><a href="#域的创建" class="headerlink" title="域的创建"></a>域的创建</h4><p>除了不同创建者提供的协程域，你也可以使用<code>coroutineScope</code>创建声明自己的域。它创建的一个协程域不会完成直到所有开启的子协程完成。<br><code>runBlocking</code>和<code>coroutineScope</code>可能看起来比较相似，因为他们都是等待他们内部和所有子协程完成。这两个的主要不同是，<code>runBlocking</code>方法阻塞了当前线程去等待，而<code>coroutineScope</code>仅仅是挂起，释放下面的线程给其他用。由于上述的不同，<code>runBlocking</code>是一个普通的方法而<code>coroutineScope</code>是一个挂起的方法。<br>下面的例子演示一下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123; <span class="comment">// this: CoroutineScope</span></span><br><span class="line">    launch &#123; </span><br><span class="line">        delay(<span class="number">200</span>L)</span><br><span class="line">        println(<span class="string">"Task from runBlocking"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    coroutineScope &#123; <span class="comment">// 创建一个协程域</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">500</span>L) </span><br><span class="line">            println(<span class="string">"Task from nested launch"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        delay(<span class="number">100</span>L)</span><br><span class="line">        println(<span class="string">"Task from coroutine scope"</span>) <span class="comment">// 这一行将在延时之前执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    println(<span class="string">"Coroutine scope is over"</span>) <span class="comment">// 这一行不会执行直到延时的代码执行完毕</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-04.kt" target="_blank" rel="noopener">查看所有代码</a><br>从结果注意到当延时任务执行等待时，”Task from coroutine scope”就已经执行了， “Task from runBlocking”也会执行和打印，尽管<code>coroutineScope</code>还没有执行完成。</p>
-<h4 id="提取方法重构"><a href="#提取方法重构" class="headerlink" title="提取方法重构"></a>提取方法重构</h4><p>让我们提取代码块中的<code>launch{}</code>成一个独立的方法。当你把代码提取出来成一个新的方法，需要加上<code>suspend</code>修饰。这就是你的第一个挂起的方法。挂起方法和普通方法一样能够在协程中被使用，但是额外的特点是他们能够有序、使用其他挂起的方法，就像这个例子中的<code>delay{}</code>，在协程中挂起执行。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    launch &#123; doWorld() &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is your first suspending function</span></span><br><span class="line">suspend <span class="function"><span class="keyword">fun</span> <span class="title">doWorld</span><span class="params">()</span></span> &#123;</span><br><span class="line">    delay(<span class="number">1000</span>L)</span><br><span class="line">    println(<span class="string">"World!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-05.kt" target="_blank" rel="noopener">查看完整代码</a><br>但是如果提取的方法中包含协程的被执行的创建者在当前的域中会怎么样？这种情况下仅仅在提取的方法上添加<code>suspend</code>修饰符是不够的。在<code>CoroutineScope</code>写一个扩展的方法是一个解决办法，但是它可能不总是合适的由于它没有清理的API。管用的方法是在一个包含目标方法的类中显式的有一个<code>CoroutineScope</code>域或者外部实现<code>CoroutineScope</code>的类有隐式的域。作为最后的手段，使用<a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope.html" target="_blank" rel="noopener">CoroutineScope(coroutineContext)</a>，但是这种方法在结构上是不安全的，因为你在这个域中没有了执行方法的控制权。仅私有API能够使用这个创建者。</p>
-<h4 id="协程是轻量级"><a href="#协程是轻量级" class="headerlink" title="协程是轻量级"></a>协程是轻量级</h4><p>执行下面的代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    repeat(<span class="number">100</span>_000) &#123; <span class="comment">// 开启很多协程</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">1000</span>L)</span><br><span class="line">            print(<span class="string">"."</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-06.kt" target="_blank" rel="noopener">查看完整代码</a><br>开启十万个协程，一秒后分别打印一个点。然后尝试使用线程做这件事。会发生什么？（很有可能会产生内存不足的错误）。</p>
-<h4 id="全局的协程就像是后台守护线程"><a href="#全局的协程就像是后台守护线程" class="headerlink" title="全局的协程就像是后台守护线程"></a>全局的协程就像是后台守护线程</h4><p>下面的代码开启了一个长时间运行的协程在全局域，它每一秒打印<code>I&#39;m sleeping</code>然后等待一些时间后从主方法中退出。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    GlobalScope.launch &#123;</span><br><span class="line">        repeat(<span class="number">1000</span>) &#123; i -&gt;</span><br><span class="line">            println(<span class="string">"I'm sleeping <span class="variable">$i</span> ..."</span>)</span><br><span class="line">            delay(<span class="number">500</span>L)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    delay(<span class="number">1300</span>L) <span class="comment">// 延时后退出</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-07.kt" target="_blank" rel="noopener">查看完整代码</a><br>你运行后可以看到以下三行打印然后结束：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I&apos;m sleeping 0 ...</span><br><span class="line">I&apos;m sleeping 1 ...</span><br><span class="line">I&apos;m sleeping 2 ...</span><br></pre></td></tr></table></figure></p>
-<p>我们在全局域启动的活跃协程不会保持进程的存活。他们就像是守护线程。</p>
-
+<p>你将看到如下结果：<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/文档翻译-Kotlin协程-基本用法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2020/01/07/文档翻译-Kotlin协程-基本用法/" data-id="ck71nrbp4002epz1odnnthcrn" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-文档翻译-Kotlin协程-简介" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2020/01/07/文档翻译-Kotlin协程-简介/">文档翻译-Kotlin协程 简介</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2020/01/07/文档翻译-Kotlin协程-简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/07/文档翻译-Kotlin协程-简介/" class="post-title-link" itemprop="url">文档翻译-Kotlin协程 简介</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 11:47:57" itemprop="dateCreated datePublished" datetime="2020-01-07T11:47:57+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:47:10" itemprop="dateModified" datetime="2020-02-27T15:47:10+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2020/01/07/文档翻译-Kotlin协程-简介/">
-            <time datetime="2020-01-07T03:47:57.000Z" itemprop="datePublished">2020-01-07</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/kotlin/">kotlin</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <blockquote>
+      
+          <blockquote>
 <p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
 </blockquote>
 <h2 id="Kotlin协程简介"><a href="#Kotlin协程简介" class="headerlink" title="Kotlin协程简介"></a>Kotlin协程简介</h2><p>Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。</p>
 <p>Kotlin的协同程序是由JetBrains为协同程序而开发的功能丰富的库。它包括一些高水平可协同的操作符，例如，launch,async 等等。</p>
 <p>本文档主要包含核心工功能的一系列kotlin协程的举例，被分成若干个部分进行阐述。</p>
-<p>为了更好的使用本文档中协程的举例，你需要先添加kotlin协程核心库依赖，可参考项目中的README。</p>
-<h3 id="内容列表"><a href="#内容列表" class="headerlink" title="内容列表"></a>内容列表</h3><ul>
-<li><a href="../2020/01/07/%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91-Kotlin%E5%8D%8F%E7%A8%8B-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/">基本用法</a></li>
-<li>可取消和超时</li>
-<li>多个挂起的协程</li>
-<li>协程的上下文和调度</li>
-<li>异步流（发起很多异步的操作）</li>
-<li>通道</li>
-<li>异常的处理和管理</li>
-<li>共享可变的状态和并发操作</li>
-<li>选择表示（测试中）</li>
-</ul>
-
+<p>为了更好的使用本文档中协程的举例，你需要先添加kotlin协程核心库依赖，可参考项目中的README。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/文档翻译-Kotlin协程-简介/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2020/01/07/文档翻译-Kotlin协程-简介/" data-id="ck71nrboa0026pz1o6d51h75n" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-iphone6的切图如何适配Android" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2019/02/02/iphone6的切图如何适配Android/">iphone6的切图如何适配Android?</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2019/02/02/iphone6的切图如何适配Android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/02/iphone6的切图如何适配Android/" class="post-title-link" itemprop="url">iphone6的切图如何适配Android?</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-02 13:40:01" itemprop="dateCreated datePublished" datetime="2019-02-02T13:40:01+08:00">2019-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:46:21" itemprop="dateModified" datetime="2020-02-27T15:46:21+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2019/02/02/iphone6的切图如何适配Android/">
-            <time datetime="2019-02-02T05:40:01.000Z" itemprop="datePublished">2019-02-02</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？</p>
+      
+          <p>Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？</p>
 <h5 id="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"><a href="#下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍" class="headerlink" title="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"></a>下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍</h5><h4 id="一、-将iPhone6的尺寸与Android-sw360dp-进行换算"><a href="#一、-将iPhone6的尺寸与Android-sw360dp-进行换算" class="headerlink" title="一、 将iPhone6的尺寸与Android sw360dp 进行换算"></a>一、 将iPhone6的尺寸与Android sw360dp 进行换算</h4><p>通常我们需要UI设计基于1920*1080的设计稿，宽度为360dp，将切图的三倍图放置xxhdpi，如果标注是px，那么我们自动除以3作为dp，如果直接是dp那我们直接拿来使用。</p>
 <table>
 <thead>
@@ -548,702 +394,349 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
-<p>假设：UI设计师以iPhone6为基准，标注中有一个为375pt宽的控件，实际像素为750px,如果我们直接用375dp拿到我们Android设备上，则 小米6、华为荣耀8X这两款手机会超出屏幕，而锤子坚果Pro2会小于屏幕，因此如果直接拿到标注进行设置，那么在锤子坚果Pro2手机上所有的控件都会显得比较小，而小米6略显一点大。<br>实验表明：小米6的控件比设计图大 1-375/360=0.041667，而坚果Pro2比设计图小1-375/432 = 0.131944。<br>因此我们换算iphone6与我们基准的360dp进行换算，得出更加近似的dp值：</p>
-<table>
-<thead>
-<tr>
-<th>手机</th>
-<th style="text-align:right">标注(换算)</th>
-<th style="text-align:right">换算公式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>iPhone6</td>
-<td style="text-align:right">1pt</td>
-<td style="text-align:right">375/375=1</td>
-</tr>
-<tr>
-<td>小米6</td>
-<td style="text-align:right">0.96dp</td>
-<td style="text-align:right">360/375=0.96</td>
-</tr>
-<tr>
-<td>华为荣耀8X</td>
-<td style="text-align:right">0.96dp</td>
-<td style="text-align:right">360/375=0.96</td>
-</tr>
-<tr>
-<td>锤子坚果Pro2</td>
-<td style="text-align:right">1.152dp</td>
-<td style="text-align:right">432/375=1.152</td>
-</tr>
-</tbody>
-</table>
-<h4 id="一、我们先使用Python对1-600常用的数值进行生成"><a href="#一、我们先使用Python对1-600常用的数值进行生成" class="headerlink" title="一、我们先使用Python对1~600常用的数值进行生成"></a>一、我们先使用Python对1~600常用的数值进行生成</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">    for i in range(1, 601):</span><br><span class="line">        dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">        dimen.attrib = &#123;&quot;name&quot;: &quot;pt_&quot; + str(i)&#125;</span><br><span class="line">        dimen.text = str(round(i * 0.96, 4)) + &quot;dp&quot;</span><br><span class="line">    ET.ElementTree(resources).write(&quot;dimens.xml&quot;)</span><br></pre></td></tr></table></figure>
-<p>dimens.xml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_1&quot;&gt;0.96dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_2&quot;&gt;1.92dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_3&quot;&gt;2.88dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_4&quot;&gt;3.84dp&lt;/dimen&gt;</span><br><span class="line">    &lt;dimen name=&quot;pt_5&quot;&gt;4.8dp&lt;/dimen&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="二、将dimens-xml或者里面的dimens复制到Android工程values下"><a href="#二、将dimens-xml或者里面的dimens复制到Android工程values下" class="headerlink" title="二、将dimens.xml或者里面的dimens复制到Android工程values下"></a>二、将dimens.xml或者里面的dimens复制到Android工程values下</h4><p>我们可以在此目录下编写我们其他自定义的一些dimens,例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    ....</span><br><span class="line">    &lt;item name=&quot;main_taotao_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.244&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;home_play_scale&quot; format=&quot;float&quot; type=&quot;dimen&quot;&gt;0.25&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;16&lt;/item&gt;</span><br><span class="line">    &lt;item name=&quot;new_main_taotao_left_back&quot; format=&quot;integer&quot; type=&quot;dimen&quot;&gt;24&lt;/item&gt;</span><br><span class="line">    ....</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="三、正常的使用"><a href="#三、正常的使用" class="headerlink" title="三、正常的使用"></a>三、正常的使用</h4><p>在xml布局文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ImageView</span><br><span class="line">   android:id=&quot;@+id/main_taotao_tell_bac&quot;</span><br><span class="line">   android:layout_width=&quot;@dimen/pt_124&quot;</span><br><span class="line">   android:layout_height=&quot;@dimen/pt_129&quot;</span><br><span class="line">   android:scaleType=&quot;fitXY&quot;</span><br><span class="line">   android:src=&quot;@drawable/main_taotao_tell_bac_phone&quot;</span><br><span class="line">   app:layout_constraintDimensionRatio=&quot;372:387&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
-<p>在kotlin文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context.resources.getDimension(R.dimen.pt_124)</span><br></pre></td></tr></table></figure></p>
-<h4 id="四、屏幕分辨率限定符文件的生产"><a href="#四、屏幕分辨率限定符文件的生产" class="headerlink" title="四、屏幕分辨率限定符文件的生产"></a>四、屏幕分辨率限定符文件的生产</h4><p>如果项目已经开发基本完成，不再添加新的dimens值，此时可以生成不同分辨率限定符文件，Python代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from xml.etree import ElementTree as ET</span><br><span class="line">import os</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    array = [384, 392, 400, 410, 432, 480, 533, 592]</span><br><span class="line">    for a in array:</span><br><span class="line">        resources = ET.Element(&quot;resources&quot;)</span><br><span class="line">        path = &apos;values-sw&apos; + str(a) + &apos;dp&apos;</span><br><span class="line">        if not os.path.exists(path):</span><br><span class="line">            os.makedirs(path)</span><br><span class="line">        for e in ET.parse(&quot;dimens.xml&quot;).getroot():</span><br><span class="line">            dimen = ET.SubElement(resources, &quot;dimen&quot;)</span><br><span class="line">            t = e.text</span><br><span class="line">            if t[-1] == &apos;p&apos;:</span><br><span class="line">                dimen.attrib = &#123;&quot;name&quot;: e.attrib[&apos;name&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t[0:-2]) * a / 360, 4)) + &quot;dp&quot;</span><br><span class="line">            else:</span><br><span class="line">                dimen.attrib = &#123;&apos;name&apos;: e.attrib[&apos;name&apos;], &apos;format&apos;: e.attrib[&apos;format&apos;], &apos;type&apos;: e.attrib[&apos;type&apos;]&#125;</span><br><span class="line">                dimen.text = str(round(float(t) * a / 360, 4))</span><br><span class="line">        ET.ElementTree(resources).write(path + &quot;/dimens.xml&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>代码中，array数组中的值选取大于360dp，常用的手机就是代码中数组中的值，运行代码后会生成多个values-sw***dp的文件夹：<br><img src="/img/WeChat2f394752492c87f09c7c0b2859b8932c.png" alt=""></p>
-<p>将这些文件直接复制到Android工程res文件夹下。</p>
-<p>适配结束。</p>
-<h4 id="五、适配前后对比"><a href="#五、适配前后对比" class="headerlink" title="五、适配前后对比"></a>五、适配前后对比</h4><p>设计稿：<br><img src="/img/sheji.jpg" alt=""><br>适配后(锤子坚果Pro2)：<br><img src="/img/shipeihou2.jpg" alt=""><br>适配前(锤子坚果Pro2)：<br><img src="/img/shipeiqian.jpg" alt=""></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/02/iphone6的切图如何适配Android/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2019/02/02/iphone6的切图如何适配Android/" data-id="ck71nrbny001ipz1orvdv1q4y" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-My-2018-And-Coming-2019" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2019/01/09/My-2018-And-Coming-2019/">My 2018 And Coming 2019</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2019/01/09/My-2018-And-Coming-2019/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/09/My-2018-And-Coming-2019/" class="post-title-link" itemprop="url">My 2018 And Coming 2019</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-01-09 14:24:35" itemprop="dateCreated datePublished" datetime="2019-01-09T14:24:35+08:00">2019-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-01-14 11:25:17" itemprop="dateModified" datetime="2019-01-14T11:25:17+08:00">2019-01-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2019/01/09/My-2018-And-Coming-2019/">
-            <time datetime="2019-01-09T06:24:35.000Z" itemprop="datePublished">2019-01-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/life/">life</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <pre><code>今天是2019年1月9号，新的一年已经到来，今天才腾出时间来总结已经过去的2018。
+      
+          <pre><code>今天是2019年1月9号，新的一年已经到来，今天才腾出时间来总结已经过去的2018。
 </code></pre><p>2018.2.23 结婚啦。<br>2018.9.17 换新工作啦，搜狗大佬们的创业公司。<br>2018.10.28 期待的猪宝宝。</p>
 <p>2018<br>在美灿，完成IOS的独立开发及上传AppStore实践，完成Python的初步学习，基于python独立开发后台小项目，Android方面全面转向Kotlin语言的开发，So fast，I like it.<br>在葡萄智学，火力全开投入到新项目的开发上。经历了三个星期的开发，第一版项目内部上线，在经过一个月的维护后，官网各大应用商店上线，又一个月重构了一部分java代码专向kotlin，保持代码的稳定统一，终于在年末项目稳定下来，各大应用商店上线。接下来的2019年，工作中心偏向程序内部功能的编写及调整。</p>
 <p>2019<br>今年应该是一个平淡而又幸福的一年。<br>我将持续在Android领域接触更多的知识，把新技术运用到公司的项目中来。<br>迎接小baby。<br>完成北大的答辩和课程。</p>
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2019/01/09/My-2018-And-Coming-2019/" data-id="ck71nrbn20011pz1o3m56t0ds" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-Android-安装界面启动APP后台切前台重复创建" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">Android 安装界面启动APP后台切前台重复创建</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" class="post-title-link" itemprop="url">Android 安装界面启动APP后台切前台重复创建</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-11-27 16:28:32 / 修改时间：16:36:10" itemprop="dateCreated datePublished" datetime="2018-11-27T16:28:32+08:00">2018-11-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
-            <time datetime="2018-11-27T08:28:32.000Z" itemprop="datePublished">2018-11-27</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。</p>
+      
+          <p>在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。</p>
 <p>在欢迎页或启动页onCreate后添加判断</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != <span class="number">0</span>) &#123;</span><br><span class="line">    finish()</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>李利锋<a href="https://github.com/limxing" target="_blank" rel="noopener">@limxing</a><br>2018-11-27</p>
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-id="ck71nrbjr0004pz1oluda4kcz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-Kotlin的一些扩展函数" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/10/22/Kotlin的一些扩展函数/">Kotlin的一些扩展函数</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2018/10/22/Kotlin的一些扩展函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/10/22/Kotlin的一些扩展函数/" class="post-title-link" itemprop="url">Kotlin的一些扩展函数</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-22 10:01:18" itemprop="dateCreated datePublished" datetime="2018-10-22T10:01:18+08:00">2018-10-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:48:58" itemprop="dateModified" datetime="2020-02-27T15:48:58+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/10/22/Kotlin的一些扩展函数/">
-            <time datetime="2018-10-22T02:01:18.000Z" itemprop="datePublished">2018-10-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Kotlin/">Kotlin</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Kotlin的一些扩展函数"><a href="#Kotlin的一些扩展函数" class="headerlink" title="Kotlin的一些扩展函数"></a>Kotlin的一些扩展函数</h1><p>标签（空格分隔）： Android Kotlin</p>
+      
+          <h1 id="Kotlin的一些扩展函数"><a href="#Kotlin的一些扩展函数" class="headerlink" title="Kotlin的一些扩展函数"></a>Kotlin的一些扩展函数</h1><p>标签（空格分隔）： Android Kotlin</p>
 <hr>
 <h2 id="StandardKt-class-通用函数"><a href="#StandardKt-class-通用函数" class="headerlink" title="StandardKt.class 通用函数"></a>StandardKt.class 通用函数</h2><h3 id="repeat-Int"><a href="#repeat-Int" class="headerlink" title="repeat(Int){}"></a>repeat(Int){}</h3><p>代码块执行多少次<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat(<span class="number">2</span>)&#123;</span><br><span class="line">println(<span class="string">"This is <span class="variable">$it</span> time"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="with-obj"><a href="#with-obj" class="headerlink" title="with(obj){}"></a>with(obj){}</h3><p>用法1：接收一个对象，在代码块中直接调用属性值赋值<br>用法2：接收一个对象后，可使用其属性转换成另外一个对象返回<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">with(TextView(context)) &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> imageView = with(TextView(context)) &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">ImageView(context)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="run"><a href="#run" class="headerlink" title=".run{}"></a>.run{}</h3><p>与with类似，只不过是错用在对象上<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TextView(context).run &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span>f</span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="let"><a href="#let" class="headerlink" title=".let{}"></a>.let{}</h3><p>多用于执行依据代码块，用在可能为空的对象上<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> <span class="keyword">data</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">data</span>?.let &#123;</span><br><span class="line">println(<span class="string">"data is not null"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="apply"><a href="#apply" class="headerlink" title=".apply{}"></a>.apply{}</h3><p>对象的扩展方法，类似with<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> textView = TextView(context).apply &#123;</span><br><span class="line">text = <span class="string">"Hello Kotlin"</span></span><br><span class="line">textSize = <span class="number">16</span></span><br><span class="line">setTextColor(android.R.color.white)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="takeIf"><a href="#takeIf" class="headerlink" title=".takeIf{}"></a>.takeIf{}</h3><h3 id="takeUnless"><a href="#takeUnless" class="headerlink" title=".takeUnless{}"></a>.takeUnless{}</h3><h3 id="synchronized-Any"><a href="#synchronized-Any" class="headerlink" title="synchronized(Any){}"></a>synchronized(Any){}</h3><h2 id="CloseableKt-class"><a href="#CloseableKt-class" class="headerlink" title="CloseableKt.class"></a>CloseableKt.class</h2><h3 id="use"><a href="#use" class="headerlink" title=".use{}"></a>.use{}</h3><p>用于流操作，能够自动关闭流资源<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">assets.<span class="keyword">open</span>(<span class="string">"data.json"</span>).reader().use &#123;</span><br><span class="line"><span class="keyword">val</span> text = it.readText()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="closeFinally"><a href="#closeFinally" class="headerlink" title="closeFinally()"></a>closeFinally()</h3><h2 id="CollectionsKt-class"><a href="#CollectionsKt-class" class="headerlink" title="CollectionsKt.class"></a>CollectionsKt.class</h2><h3 id="groupBy"><a href="#groupBy" class="headerlink" title=".groupBy{}"></a>.groupBy{}</h3><p>用于对集合进行分组,返回的是Map集合,key是{条件},value是集合中的对象<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"abc"</span>, <span class="string">"fd"</span>, <span class="string">"edd"</span>, <span class="string">"zdc"</span>,<span class="string">"pkj"</span>)</span><br><span class="line">list.groupBy &#123; it.first() &#125;.forEach(::println)</span><br></pre></td></tr></table></figure></p>
-<h3 id="forEach"><a href="#forEach" class="headerlink" title=".forEach{}"></a>.forEach{}</h3><p>对集合进行遍历，array,list,map…<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> list = listOf(<span class="string">"abc"</span>, <span class="string">"fd"</span>, <span class="string">"edd"</span>, <span class="string">"zdc"</span>,<span class="string">"pkj"</span>)</span><br><span class="line">list.forEach (::println)</span><br><span class="line">list.forEach&#123; println(it) &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="forEachIndexed-index-T-gt"><a href="#forEachIndexed-index-T-gt" class="headerlink" title=".forEachIndexed{ index, T -&gt; }"></a>.forEachIndexed{ index, T -&gt; }</h3><p>对数组进行遍历，提供角标和对象<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.forEachIndexed &#123; index, s -&gt;</span><br><span class="line">println(<span class="string">"index:<span class="variable">$index</span> obj:<span class="variable">$s</span>"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="filter"><a href="#filter" class="headerlink" title=".filter{}"></a>.filter{}</h3><p>筛选指定条件的对象返回List<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list.filter &#123;</span><br><span class="line">it.first() == <span class="string">'a'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="reversed"><a href="#reversed" class="headerlink" title=".reversed()"></a>.reversed()</h3><p>返回集合的倒序<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.reversed()</span><br></pre></td></tr></table></figure></p>
-<h3 id="List-zip-List-List-lt-Pair-lt-T-R-gt-gt"><a href="#List-zip-List-List-lt-Pair-lt-T-R-gt-gt" class="headerlink" title="List.zip(List):List&lt;Pair&lt;T, R&gt;&gt;"></a>List<t>.zip(List<r>):List&lt;Pair&lt;T, R&gt;&gt;</r></t></h3><p>两个集合合并，返回Pair对象</p>
-<h3 id="average"><a href="#average" class="headerlink" title=".average()"></a>.average()</h3><p>返回集合内数的平均值</p>
-<h3 id="count"><a href="#count" class="headerlink" title=".count()"></a>.count()</h3><p>返回集合的个数</p>
-<p>…more collect</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/10/22/Kotlin的一些扩展函数/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2018/10/22/Kotlin的一些扩展函数/" data-id="ck71nrbmx000upz1ocjoxel36" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-Android-三个SDKVersion的含义" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/24/Android-三个SDKVersion的含义/">Android 三个SDKVersion的含义</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2018/08/24/Android-三个SDKVersion的含义/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/24/Android-三个SDKVersion的含义/" class="post-title-link" itemprop="url">Android 三个SDKVersion的含义</a>
         </h1>
-    
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/08/24/Android-三个SDKVersion的含义/">
-            <time datetime="2018-08-24T02:27:14.000Z" itemprop="datePublished">2018-08-24</time>
-        </a>
-    </div>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
+              <time title="创建时间：2018-08-24 10:27:14" itemprop="dateCreated datePublished" datetime="2018-08-24T10:27:14+08:00">2018-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 16:03:01" itemprop="dateModified" datetime="2020-02-27T16:03:01+08:00">2020-02-27</time>
+              </span>
 
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Android/">Android</a>
-    </div>
+          
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 27</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;online.shuzhi.app&quot;</span><br><span class="line">        minSdkVersion 15</span><br><span class="line">        targetSdkVersion 27</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="compileSdkVersion"><a href="#compileSdkVersion" class="headerlink" title="compileSdkVersion"></a>compileSdkVersion</h4><p>表示整个项目编译时所使用的sdk版本，用于一些检查，一般使用最新版本，此值，影响了dependencies中Android Support的一些依赖包，需要同步到此版本的最新版本的依赖包，否则会提示报错，但不会影响编译</p>
-<h4 id="minSdkVersion"><a href="#minSdkVersion" class="headerlink" title="minSdkVersion"></a>minSdkVersion</h4><p>表示打包后的apk支持最低Android系统为多少，此值会记录在apk安装包中</p>
-<h4 id="targetSdkVersion"><a href="#targetSdkVersion" class="headerlink" title="targetSdkVersion"></a>targetSdkVersion</h4><p>关系到是否能够使用到什么版本的新特性。举例：<br>android 23 ，加入了运行时权限，那么如果设置为23及之后的值，则需要在代码中适配运行时权限的操作<br>android 26，加入了通知栏渠道，那么在26之后的值需要使用最新的代码编写通知<br>…<br>此值关系到能否使用最新版本的android中的新效果，新特性，同时在某些功能上需要重新编写代码，因此，如果不想适配新的功能，则不要设置此值为最新，同时也无法使用到最新版本所优化的一些功能。</p>
-<p>结论：如果没有使用到最新SDK中的技术，某一版本就能够达到开发APP的要求，那么也就没有必要升级到最新版本的targetSdkVersion，不过如果你已经了解并熟悉了最新特性的代码的编写，升级到响应的sdk版本，能够得到更好的效果。</p>
-<p>附android版本图：</p>
-<p><img src="/img/1535078200676.jpg"></p>
-
-        
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
+      </header>
 
-
-
-</div>
-
-    <a data-url="/2018/08/24/Android-三个SDKVersion的含义/" data-id="ck71nrbjn0002pz1ol3u16xhz" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-        </footer>
+      
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 27</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;online.shuzhi.app&quot;</span><br><span class="line">        minSdkVersion 15</span><br><span class="line">        targetSdkVersion 27</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/24/Android-三个SDKVersion的含义/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-IOS移动开发-数据库orm增删改查" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/05/IOS移动开发-数据库orm增删改查/">IOS移动开发:数据库orm增删改查</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2018/02/05/IOS移动开发-数据库orm增删改查/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="post-title-link" itemprop="url">IOS移动开发:数据库orm增删改查</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-02-05 15:01:26 / 修改时间：15:02:46" itemprop="dateCreated datePublished" datetime="2018-02-05T15:01:26+08:00">2018-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/">
-            <time datetime="2018-02-05T07:01:26.000Z" itemprop="datePublished">2018-02-05</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/ios/">ios</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>基于SQLite.swift的数据库orm增删改查 github:<a src="https://github.com/limxing/XMDBModel">XMDBModel</a></p>
+      
+          <p>基于SQLite.swift的数据库orm增删改查 github:<a src="https://github.com/limxing/XMDBModel">XMDBModel</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">XMDBModel Type         SQLite.swift Type      SQLite Type</span><br><span class="line">NSNumber                 Int64(Int,Bool)         INTEGER</span><br><span class="line">NSNumber                    Double                  REAL</span><br><span class="line">String                      String                  TEXT</span><br><span class="line">nil                         nil                     NULL</span><br><span class="line">Data                      SQLite.Blob               BLOB</span><br><span class="line">Date                      Int64 (Date)             INTEGER</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 <h3 id="How-To-Use"><a href="#How-To-Use" class="headerlink" title="How To Use"></a>How To Use</h3><p>1、copy Source to your project</p>
 <p>2、add depend library：pod ‘SQLite.swift’, ‘~&gt; 0.11.4’</p>
@@ -1252,593 +745,318 @@ var _hmt = _hmt || [];
 <h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p>ActiveSQLite</p>
 <h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>XMDBModel is available under the MIT license.</p>
 
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/" data-id="ck71nrbm6000mpz1otol7fp03" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-Mysql数据库的迁移" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/11/21/Mysql数据库的迁移/">Mysql数据库的迁移</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2017/11/21/Mysql数据库的迁移/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/21/Mysql数据库的迁移/" class="post-title-link" itemprop="url">Mysql数据库的迁移</a>
         </h1>
-    
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2017/11/21/Mysql数据库的迁移/">
-            <time datetime="2017-11-21T03:24:24.000Z" itemprop="datePublished">2017-11-21</time>
-        </a>
-    </div>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
+              <time title="创建时间：2017-11-21 11:24:24 / 修改时间：11:26:20" itemprop="dateCreated datePublished" datetime="2017-11-21T11:24:24+08:00">2017-11-21</time>
+            </span>
 
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>备份：mysqldump -uroot -p1234 [databases name] &gt;bck.sql<br>还原：mysql -uroot -p1234 &lt;bck.sql</p>
+          
 
-        
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
+      </header>
 
-
-
-</div>
-
-    <a data-url="/2017/11/21/Mysql数据库的迁移/" data-id="ck71nrbn0000zpz1oiwvg2uqs" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-        </footer>
+      
+          <p>备份：mysqldump -uroot -p1234 [databases name] &gt;bck.sql<br>还原：mysql -uroot -p1234 &lt;bck.sql</p>
+
+      
     </div>
+
     
-</article>
-
-
-
-    <article id="post-Centos-python3-nginx-uwsgi-flask" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">Centos+python3+nginx+uwsgi+flask</a>
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="李利锋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" class="post-title-link" itemprop="url">Centos+python3+nginx+uwsgi+flask</a>
         </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-11-19 23:04:25" itemprop="dateCreated datePublished" datetime="2017-11-19T23:04:25+08:00">2017-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 16:02:07" itemprop="dateModified" datetime="2020-02-27T16:02:07+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
     
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fas fa-calendar-alt"></i>
-        <a href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">
-            <time datetime="2017-11-19T15:04:25.000Z" itemprop="datePublished">2017-11-19</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>1、下载Python3</p>
+      
+          <p>1、下载Python3</p>
 <pre><code>wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
 </code></pre><p>2、安装openssl</p>
 <pre><code>$ yum install openssl -y (-y 是遇到选择yes/no的时候默认提前yes了)
 $ yum install openssl-devel -y
-</code></pre><p>3、解压Python3</p>
-<pre><code>$ tar -zxf Python-3.6.3.tgz
-$ cd Python-3.6.3
-</code></pre><p>4、编译Python</p>
-<pre><code>$ ./configure
-$ make &amp; make install
-</code></pre><p>5、安装虚拟环境</p>
-<pre><code>$ pip3 install virtualenv
-$ virtualenv --no-site-packages -p python3 **_env (不关联系统库，使用python3)
-
-$ source **_env/bin/activate(激活)
-$ deactivate (退出虚拟环境)
-</code></pre><p>6、安装nginx</p>
-<pre><code>$ yum install nginx
-$ service nginx start
-</code></pre><p>6.1、谁占用了80端口？kill掉</p>
-<pre><code>$ netstat -tln | grep 80
-$ kill -9 &apos;id&apos;
-</code></pre><p>7、安装uwsgi</p>
-<pre><code>$ pip install uwsgi
-</code></pre><p>8、配置nginx与uwsgi之间</p>
-<pre><code>$ vim /etc/nginx/nginx.conf
-    server {
-        listen 80;
-        server_name localhost;
-        charset utf-8;
-        client_max_body_size 75M;
-        location / {
-            include uwsgi_params;
-            uwsgi_pass 127.0.0.1:8000;
-            uwsgi_param UWSGI_PYHOME /var/www/leefeng_env;
-            uwsgi_param UWSGI_CHDIR /var/www/leefeng;
-            uwsgi_param UWSGI_SCRIPT core:app;
-        }
-    }
-$ vim /var/www/leefeng/uwsgi.ini
-    [uwsgi]
-    socket = 127.0.0.1:8000
-    plugins = python
-    chidir = /var/www/leefeng
-    virtualenv = /var/www/leefeng_env
-    wsgi-file = core.py
-    callable = app
-
-    threads = 2
-    processes = 4
-</code></pre><p>9、编写代码</p>
-<pre><code>$ pip install flask
-$ vim /var/www/leefeng/core.py
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask</span><br><span class="line">app=Flask(__name__)</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/&apos;)</span><br><span class="line">def index():</span><br><span class="line">return &apos;&lt;h2&gt;Hello Word!&lt;/h2&gt;&apos;</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">app.run()</span><br></pre></td></tr></table></figure>
-</code></pre><p>10、开启</p>
-<pre><code>$ uwsgi uwsgi.ini
-$ nohup uwsgi uwsgi.ini &amp; (断开终端依旧运行)
-$ ps -ef|grep uwsgi (查询正在运行的uwsgi的进程，然后kill -9 id 后退出uwsgi)
-</code></pre><p>错误解决</p>
-<pre><code>make时报错zipimport.ZipImportError: can&apos;t decompress data; zlib not available：#yum install zlib-devel
-启动nginx报错：nginx: [emerg] socket() [::]:80 failed=需要在nginx.conf 注释掉#listen       [::]:80 default_server;
-pip报错：ssl module in Python is not available=（需要重新python :./configure make &amp; make install ）
-yum install openssl -y (-y 是遇到选择yes/no的时候默认提前yes了)
-yum install openssl-devel -y
-安装python错误：Prior to installing Python in CentOS 7, let’s make sure our system has all the necessary development dependencies:
-
-# yum -y groupinstall development
-# yum -y install zlib-devel
-
-
-1.查看数据库编码格式
-mysql&gt; show variables like &apos;character_set_database&apos;;
-2.查看数据表的编码格式
-mysql&gt; show create table &lt;表名&gt;;
-5.修改数据库的编码格式
-mysql&gt;alter database &lt;数据库名&gt; character set utf8;
-6.修改数据表格编码格式
-mysql&gt;alter table &lt;表名&gt; character set utf8;
-</code></pre>
+</code></pre><p>3、解压Python3<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
-</div>
+          </div>
+          
 
-    <a data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" data-id="ck71nrbju0006pz1okek0mq78" class="article-share-link"><i class="fas fa-share"></i>分享到</a>
 <script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fab fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
 </script>
 
-            
-    
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
 
-        </footer>
-    </div>
-    
-</article>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
 
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-    <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-    </nav>
-</section>
-            
-                
-<aside id="sidebar">
-   
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="李利锋"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">李利锋</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/" class="title">文档翻译-Kotlin协程 基本用法</a></p>
-                            <p class="item-date"><time datetime="2020-01-07T09:19:10.000Z" itemprop="datePublished">2020-01-07</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/01/07/文档翻译-Kotlin协程-简介/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/01/07/文档翻译-Kotlin协程-简介/" class="title">文档翻译-Kotlin协程 简介</a></p>
-                            <p class="item-date"><time datetime="2020-01-07T03:47:57.000Z" itemprop="datePublished">2020-01-07</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/02/02/iphone6的切图如何适配Android/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/02/02/iphone6的切图如何适配Android/" class="title">iphone6的切图如何适配Android?</a></p>
-                            <p class="item-date"><time datetime="2019-02-02T05:40:01.000Z" itemprop="datePublished">2019-02-02</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/01/09/My-2018-And-Coming-2019/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
+      </div>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/01/09/My-2018-And-Coming-2019/" class="title">My 2018 And Coming 2019</a></p>
-                            <p class="item-date"><time datetime="2019-01-09T06:24:35.000Z" itemprop="datePublished">2019-01-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" class="title">Android 安装界面启动APP后台切前台重复创建</a></p>
-                            <p class="item-date"><time datetime="2018-11-27T08:28:32.000Z" itemprop="datePublished">2018-11-27</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
     </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
-    
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
         
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">6</span></li></ul>
-        </div>
-    </div>
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
+  </div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kotlin/">kotlin</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/能够一键导入代码的插件开发/">能够一键导入代码的插件开发</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">李利锋</span>
+</div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/JAVA/" style="font-size: 15px;">JAVA</a> <a href="/tags/Kotlin/" style="font-size: 15px;">Kotlin</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/life/" style="font-size: 15px;">life</a> <a href="/tags/能够一键导入代码的插件开发/" style="font-size: 10px;">能够一键导入代码的插件开发</a>
-        </div>
-    </div>
-
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://leefeng.me">Limxing</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-    
-    <div id="toTop" class="fas fa-angle-up"></div>
-</aside>
-
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2020 leefeng.me<br>
-             <a href="http://www.beian.miit.gov.cn/">京ICP备16001995号-3</a>
-        </div>
-    </div>
-</footer>
         
 
 
-    
-    
-    
 
 
 
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
 
-    </div>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
 </body>
 </html>
