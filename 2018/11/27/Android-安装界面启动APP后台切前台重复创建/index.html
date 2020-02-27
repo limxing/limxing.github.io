@@ -1,297 +1,421 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <script>
-  var _hmt = _hmt || []
-  ;(function() {
-    var hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
-    var s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-  })()
-</script> 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    
-    <title>
-      Android 安装界面启动APP后台切前台重复创建 - Leefeng Blog
-    </title>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style/style.css">
-  </head>
-  <body>
-    <canvas id='pagemap'></canvas>
-    
-    <div id="fixed-menu-wrap">
-      <span class="iconfont icon-sousuo search-box menu-reset"></span>
-      <span class="icon-toc menu-reset">Toc</span>
-      <span class="iconfont icon-arrowup menu-reset"></span>
-    </div>
-    <div id="fixed-menu">
-      <span class="iconfont icon-menu-"></span>
-    </div>
-    <div id="progress">
-      <div class="line"></div>
-    </div>
-    <div id="search-shade" class="animated hiddenSearch hide">
-      <div class="input-wrap">
-        <span class="iconfont icon-sousuo search-box"></span>
-        <input type="text" placeholder="Search" />
-        <span class="iconfont icon-close"></span>
-      </div>
-      <div class="search-result">
-        <div class="meta">
-          <span><b id="result-count">0</b> results found</span>
-          <img src="/images/logo.jpeg" />
-        </div>
-        <ul id="result-box"></ul>
-      </div>
-    </div>
-    <div id="menu-mask" class="animated hideMenuMask hide">
-      <span class="iconfont icon-close"></span>
-      <div class="nav">
-        
-        <a href="/" class="">
-          首页
-        </a>
-        
-        <a href="/archives" class="">
-          归档
-        </a>
-        
-        <a href="/categories" class="">
-          分类
-        </a>
-        
-        <a href="/tags" class="">
-          标签
-        </a>
-        
-        <a href="/friends" class="">
-          友链
-        </a>
-        
-        <a href="/about" class="">
-          关于
-        </a>
-        
-      </div>
-    </div>
-    <div id="header">
-      <div class="intro">
-        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">李利锋</div>
-      </div>
-      <div class="nav">
-        <span class="iconfont icon-menu menu-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-    </div>
-    <div id="side" class="animated bounceInLeft">
-      <div class="shrink">
-        <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        <span class="iconfont icon-menu toggle-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-      <div class="magnify">
-        <div class="about">
-          <div class="author">李利锋</div>
-          <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        <div class="nav">
-          
-          <a href="/" class="">
-            首页
-          </a>
-          
-          <a href="/archives" class="">
-            归档
-          </a>
-          
-          <a href="/categories" class="">
-            分类
-          </a>
-          
-          <a href="/tags" class="">
-            标签
-          </a>
-          
-          <a href="/friends" class="">
-            友链
-          </a>
-          
-          <a href="/about" class="">
-            关于
-          </a>
-          
-          <a href="#" class="search-box">
-            <span class="iconfont icon-sousuo"></span>
-          </a>
-        </div>
-        <div class="bottom">
-          <div class="follow">
-            
-            <a href="https://github.com/limxing" target="_block">
-              <span class="iconfont icon-github"></span>
-            </a>
-             
-            <a href="/atom.xml" target="_block">
-              <span class="iconfont icon-rss"></span>
-            </a>
-            
-          </div>
-        </div>
-      </div>
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leefeng.me","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。 在欢迎页或启动页onCreate后添加判断 12345if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != 0) &amp;#123;    finish()    return&amp;#125;  李利锋@limxing2018-11-27">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 安装界面启动APP后台切前台重复创建">
+<meta property="og:url" content="http://leefeng.me/2018/11/27/Android-安装界面启动APP后台切前台重复创建/index.html">
+<meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:description" content="在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。 在欢迎页或启动页onCreate后添加判断 12345if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != 0) &amp;#123;    finish()    return&amp;#125;  李利锋@limxing2018-11-27">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-27T08:36:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 安装界面启动APP后台切前台重复创建">
+<meta name="twitter:description" content="在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。 在欢迎页或启动页onCreate后添加判断 12345if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != 0) &amp;#123;    finish()    return&amp;#125;  李利锋@limxing2018-11-27">
+
+<link rel="canonical" href="http://leefeng.me/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Android 安装界面启动APP后台切前台重复创建 | Leefeng Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div id="container">
-      <div class="main animated bounceInRight delay-0.7s">
-        <article class="post-entry">
-    <div class="header">
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leefeng Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
       
-      <div class="title">Android 安装界面启动APP后台切前台重复创建</div>
-      <div class="meta">
-        <span class="item">
-          <span class="iconfont icon-time-circle"></span>
-          <span>2018/11/27</span>
-        </span>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
 
-        
-          <span class="item leancloud-visitors" id="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" data-flag-title="Android 安装界面启动APP后台切前台重复创建">
-            <span class="iconfont icon-eye1"></span>
-            <span class="leancloud-visitors-count"></span>
-          </span>
-        
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
 
-        
-        
-         
-          <span class="item">
-            <span class="iconfont icon-tag1"></span>
-            <span>
-                
-                  
-                    <a href="/tags/Android">Android</a>
-                  
-                
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Android 安装界面启动APP后台切前台重复创建
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-11-27 16:28:32 / 修改时间：16:36:10" itemprop="dateCreated datePublished" datetime="2018-11-27T16:28:32+08:00">2018-11-27</time>
             </span>
-          </span>
-         
-      </div>
-      <div>
-      </div>
-    </div>
-    <p>在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。</p>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。</p>
 <p>在欢迎页或启动页onCreate后添加判断</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != <span class="number">0</span>) &#123;</span><br><span class="line">    finish()</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>李利锋<a href="https://github.com/limxing" target="_blank" rel="noopener">@limxing</a><br>2018-11-27</p>
 
+    </div>
 
-  
-    <div class="post-reward">
-    <div id="reward-button">打赏</div>
-      <div id="qr">
-        <div class="wrap">
-            
-            <div class="bg-wrap">
-              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
-              支付宝
-            </div>
-            
-            
-            <div class="bg-wrap">
-                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
-              微信
-            </div>
-            
-        </div>
-      </div>
-    </div>
-  
-  <div class="post-guide">
-    <div class="item left">
-        
-          <a href="/2019/01/09/My-2018-And-Coming-2019/">My 2018 And Coming 2019</a>
-        
-    </div>
-    <div class="item right">
-        
-          <a href="/2018/10/22/Kotlin的一些扩展函数/">Kotlin的一些扩展函数</a>
-        
-    </div>
-  </div>
-
-  
-
-  <div class="post-copyright">
-    <div class="auth">
-      本文作者：<a href="/">李利锋</a>
-    </div>
-    <div class="link">
-      永久链接：<a href="//2018/11/27/Android-安装界面启动APP后台切前台重复创建/">//2018/11/27/Android-安装界面启动APP后台切前台重复创建/</a>
-    </div>
-    <div class="declare">
-      版权声明：本文首发于<a href="/">李利锋</a>的博客，转载请注明出处！
-    </div>
-  </div>
-
-  <div id="comment"></div>
-
-  
-  
-</article>
-        <footer>
-          <div class="copyright">
-            ©2020
-            <a href="">李利锋</a> Powered by <a href="https://hexo.io">Hexo</a><br/>
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-         <!--  
-          <div class="icp">
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-           -->
-        </footer>
-      </div>
-    </div>
-  </body>
-  
-</html>
-<script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"VnmkbK0E9LuxLYqLlol28pOY-gzGzoHsz\",\"API_KEY\":\"4oDJsdezLOaMCUlQq1K2E5sr\"},\"service_worker\":{\"open\":false}}")
-                </script> <script type="text/javascript">window.addEventListener('load', function() {
     
-    window.loadJs = function(d, m, a) {
-      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
-      var b = document.createElement('script')
-      b.defer = true
-      b.setAttribute('type', 'text/javascript')
-      b.setAttribute('charset', 'UTF-8')
-      b.setAttribute('async', 'true')
-      b.setAttribute('src', d)
-      m && b.setAttribute('data-main', '/scripts/app-built')
-      if (typeof a === 'function') {
-        if (window.attachEvent) {
-          b.onreadystatechange = function() {
-            var e = b.readyState
-            if (e === 'loaded' || e === 'complete') {
-              b.onreadystatechange = null
-              a()
-            }
-          }
-        } else {
-          b.onload = a
-        }
-      }
-      c.appendChild(b)
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/10/22/Kotlin的一些扩展函数/" rel="prev" title="Kotlin的一些扩展函数">
+      <i class="fa fa-chevron-left"></i> Kotlin的一些扩展函数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/09/My-2018-And-Coming-2019/" rel="next" title="My 2018 And Coming 2019">
+      My 2018 And Coming 2019 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80ODgzMi8yNTMyNg=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
-  })</script>  
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leefeng"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Leefeng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leefeng</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

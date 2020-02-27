@@ -1,203 +1,218 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <script>
-  var _hmt = _hmt || []
-  ;(function() {
-    var hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
-    var s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-  })()
-</script> 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    
-    <title>
-      文档翻译-Kotlin协程 基本用法 - Leefeng Blog
-    </title>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style/style.css">
-  </head>
-  <body>
-    <canvas id='pagemap'></canvas>
-    
-    <div id="post-toc" class="animated hiddenToc hide">
-      <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Kotlin协程的基本用法"><span class="toc-text">Kotlin协程的基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#你的第一个协同程序"><span class="toc-text">你的第一个协同程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#桥接阻塞和非阻塞世界"><span class="toc-text">桥接阻塞和非阻塞世界</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#等待任务"><span class="toc-text">等待任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构并发"><span class="toc-text">结构并发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#域的创建"><span class="toc-text">域的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提取方法重构"><span class="toc-text">提取方法重构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#协程是轻量级"><span class="toc-text">协程是轻量级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局的协程就像是后台守护线程"><span class="toc-text">全局的协程就像是后台守护线程</span></a></li></ol></li></ol></li></ol>
-    </div>
-    
-    <div id="fixed-menu-wrap">
-      <span class="iconfont icon-sousuo search-box menu-reset"></span>
-      <span class="icon-toc menu-reset">Toc</span>
-      <span class="iconfont icon-arrowup menu-reset"></span>
-    </div>
-    <div id="fixed-menu">
-      <span class="iconfont icon-menu-"></span>
-    </div>
-    <div id="progress">
-      <div class="line"></div>
-    </div>
-    <div id="search-shade" class="animated hiddenSearch hide">
-      <div class="input-wrap">
-        <span class="iconfont icon-sousuo search-box"></span>
-        <input type="text" placeholder="Search" />
-        <span class="iconfont icon-close"></span>
-      </div>
-      <div class="search-result">
-        <div class="meta">
-          <span><b id="result-count">0</b> results found</span>
-          <img src="/images/logo.jpeg" />
-        </div>
-        <ul id="result-box"></ul>
-      </div>
-    </div>
-    <div id="menu-mask" class="animated hideMenuMask hide">
-      <span class="iconfont icon-close"></span>
-      <div class="nav">
-        
-        <a href="/" class="">
-          首页
-        </a>
-        
-        <a href="/archives" class="">
-          归档
-        </a>
-        
-        <a href="/categories" class="">
-          分类
-        </a>
-        
-        <a href="/tags" class="">
-          标签
-        </a>
-        
-        <a href="/friends" class="">
-          友链
-        </a>
-        
-        <a href="/about" class="">
-          关于
-        </a>
-        
-      </div>
-    </div>
-    <div id="header">
-      <div class="intro">
-        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">李利锋</div>
-      </div>
-      <div class="nav">
-        <span class="iconfont icon-menu menu-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-    </div>
-    <div id="side" class="animated bounceInLeft">
-      <div class="shrink">
-        <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        <span class="iconfont icon-menu toggle-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-      <div class="magnify">
-        <div class="about">
-          <div class="author">李利锋</div>
-          <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        <div class="nav">
-          
-          <a href="/" class="">
-            首页
-          </a>
-          
-          <a href="/archives" class="">
-            归档
-          </a>
-          
-          <a href="/categories" class="">
-            分类
-          </a>
-          
-          <a href="/tags" class="">
-            标签
-          </a>
-          
-          <a href="/friends" class="">
-            友链
-          </a>
-          
-          <a href="/about" class="">
-            关于
-          </a>
-          
-          <a href="#" class="search-box">
-            <span class="iconfont icon-sousuo"></span>
-          </a>
-        </div>
-        <div class="bottom">
-          <div class="follow">
-            
-            <a href="https://github.com/limxing" target="_block">
-              <span class="iconfont icon-github"></span>
-            </a>
-             
-            <a href="/atom.xml" target="_block">
-              <span class="iconfont icon-rss"></span>
-            </a>
-            
-          </div>
-        </div>
-      </div>
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leefeng.me","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
+<meta name="keywords" content="Kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文档翻译-Kotlin协程 基本用法">
+<meta property="og:url" content="http://leefeng.me/2020/01/07/文档翻译-Kotlin协程-基本用法/index.html">
+<meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-27T07:45:04.170Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文档翻译-Kotlin协程 基本用法">
+<meta name="twitter:description" content="该文档由作者自己的理解翻译，若有出入，敬请谅解。  Kotlin协程的基本用法这一篇我们学习协同程序的基本概念。查看原文 你的第一个协同程序复制下面的代码到你的程序中并运行： 12345678910import kotlinx.coroutines.*fun main() &amp;#123;    GlobalScope.launch &amp;#123; // 启动一个新的后台协同程序，并继续">
+
+<link rel="canonical" href="http://leefeng.me/2020/01/07/文档翻译-Kotlin协程-基本用法/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>文档翻译-Kotlin协程 基本用法 | Leefeng Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div id="container">
-      <div class="main animated bounceInRight delay-0.7s">
-        <article class="post-entry">
-    <div class="header">
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leefeng Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
       
-      <div class="title">文档翻译-Kotlin协程 基本用法</div>
-      <div class="meta">
-        <span class="item">
-          <span class="iconfont icon-time-circle"></span>
-          <span>2020/01/07</span>
-        </span>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/01/07/文档翻译-Kotlin协程-基本用法/">
 
-        
-          <span class="item leancloud-visitors" id="/2020/01/07/文档翻译-Kotlin协程-基本用法/" data-flag-title="文档翻译-Kotlin协程 基本用法">
-            <span class="iconfont icon-eye1"></span>
-            <span class="leancloud-visitors-count"></span>
-          </span>
-        
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
 
-        
-        
-         
-          <span class="item">
-            <span class="iconfont icon-tag1"></span>
-            <span>
-                
-                  
-                    <a href="/tags/Kotlin">Kotlin</a>
-                  
-                
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文档翻译-Kotlin协程 基本用法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 17:19:10" itemprop="dateCreated datePublished" datetime="2020-01-07T17:19:10+08:00">2020-01-07</time>
             </span>
-          </span>
-         
-      </div>
-      <div>
-      </div>
-    </div>
-    <blockquote>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:45:04" itemprop="dateModified" datetime="2020-02-27T15:45:04+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
 <p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
 </blockquote>
-<h2 id="Kotlin协程的基本用法">Kotlin协程的基本用法<a class="post-anchor" href="#Kotlin协程的基本用法"></a></h2><p>这一篇我们学习协同程序的基本概念。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/docs/basics.md" target="_blank" rel="noopener">查看原文</a></p>
-<h4 id="你的第一个协同程序">你的第一个协同程序<a class="post-anchor" href="#你的第一个协同程序"></a></h4><p>复制下面的代码到你的程序中并运行：</p>
+<h2 id="Kotlin协程的基本用法"><a href="#Kotlin协程的基本用法" class="headerlink" title="Kotlin协程的基本用法"></a>Kotlin协程的基本用法</h2><p>这一篇我们学习协同程序的基本概念。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/docs/basics.md" target="_blank" rel="noopener">查看原文</a></p>
+<h4 id="你的第一个协同程序"><a href="#你的第一个协同程序" class="headerlink" title="你的第一个协同程序"></a>你的第一个协同程序</h4><p>复制下面的代码到你的程序中并运行：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个新的后台协同程序，并继续</span></span><br><span class="line">        delay(<span class="number">1000</span>L) <span class="comment">// 非阻塞的延时1秒(默认时间单位是毫秒)</span></span><br><span class="line">        println(<span class="string">"World!"</span>) <span class="comment">// 延时结束打印</span></span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 协同程序结束延时后，主线程继续执行</span></span><br><span class="line">    Thread.sleep(<span class="number">2000</span>L) <span class="comment">// 阻塞主线程2秒用来保持虚拟机运行中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-01.kt" target="_blank" rel="noopener">查看全部代码</a></p>
 <p>你将看到如下结果：<br><a id="more"></a></p>
@@ -207,7 +222,7 @@
 <p>如果你用thread替换GlobalScope.launch，编译器将出现以下错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Kotlin: Suspend functions are only allowed to be called from a coroutine or another suspend function</span><br></pre></td></tr></table></figure>
 <p>那是因为delay是一个特殊的挂起方法不会阻塞线程，但是挂起协同程序和它都只能在协同程序中使用。</p>
-<h4 id="桥接阻塞和非阻塞世界">桥接阻塞和非阻塞世界<a class="post-anchor" href="#桥接阻塞和非阻塞世界"></a></h4><p>第一个例子将非阻塞的delay{} 和阻塞的Thread.sleep()混合在同一段代码中。这将很容易的忘记哪个是阻塞的哪个是非阻塞的。让我们使用runBlocking协程创建者明确关于阻塞：</p>
+<h4 id="桥接阻塞和非阻塞世界"><a href="#桥接阻塞和非阻塞世界" class="headerlink" title="桥接阻塞和非阻塞世界"></a>桥接阻塞和非阻塞世界</h4><p>第一个例子将非阻塞的delay{} 和阻塞的Thread.sleep()混合在同一段代码中。这将很容易的忘记哪个是阻塞的哪个是非阻塞的。让我们使用runBlocking协程创建者明确关于阻塞：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123; </span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个新的后台协同程序，并继续</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 主线程将立即执行</span></span><br><span class="line">    runBlocking &#123;     <span class="comment">// 但是这个代码块阻塞在主线程</span></span><br><span class="line">        delay(<span class="number">2000</span>L)  <span class="comment">// ... 我们延时2秒保持虚拟机的运行</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02.kt" target="_blank" rel="noopener">查看全部代码</a></p>
 <p>结果是一样的，但是这次的代码仅仅使用的是非阻塞的delay。在主线程唤起 runBlocking 阻塞直到runBlocking内的协程执行完成。  </p>
@@ -215,118 +230,228 @@
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking&lt;<span class="built_in">Unit</span>&gt; &#123; <span class="comment">// 开始主协程</span></span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个后台的协程</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 主协程立即执行</span></span><br><span class="line">    delay(<span class="number">2000</span>L)      <span class="comment">// 延时2秒保持虚拟机的运行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-02b.kt" target="_blank" rel="noopener">查看全部代码</a>  </p>
 <p>这里的runBlocking<unit> { … }作为一个被用于开始最高级的主协程（我们可以使用runBlocking开启一个最高等级的主协程）。我们明确指定它的返回类型<code>Unit</code>，因为一个好的主方法结构必须要返回<code>Unit</code>。<br>这也是写挂起方法的单元测试的一种方式。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">testMySuspendingFunction</span><span class="params">()</span></span> = runBlocking&lt;<span class="built_in">Unit</span>&gt; &#123;</span><br><span class="line">        <span class="comment">// 在这里我们可以使用我们喜欢的任何风格的挂起方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></unit></p>
-<h4 id="等待任务">等待任务<a class="post-anchor" href="#等待任务"></a></h4><p>当其他协程正在执行时，我们等待一段时间并不是一个好的方式。让我们明确的等待直到我们开启的后台工作完成。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    <span class="keyword">val</span> job = GlobalScope.launch &#123; <span class="comment">// launch a new coroutine and keep a reference to its Job</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">    job.join() <span class="comment">// wait until child coroutine completes</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="等待任务"><a href="#等待任务" class="headerlink" title="等待任务"></a>等待任务</h4><p>当其他协程正在执行时，我们等待一段时间并不是一个好的方式。让我们明确的等待直到我们开启的后台工作完成。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    <span class="keyword">val</span> job = GlobalScope.launch &#123; <span class="comment">// launch a new coroutine and keep a reference to its Job</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">    job.join() <span class="comment">// wait until child coroutine completes</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-03.kt" target="_blank" rel="noopener">查看完整代码</a><br>现在的结果仍然是一样的，但是主协程的代码不依赖于任何后台工作的时长。更加好。</p>
-<h4 id="结构并发">结构并发<a class="post-anchor" href="#结构并发"></a></h4><p>我们仍然有一些期望更加实用的协程。当我们使用<code>GlobalScope.launch</code>，我们创建 一个顶级的协程。尽管这是轻量级的，它运行时仍然会消耗一些内存资源。如果我们忘了给它指向新的引用，那么它会一直运行。如果代码在协程中挂起（例如，我们错误的延时很长时间），如果我们开启了太多的协程导致超过内存限制会怎么样？不得不手动的保持所有开启的协程引用，链接他们是错误的想发（倾向）。  </p>
+<h4 id="结构并发"><a href="#结构并发" class="headerlink" title="结构并发"></a>结构并发</h4><p>我们仍然有一些期望更加实用的协程。当我们使用<code>GlobalScope.launch</code>，我们创建 一个顶级的协程。尽管这是轻量级的，它运行时仍然会消耗一些内存资源。如果我们忘了给它指向新的引用，那么它会一直运行。如果代码在协程中挂起（例如，我们错误的延时很长时间），如果我们开启了太多的协程导致超过内存限制会怎么样？不得不手动的保持所有开启的协程引用，链接他们是错误的想发（倾向）。  </p>
 <p>有一个更好的解决办法。我们可以使用并发结构的代码。为了如我们使用线程（线程都是全局的）一样的在全局启动协程，我们可以在一个我们能够控制的一个域中启动协程。</p>
 <p>回到我们的例子，我们由<code>main</code>方法已经被转变成使用runBlocking创建的协程。所有的协程创建方式，包括<code>runBlocking</code>，在代码块中添加了一个协程域的实例。我们能够在这个域中开启一个协程并且明确的没有<code>join</code>到域中，因为外层协程不会执行完成知道它的域开启的所有协程都完成。所以，我也可以类似的改造我们的例子：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123; <span class="comment">// 当前的协程域</span></span><br><span class="line">    launch &#123; <span class="comment">//在runVloacking下开启了一个新的协程</span></span><br><span class="line">        delay(<span class="number">1000</span>L)</span><br><span class="line">        println(<span class="string">"World!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-03s.kt" target="_blank" rel="noopener">查看所有代码</a>  </p>
-<h4 id="域的创建">域的创建<a class="post-anchor" href="#域的创建"></a></h4><p>除了不同创建者提供的协程域，你也可以使用<code>coroutineScope</code>创建声明自己的域。它创建的一个协程域不会完成直到所有开启的子协程完成。<br><code>runBlocking</code>和<code>coroutineScope</code>可能看起来比较相似，因为他们都是等待他们内部和所有子协程完成。这两个的主要不同是，<code>runBlocking</code>方法阻塞了当前线程去等待，而<code>coroutineScope</code>仅仅是挂起，释放下面的线程给其他用。由于上述的不同，<code>runBlocking</code>是一个普通的方法而<code>coroutineScope</code>是一个挂起的方法。<br>下面的例子演示一下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123; <span class="comment">// this: CoroutineScope</span></span><br><span class="line">    launch &#123; </span><br><span class="line">        delay(<span class="number">200</span>L)</span><br><span class="line">        println(<span class="string">"Task from runBlocking"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    coroutineScope &#123; <span class="comment">// 创建一个协程域</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">500</span>L) </span><br><span class="line">            println(<span class="string">"Task from nested launch"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        delay(<span class="number">100</span>L)</span><br><span class="line">        println(<span class="string">"Task from coroutine scope"</span>) <span class="comment">// 这一行将在延时之前执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    println(<span class="string">"Coroutine scope is over"</span>) <span class="comment">// 这一行不会执行直到延时的代码执行完毕</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="域的创建"><a href="#域的创建" class="headerlink" title="域的创建"></a>域的创建</h4><p>除了不同创建者提供的协程域，你也可以使用<code>coroutineScope</code>创建声明自己的域。它创建的一个协程域不会完成直到所有开启的子协程完成。<br><code>runBlocking</code>和<code>coroutineScope</code>可能看起来比较相似，因为他们都是等待他们内部和所有子协程完成。这两个的主要不同是，<code>runBlocking</code>方法阻塞了当前线程去等待，而<code>coroutineScope</code>仅仅是挂起，释放下面的线程给其他用。由于上述的不同，<code>runBlocking</code>是一个普通的方法而<code>coroutineScope</code>是一个挂起的方法。<br>下面的例子演示一下：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123; <span class="comment">// this: CoroutineScope</span></span><br><span class="line">    launch &#123; </span><br><span class="line">        delay(<span class="number">200</span>L)</span><br><span class="line">        println(<span class="string">"Task from runBlocking"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    coroutineScope &#123; <span class="comment">// 创建一个协程域</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">500</span>L) </span><br><span class="line">            println(<span class="string">"Task from nested launch"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        delay(<span class="number">100</span>L)</span><br><span class="line">        println(<span class="string">"Task from coroutine scope"</span>) <span class="comment">// 这一行将在延时之前执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    println(<span class="string">"Coroutine scope is over"</span>) <span class="comment">// 这一行不会执行直到延时的代码执行完毕</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-04.kt" target="_blank" rel="noopener">查看所有代码</a><br>从结果注意到当延时任务执行等待时，”Task from coroutine scope”就已经执行了， “Task from runBlocking”也会执行和打印，尽管<code>coroutineScope</code>还没有执行完成。</p>
-<h4 id="提取方法重构">提取方法重构<a class="post-anchor" href="#提取方法重构"></a></h4><p>让我们提取代码块中的<code>launch{}</code>成一个独立的方法。当你把代码提取出来成一个新的方法，需要加上<code>suspend</code>修饰。这就是你的第一个挂起的方法。挂起方法和普通方法一样能够在协程中被使用，但是额外的特点是他们能够有序、使用其他挂起的方法，就像这个例子中的<code>delay{}</code>，在协程中挂起执行。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    launch &#123; doWorld() &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is your first suspending function</span></span><br><span class="line">suspend <span class="function"><span class="keyword">fun</span> <span class="title">doWorld</span><span class="params">()</span></span> &#123;</span><br><span class="line">    delay(<span class="number">1000</span>L)</span><br><span class="line">    println(<span class="string">"World!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="提取方法重构"><a href="#提取方法重构" class="headerlink" title="提取方法重构"></a>提取方法重构</h4><p>让我们提取代码块中的<code>launch{}</code>成一个独立的方法。当你把代码提取出来成一个新的方法，需要加上<code>suspend</code>修饰。这就是你的第一个挂起的方法。挂起方法和普通方法一样能够在协程中被使用，但是额外的特点是他们能够有序、使用其他挂起的方法，就像这个例子中的<code>delay{}</code>，在协程中挂起执行。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    launch &#123; doWorld() &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this is your first suspending function</span></span><br><span class="line">suspend <span class="function"><span class="keyword">fun</span> <span class="title">doWorld</span><span class="params">()</span></span> &#123;</span><br><span class="line">    delay(<span class="number">1000</span>L)</span><br><span class="line">    println(<span class="string">"World!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-05.kt" target="_blank" rel="noopener">查看完整代码</a><br>但是如果提取的方法中包含协程的被执行的创建者在当前的域中会怎么样？这种情况下仅仅在提取的方法上添加<code>suspend</code>修饰符是不够的。在<code>CoroutineScope</code>写一个扩展的方法是一个解决办法，但是它可能不总是合适的由于它没有清理的API。管用的方法是在一个包含目标方法的类中显式的有一个<code>CoroutineScope</code>域或者外部实现<code>CoroutineScope</code>的类有隐式的域。作为最后的手段，使用<a href="https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope.html" target="_blank" rel="noopener">CoroutineScope(coroutineContext)</a>，但是这种方法在结构上是不安全的，因为你在这个域中没有了执行方法的控制权。仅私有API能够使用这个创建者。</p>
-<h4 id="协程是轻量级">协程是轻量级<a class="post-anchor" href="#协程是轻量级"></a></h4><p>执行下面的代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    repeat(<span class="number">100</span>_000) &#123; <span class="comment">// 开启很多协程</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">1000</span>L)</span><br><span class="line">            print(<span class="string">"."</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="协程是轻量级"><a href="#协程是轻量级" class="headerlink" title="协程是轻量级"></a>协程是轻量级</h4><p>执行下面的代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line">    repeat(<span class="number">100</span>_000) &#123; <span class="comment">// 开启很多协程</span></span><br><span class="line">        launch &#123;</span><br><span class="line">            delay(<span class="number">1000</span>L)</span><br><span class="line">            print(<span class="string">"."</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-06.kt" target="_blank" rel="noopener">查看完整代码</a><br>开启十万个协程，一秒后分别打印一个点。然后尝试使用线程做这件事。会发生什么？（很有可能会产生内存不足的错误）。</p>
-<h4 id="全局的协程就像是后台守护线程">全局的协程就像是后台守护线程<a class="post-anchor" href="#全局的协程就像是后台守护线程"></a></h4><p>下面的代码开启了一个长时间运行的协程在全局域，它每一秒打印<code>I&#39;m sleeping</code>然后等待一些时间后从主方法中退出。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    GlobalScope.launch &#123;</span><br><span class="line">        repeat(<span class="number">1000</span>) &#123; i -&gt;</span><br><span class="line">            println(<span class="string">"I'm sleeping <span class="variable">$i</span> ..."</span>)</span><br><span class="line">            delay(<span class="number">500</span>L)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    delay(<span class="number">1300</span>L) <span class="comment">// 延时后退出</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="全局的协程就像是后台守护线程"><a href="#全局的协程就像是后台守护线程" class="headerlink" title="全局的协程就像是后台守护线程"></a>全局的协程就像是后台守护线程</h4><p>下面的代码开启了一个长时间运行的协程在全局域，它每一秒打印<code>I&#39;m sleeping</code>然后等待一些时间后从主方法中退出。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> = runBlocking &#123;</span><br><span class="line"><span class="comment">//sampleStart</span></span><br><span class="line">    GlobalScope.launch &#123;</span><br><span class="line">        repeat(<span class="number">1000</span>) &#123; i -&gt;</span><br><span class="line">            println(<span class="string">"I'm sleeping <span class="variable">$i</span> ..."</span>)</span><br><span class="line">            delay(<span class="number">500</span>L)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    delay(<span class="number">1300</span>L) <span class="comment">// 延时后退出</span></span><br><span class="line"><span class="comment">//sampleEnd    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/kotlinx-coroutines-core/jvm/test/guide/example-basic-07.kt" target="_blank" rel="noopener">查看完整代码</a><br>你运行后可以看到以下三行打印然后结束：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I&apos;m sleeping 0 ...</span><br><span class="line">I&apos;m sleeping 1 ...</span><br><span class="line">I&apos;m sleeping 2 ...</span><br></pre></td></tr></table></figure></p>
 <p>我们在全局域启动的活跃协程不会保持进程的存活。他们就像是守护线程。</p>
 
+    </div>
 
-  
-    <div class="post-reward">
-    <div id="reward-button">打赏</div>
-      <div id="qr">
-        <div class="wrap">
-            
-            <div class="bg-wrap">
-              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
-              支付宝
-            </div>
-            
-            
-            <div class="bg-wrap">
-                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
-              微信
-            </div>
-            
-        </div>
-      </div>
-    </div>
-  
-  <div class="post-guide">
-    <div class="item left">
-        
-    </div>
-    <div class="item right">
-        
-          <a href="/2020/01/07/文档翻译-Kotlin协程-简介/">文档翻译-Kotlin协程 简介</a>
-        
-    </div>
-  </div>
-
-  
-
-  <div class="post-copyright">
-    <div class="auth">
-      本文作者：<a href="/">李利锋</a>
-    </div>
-    <div class="link">
-      永久链接：<a href="//2020/01/07/文档翻译-Kotlin协程-基本用法/">//2020/01/07/文档翻译-Kotlin协程-基本用法/</a>
-    </div>
-    <div class="declare">
-      版权声明：本文首发于<a href="/">李利锋</a>的博客，转载请注明出处！
-    </div>
-  </div>
-
-  <div id="comment"></div>
-
-  
-  
-</article>
-        <footer>
-          <div class="copyright">
-            ©2020
-            <a href="">李利锋</a> Powered by <a href="https://hexo.io">Hexo</a><br/>
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-         <!--  
-          <div class="icp">
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-           -->
-        </footer>
-      </div>
-    </div>
-  </body>
-  
-</html>
-<script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"VnmkbK0E9LuxLYqLlol28pOY-gzGzoHsz\",\"API_KEY\":\"4oDJsdezLOaMCUlQq1K2E5sr\"},\"service_worker\":{\"open\":false}}")
-                </script> <script type="text/javascript">window.addEventListener('load', function() {
     
-    window.loadJs = function(d, m, a) {
-      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
-      var b = document.createElement('script')
-      b.defer = true
-      b.setAttribute('type', 'text/javascript')
-      b.setAttribute('charset', 'UTF-8')
-      b.setAttribute('async', 'true')
-      b.setAttribute('src', d)
-      m && b.setAttribute('data-main', '/scripts/app-built')
-      if (typeof a === 'function') {
-        if (window.attachEvent) {
-          b.onreadystatechange = function() {
-            var e = b.readyState
-            if (e === 'loaded' || e === 'complete') {
-              b.onreadystatechange = null
-              a()
-            }
-          }
-        } else {
-          b.onload = a
-        }
-      }
-      c.appendChild(b)
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/07/文档翻译-Kotlin协程-简介/" rel="prev" title="文档翻译-Kotlin协程 简介">
+      <i class="fa fa-chevron-left"></i> 文档翻译-Kotlin协程 简介
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80ODgzMi8yNTMyNg=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
-  })</script>  
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kotlin协程的基本用法"><span class="nav-number">1.</span> <span class="nav-text">Kotlin协程的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#你的第一个协同程序"><span class="nav-number">1.0.1.</span> <span class="nav-text">你的第一个协同程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#桥接阻塞和非阻塞世界"><span class="nav-number">1.0.2.</span> <span class="nav-text">桥接阻塞和非阻塞世界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#等待任务"><span class="nav-number">1.0.3.</span> <span class="nav-text">等待任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构并发"><span class="nav-number">1.0.4.</span> <span class="nav-text">结构并发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域的创建"><span class="nav-number">1.0.5.</span> <span class="nav-text">域的创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提取方法重构"><span class="nav-number">1.0.6.</span> <span class="nav-text">提取方法重构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协程是轻量级"><span class="nav-number">1.0.7.</span> <span class="nav-text">协程是轻量级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局的协程就像是后台守护线程"><span class="nav-number">1.0.8.</span> <span class="nav-text">全局的协程就像是后台守护线程</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leefeng"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Leefeng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leefeng</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>

@@ -1,745 +1,1028 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <script>
-  var _hmt = _hmt || []
-  ;(function() {
-    var hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
-    var s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-  })()
-</script> 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    
-    <title>
-          Leefeng Blog
-    </title>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style/style.css">
-  </head>
-  <body>
-    <canvas id='pagemap'></canvas>
-    
-    <div id="fixed-menu-wrap">
-      <span class="iconfont icon-sousuo search-box menu-reset"></span>
-      <span class="icon-toc menu-reset">Toc</span>
-      <span class="iconfont icon-arrowup menu-reset"></span>
-    </div>
-    <div id="fixed-menu">
-      <span class="iconfont icon-menu-"></span>
-    </div>
-    <div id="progress">
-      <div class="line"></div>
-    </div>
-    <div id="search-shade" class="animated hiddenSearch hide">
-      <div class="input-wrap">
-        <span class="iconfont icon-sousuo search-box"></span>
-        <input type="text" placeholder="Search" />
-        <span class="iconfont icon-close"></span>
-      </div>
-      <div class="search-result">
-        <div class="meta">
-          <span><b id="result-count">0</b> results found</span>
-          <img src="/images/logo.jpeg" />
-        </div>
-        <ul id="result-box"></ul>
-      </div>
-    </div>
-    <div id="menu-mask" class="animated hideMenuMask hide">
-      <span class="iconfont icon-close"></span>
-      <div class="nav">
-        
-        <a href="/" class="">
-          首页
-        </a>
-        
-        <a href="/archives" class="">
-          归档
-        </a>
-        
-        <a href="/categories" class="">
-          分类
-        </a>
-        
-        <a href="/tags" class="">
-          标签
-        </a>
-        
-        <a href="/friends" class="">
-          友链
-        </a>
-        
-        <a href="/about" class="">
-          关于
-        </a>
-        
-      </div>
-    </div>
-    <div id="header">
-      <div class="intro">
-        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">李利锋</div>
-      </div>
-      <div class="nav">
-        <span class="iconfont icon-menu menu-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-    </div>
-    <div id="side" class="animated bounceInLeft">
-      <div class="shrink">
-        <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        <span class="iconfont icon-menu toggle-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-      <div class="magnify">
-        <div class="about">
-          <div class="author">李利锋</div>
-          <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        <div class="nav">
-          
-          <a href="/" class="">
-            首页
-          </a>
-          
-          <a href="/archives" class="">
-            归档
-          </a>
-          
-          <a href="/categories" class="">
-            分类
-          </a>
-          
-          <a href="/tags" class="">
-            标签
-          </a>
-          
-          <a href="/friends" class="">
-            友链
-          </a>
-          
-          <a href="/about" class="">
-            关于
-          </a>
-          
-          <a href="#" class="search-box">
-            <span class="iconfont icon-sousuo"></span>
-          </a>
-        </div>
-        <div class="bottom">
-          <div class="follow">
-            
-            <a href="https://github.com/limxing" target="_block">
-              <span class="iconfont icon-github"></span>
-            </a>
-             
-            <a href="/atom.xml" target="_block">
-              <span class="iconfont icon-rss"></span>
-            </a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="container">
-      <div class="main animated bounceInRight delay-0.7s">
-        
-<div class="posts">
-  <ul>
-     
+<link rel="stylesheet" href="/css/main.css">
 
-    
 
-  <li class="item">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-      
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leefeng.me","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/11/19/Linux安装Python3/">Linux安装Python3</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/11/19</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Leefeng Blog">
+<meta property="og:url" content="http://leefeng.me/page/2/index.html">
+<meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leefeng Blog">
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Linux">Linux</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/11/19/Linux安装Python3/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/11/19/Linux安装Python3/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/11/19/Linux安装Python3/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+<link rel="canonical" href="http://leefeng.me/page/2/">
 
-    
 
-  <li class="item">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
 
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/11/19/Linux-命令/">Linux 命令</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/11/19</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Linux">Linux</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/11/19/Linux-命令/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/11/19/Linux-命令/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/11/19/Linux-命令/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/11/04/Just-Do-It/">Just Do It</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/11/04</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/11/04/Just-Do-It/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/11/04/Just-Do-It/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/11/04/Just-Do-It/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/08/11/Change-Coming-Soon/">Change Coming Soon</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/08/11</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/08/11/Change-Coming-Soon/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/08/11/Change-Coming-Soon/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/08/11/Change-Coming-Soon/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/07/29/Swift-ijkplayer/">Swift ijkplayer</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/07/29</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Swift">Swift</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/07/29/Swift-ijkplayer/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/07/29/Swift-ijkplayer/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/07/29/Swift-ijkplayer/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/06/30/再见，世景/">再见，世景</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/06/30</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/life">life</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/06/30/再见，世景/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/06/30/再见，世景/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/06/30/再见，世景/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/06/20/技术习惯/">技术习惯</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/06/20</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/06/20/技术习惯/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/06/20/技术习惯/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/06/20/技术习惯/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/05/15/工作总结/">工作总结</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/05/15</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/05/15/工作总结/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/05/15/工作总结/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/05/15/工作总结/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/05/05/defaultConfig中ndk的使用/">defaultConfig中ndk的使用</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/05/05</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Android">Android</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/05/05/defaultConfig中ndk的使用/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/05/05/defaultConfig中ndk的使用/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/05/05/defaultConfig中ndk的使用/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
-
-    
-
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/01/04/用INTEIILj-idea-创建Android-studio插件/">用INTEIILj idea 创建Android studio插件</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/01/04</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/能够一键导入代码的插件开发">能够一键导入代码的插件开发</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/01/04/用INTEIILj-idea-创建Android-studio插件/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/01/04/用INTEIILj-idea-创建Android-studio插件/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/01/04/用INTEIILj-idea-创建Android-studio插件/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-    
-  </ul>
-</div>
-
-<div class="paginator">
-  <a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a>
-</div>
-
-        <footer>
-          <div class="copyright">
-            ©2020
-            <a href="">李利锋</a> Powered by <a href="https://hexo.io">Hexo</a><br/>
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-         <!--  
-          <div class="icp">
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-           -->
-        </footer>
-      </div>
-    </div>
-  </body>
+  <title>Leefeng Blog</title>
   
-</html>
-<script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"VnmkbK0E9LuxLYqLlol28pOY-gzGzoHsz\",\"API_KEY\":\"4oDJsdezLOaMCUlQq1K2E5sr\"},\"service_worker\":{\"open\":false}}")
-                </script> <script type="text/javascript">window.addEventListener('load', function() {
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leefeng Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
     
-    window.loadJs = function(d, m, a) {
-      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
-      var b = document.createElement('script')
-      b.defer = true
-      b.setAttribute('type', 'text/javascript')
-      b.setAttribute('charset', 'UTF-8')
-      b.setAttribute('async', 'true')
-      b.setAttribute('src', d)
-      m && b.setAttribute('data-main', '/scripts/app-built')
-      if (typeof a === 'function') {
-        if (window.attachEvent) {
-          b.onreadystatechange = function() {
-            var e = b.readyState
-            if (e === 'loaded' || e === 'complete') {
-              b.onreadystatechange = null
-              a()
-            }
-          }
-        } else {
-          b.onload = a
-        }
-      }
-      c.appendChild(b)
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/11/19/Linux安装Python3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/19/Linux安装Python3/" class="post-title-link" itemprop="url">Linux安装Python3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-11-19 16:25:01" itemprop="dateCreated datePublished" datetime="2017-11-19T16:25:01+08:00">2017-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-24 15:13:38" itemprop="dateModified" datetime="2018-08-24T15:13:38+08:00">2018-08-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一、首先，官网下载python3的所需版本。</p>
+<p>wget <a href="https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz</a></p>
+<p>想下载到那个文件夹下就先进入到那个文件夹下——cd /home/download</p>
+<p>二、然后，解压缩文件》</p>
+<p>tar -xvf Python-3.6.0.tgz</p>
+<p>三、创建安装文件的路径。（可以不指定目录）</p>
+<p>mkdir /usr/local/python3</p>
+<p>四、编译。（可以直接./configure，那样的话python3就可以与系统区分了）</p>
+<p>./configure –prefix=/usr/local/python3</p>
+<p>五、安装。(失败没有安装gcc):#yum install gcc</p>
+<p>1、make</p>
+<p>2、make install</p>
+<p>3、完毕<br>（第四部直接./configure不需要软连接）以下步骤不需要操作了</p>
+<p>六、创建新版本的软连接。</p>
+<p>1、修改旧版本</p>
+<p>mv /usr/bin/python /usr/bin/python_bak</p>
+<p>2、创建新的软连接</p>
+<p>ln -s /usr/local/python3/bin/python3 /usr/bin/python</p>
+<p>3、检查python的版本</p>
+<p>python -V</p>
+<p>python-3.6.0</p>
+<p>软连接创建成功</p>
+<p>七、配置成功后，pip3用不了，需进一步配置。</p>
+<p>1、PATH=$PATH:$HOME/bin:</p>
+<p>2、PATH=$PATH:$HOME/bin:/usr/local/python3/bin</p>
+<p>3、完成</p>
+<p>这时pip3就可以使用了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/11/19/Linux-命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/19/Linux-命令/" class="post-title-link" itemprop="url">Linux 命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-11-19 16:18:56" itemprop="dateCreated datePublished" datetime="2017-11-19T16:18:56+08:00">2017-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-24 15:17:52" itemprop="dateModified" datetime="2018-08-24T15:17:52+08:00">2018-08-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.查找被占用的端口<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">netstat -tln</span><br><span class="line">netstat -tln | grep 8083</span><br></pre></td></tr></table></figure></p>
+<pre><code>netstat -tln 查看端口使用情况，而netstat -tln | grep 8083 则是只查看端口8083的使用情况
+</code></pre><p>2.查看端口属于哪个程序？端口被哪个进程占用<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i :8083</span><br></pre></td></tr></table></figure></p>
+<p>3.杀掉占用端口的进程<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 进程id</span><br></pre></td></tr></table></figure></p>
+<p>4、数据库备份<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果把文件从远程机器拷贝到本机当前目录用这个命令： </span><br><span class="line">    scp root@192.168.0.2:/home/a.tar.tz </span><br><span class="line">拷贝远程机器的整个目录下的文件</span><br><span class="line">   scp -r root@192.168.0.2：/home/* ./</span><br></pre></td></tr></table></figure></p>
+<p>5、添加全局环境变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/paths</span><br><span class="line"></span><br><span class="line">/usr/local/mysql/bin</span><br></pre></td></tr></table></figure></p>
+<p>6、数据库创建database<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE `mydb` CHARACTER SET utf8 COLLATE utf8_general_ci;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/11/04/Just-Do-It/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/04/Just-Do-It/" class="post-title-link" itemprop="url">Just Do It</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-11-04 17:22:29 / 修改时间：18:43:59" itemprop="dateCreated datePublished" datetime="2017-11-04T17:22:29+08:00">2017-11-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>最近的一段工作中，进入了大量学习的阶段，压力并不是外在的，而是自己强加给自己的，需要适度的适应。
+
+&lt;a&gt;此处删了100行&lt;/a&gt;
+Python，Kotlin,Swift,Java...
+
+Just Do It
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/08/11/Change-Coming-Soon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/08/11/Change-Coming-Soon/" class="post-title-link" itemprop="url">Change Coming Soon</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-08-11 13:47:30" itemprop="dateCreated datePublished" datetime="2017-08-11T13:47:30+08:00">2017-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-08-14 09:37:15" itemprop="dateModified" datetime="2017-08-14T09:37:15+08:00">2017-08-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/07/29/Swift-ijkplayer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/29/Swift-ijkplayer/" class="post-title-link" itemprop="url">Swift ijkplayer</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-07-29 18:00:21 / 修改时间：18:07:21" itemprop="dateCreated datePublished" datetime="2017-07-29T18:00:21+08:00">2017-07-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Swift-IJKPlayer"><a href="#Swift-IJKPlayer" class="headerlink" title="Swift-IJKPlayer"></a>Swift-IJKPlayer</h1><p>IJKPlayer的封装视频播放器封装，Swift编写。仿今日头条视频播放器。</p>
+<p><img src="http://leefengme-1251517267.costj.myqcloud.com/screen1.jpg"><img src="http://leefengme-1251517267.costj.myqcloud.com/screen2.jpg"><img src="http://leefengme-1251517267.costj.myqcloud.com/screen3.jpg"><img src="http://leefengme-1251517267.costj.myqcloud.com/screen4.jpg"><img src="http://leefengme-1251517267.costj.myqcloud.com/screen5.jpg"></p>
+<h2 id="How-To-Use"><a href="#How-To-Use" class="headerlink" title="How To Use"></a>How To Use</h2><p>1、添加依赖库<br><img src="http://leefengme-1251517267.costj.myqcloud.com/screen10.jpg"></p>
+<p>需要下载的framework：</p>
+<p>真机（一般用于上线）：链接:<a href="http://pan.baidu.com/s/1dF2Bx3j" target="_blank" rel="noopener">http://pan.baidu.com/s/1dF2Bx3j</a>  密码:t56g</p>
+<p>模拟器+真机（一般用于测试）：链接:<a href="http://pan.baidu.com/s/1gf5VjUz" target="_blank" rel="noopener">http://pan.baidu.com/s/1gf5VjUz</a>  密码:w8fh</p>
+<p>2、把项目中 VideoPlayer 文件夹拖进自己的项目</p>
+<p>3、有一个桥接文件，如果自己已经配置了则添加：#import “Slider.h” ，没有则使用VideoPlayer文件夹中的 Swift-IJKPlayer-Bridging-Header.h 文件作为桥接文件。</p>
+<p>4、基本设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//以下必须配置</span><br><span class="line">//得到控制器</span><br><span class="line">playerController = PlayerViewController()</span><br><span class="line">if let playerView = playerController?.view &#123;</span><br><span class="line">//初始化播放界面的大小</span><br><span class="line">playerController?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,height: height)</span><br><span class="line">//添加控制器</span><br><span class="line">addChildViewController(playerController!)</span><br><span class="line">//添加播放界面</span><br><span class="line">view.addSubview(playerView)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//设置路径后立即播放,默认true</span><br><span class="line">playerController?.isAutoPlay = false</span><br><span class="line">//设置路径</span><br><span class="line">playerController?.url = &quot;http://baobab.wandoujia.com/api/v1/playUrl?vid=2616&amp;editionType=normal&quot;</span><br><span class="line">//以下选配</span><br><span class="line">//设置封面</span><br><span class="line">playerController?.coverImageView()?.image = UIImage(named: &quot;cover&quot;)</span><br><span class="line">playerController?.playerTitle = &quot;leefeng.me&quot;</span><br><span class="line">//协议</span><br><span class="line">playerController?.playerProtocol = self</span><br></pre></td></tr></table></figure>
+<p>5、协议方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">internal func playerStartComplete() &#123;</span><br><span class="line">print(&quot;playerStartComplete 播放完成&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">internal func playerStartPause() &#123;</span><br><span class="line">print(&quot;playerStartPause 播放暂停&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">internal func playerStartPlay() &#123;</span><br><span class="line">print(&quot;playerStartPlay 开始播放&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、其他API</p>
+<p>play()播放</p>
+<p>pause() 暂停</p>
+<p>shutDown()退出</p>
+<p>基库： <a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">https://github.com/Bilibili/ijkplayer</a></p>
+<h1 id="License"><a href="#License" class="headerlink" title="License"></a>License</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Copyright  2017 Limxing</span><br><span class="line"></span><br><span class="line">Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span><br><span class="line">you may not use this file except in compliance with the License.</span><br><span class="line">You may obtain a copy of the License at</span><br><span class="line"></span><br><span class="line">http://www.apache.org/licenses/LICENSE-2.0</span><br><span class="line"></span><br><span class="line">Unless required by applicable law or agreed to in writing, software</span><br><span class="line">distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span><br><span class="line">WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><br><span class="line">See the License for the specific language governing permissions and</span><br><span class="line">limitations under the License.</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/06/30/再见，世景/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/30/再见，世景/" class="post-title-link" itemprop="url">再见，世景</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-06-30 10:58:51 / 修改时间：11:18:13" itemprop="dateCreated datePublished" datetime="2017-06-30T10:58:51+08:00">2017-06-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>两年的时间，在这里成长，今天是在世景的最后一天，心中难掩不舍，虽然是一个集团大家庭，没有小公司的浓厚氛围，我想我是一个比较理性带有感性的人。两年，是一个不长不短的日子，感谢公司给与我这个工作机会。</p>
+<p>在世景的两年里，我所骄傲的是我的Android能力的提高，世景给了我富足的时间让我学习、自我提高，在社区上分享了自己的轮子，得到了不少行内的认同和鼓励，学习了IOS开发，让我对移动开发的认识进一步的提高。</p>
+<p>祝福世景</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/06/20/技术习惯/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/20/技术习惯/" class="post-title-link" itemprop="url">技术习惯</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-06-20 22:40:19 / 修改时间：22:42:01" itemprop="dateCreated datePublished" datetime="2017-06-20T22:40:19+08:00">2017-06-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>每周三晚的技术分享和每周末每人一篇的技术博客
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/05/15/工作总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/15/工作总结/" class="post-title-link" itemprop="url">工作总结</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-05-15 10:25:23" itemprop="dateCreated datePublished" datetime="2017-05-15T10:25:23+08:00">2017-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-06-05 09:05:18" itemprop="dateModified" datetime="2017-06-05T09:05:18+08:00">2017-06-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="产品层面"><a href="#产品层面" class="headerlink" title="产品层面"></a>产品层面</h4><ol>
+<li>特效的运用要考虑用户的心理趋向和感受，炫的效果很酷，可能会让人产生某种心理导向。</li>
+<li>特效的运用要考虑将来功能的扩展，一味的渲染也不一定很好，可能会为后续功能带来难度。</li>
+<li>一个产品能帮助用户解决至少一个问题，那解决问题会有主流程，引导要强化，比如按钮大，颜色显眼，字体稍大，放置位置移动少。</li>
+<li>产品不能为照顾运营而偏离主题，或者严重影响美观和主要功能，聚划算妹纸儿们说广告banner曝光度不够，设计变为由轮转变为平铺，但是广告良莠不齐，视觉效果不好，并且主页list仅能显示1、2个商品，影响了主题功能。</li>
+</ol>
+<h4 id="代码方面"><a href="#代码方面" class="headerlink" title="代码方面"></a>代码方面</h4><p>代码需要审核，程序的代码需要共同学习，完善代码</p>
+<h4 id="项目方面"><a href="#项目方面" class="headerlink" title="项目方面"></a>项目方面</h4><ol>
+<li>计划进度，前紧后慢，提前实施。</li>
+<li>不拘泥与细节，不干扰整体进度。</li>
+<li>个人有担当，能者多劳，最大程度保证进度。</li>
+<li>有问题不能包着，有些项目问题不是一个人的问题，不是一人能担得住的。</li>
+<li>宝不能压在责任无关人身上，别人的资源、承诺要充分利用，但是最终还是靠自己突破。</li>
+<li>干一样活的人放在一起，沟通迅速，快速解决问题。</li>
+<li>早上碰一下，清晰任务；晚上碰一下一下，检查进度。</li>
+<li>bug先把基础性、功能性问题解决，适配、显示、兼容问题靠后。</li>
+<li>不同网络机型下的跑测，不同网络环境下的测试提前入测。</li>
+<li>写完一天代码，尽量坚持用findbugs查找潜在危险。</li>
+<li>同一版本多次发布，或多个版本发布后，记录下的crash问题如果没有版本属性就很难定位,混淆map也对应不上。发板后立即封代码，保证bug日志中的bug发生行数和源码一致。</li>
+<li>开发新功能、打包、发布过程规范化，规范减少问题发生概率。</li>
+<li>日志规范：<pre><code>1). 冗长、惯例日志打到Verbose级别，例如网络返回信息，经常携带大量的信息，会严                                    重干扰视觉；
+2). 细粒度信息打到Debug级别，对出问题时调试有帮助作用，比如某个参数的值，我并    不总想知道是多少，但某些情况我就得看一下；
+3). 粗粒度级别信息打到Info级别，比如应用业务主逻辑，运行中重要的过程或关键点；
+4). 会出现 潜在错误的信息 或者 可以接受的错误 打到Warn级别，比如某个地方我想警告一下说这里是有问题的，或者可能引出其他什么问题；
+5). 错误或者致命信息，理应放到Error级别，血红的颜色很显眼~
+</code></pre></li>
+</ol>
+<h4 id="管理方面"><a href="#管理方面" class="headerlink" title="管理方面"></a>管理方面</h4><ol>
+<li>会议总结问题，就一定要着手解决，不解决会议时间就白浪费了。</li>
+<li>对于人的期望，快速的给予回馈，帮助其向希望的方向发展。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/05/05/defaultConfig中ndk的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/05/defaultConfig中ndk的使用/" class="post-title-link" itemprop="url">defaultConfig中ndk的使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-05-05 09:31:01 / 修改时间：09:40:24" itemprop="dateCreated datePublished" datetime="2017-05-05T09:31:01+08:00">2017-05-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">android&#123;</span><br><span class="line">    ...</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">    ...</span><br><span class="line">        ndk &#123;</span><br><span class="line">            abiFilters &apos;armeabi&apos;, &apos;x86&apos;//, &apos;armeabi-v7a&apos;, &apos;x86_64&apos;, &apos;arm64-v8a&apos;, mips, mips64...加入需要生成的文件夹</span><br><span class="line">        &#125;</span><br><span class="line">    ｝</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果不添加此处ndk的选项描述，那么androidstudio默认打包会产生所有的平台so文件包，如果没有相应的so文件那么就会导致程序报错：找不到so文件在某个目录下。因此我们需要根据现有的什么类型的so文件进行配置ndk。</p>
+<ul>
+<li><strong>通常我们都会有armeabi和x86平台的so文件,这两个都是为32位的平台提供。有这两个就满足的几乎全部的机型了</strong> </li>
+<li><strong>armeabi-v7a,arm64-v8a都是arm平台的更优化的平台，使用这个so文件效率更高，如果有这种的so文件那么就添加响应的配置。</strong></li>
+<li><strong>手机优先选择平台更好的处理平台的so文件，因此没有高版本的so文件就不要添加配置。</strong></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/01/04/用INTEIILj-idea-创建Android-studio插件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/01/04/用INTEIILj-idea-创建Android-studio插件/" class="post-title-link" itemprop="url">用INTEIILj idea 创建Android studio插件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-01-04 17:25:13 / 修改时间：17:28:22" itemprop="dateCreated datePublished" datetime="2017-01-04T17:25:13+08:00">2017-01-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>GitHub项目地址：<a href="https://github.com/limxing/MVPHelper" target="_blank" rel="noopener">https://github.com/limxing/MVPHelper</a></p>
+<p>一键创建 Activity Presenter View 以及BaseActivity BasePresenter ProjectApplication</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
-  })</script>  
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leefeng"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Leefeng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leefeng</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+</body>
+</html>

@@ -1,305 +1,367 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <script>
-  var _hmt = _hmt || []
-  ;(function() {
-    var hm = document.createElement('script')
-    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
-    var s = document.getElementsByTagName('script')[0]
-    s.parentNode.insertBefore(hm, s)
-  })()
-</script> 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    
-    <title>
-          Leefeng Blog
-    </title>
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/style/style.css">
-  </head>
-  <body>
-    <canvas id='pagemap'></canvas>
-    
-    <div id="fixed-menu-wrap">
-      <span class="iconfont icon-sousuo search-box menu-reset"></span>
-      <span class="icon-toc menu-reset">Toc</span>
-      <span class="iconfont icon-arrowup menu-reset"></span>
-    </div>
-    <div id="fixed-menu">
-      <span class="iconfont icon-menu-"></span>
-    </div>
-    <div id="progress">
-      <div class="line"></div>
-    </div>
-    <div id="search-shade" class="animated hiddenSearch hide">
-      <div class="input-wrap">
-        <span class="iconfont icon-sousuo search-box"></span>
-        <input type="text" placeholder="Search" />
-        <span class="iconfont icon-close"></span>
-      </div>
-      <div class="search-result">
-        <div class="meta">
-          <span><b id="result-count">0</b> results found</span>
-          <img src="/images/logo.jpeg" />
-        </div>
-        <ul id="result-box"></ul>
-      </div>
-    </div>
-    <div id="menu-mask" class="animated hideMenuMask hide">
-      <span class="iconfont icon-close"></span>
-      <div class="nav">
-        
-        <a href="/" class="current">
-          首页
-        </a>
-        
-        <a href="/archives" class="">
-          归档
-        </a>
-        
-        <a href="/categories" class="">
-          分类
-        </a>
-        
-        <a href="/tags" class="">
-          标签
-        </a>
-        
-        <a href="/friends" class="">
-          友链
-        </a>
-        
-        <a href="/about" class="">
-          关于
-        </a>
-        
-      </div>
-    </div>
-    <div id="header">
-      <div class="intro">
-        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">李利锋</div>
-      </div>
-      <div class="nav">
-        <span class="iconfont icon-menu menu-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-    </div>
-    <div id="side" class="animated bounceInLeft">
-      <div class="shrink">
-        <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        <span class="iconfont icon-menu toggle-icon"></span>
-        <a href="#" class="search-box">
-          <span class="iconfont icon-sousuo"></span>
-        </a>
-      </div>
-      <div class="magnify">
-        <div class="about">
-          <div class="author">李利锋</div>
-          <a href="/" class="logo" style="background-image: url('/images/logo.png')"></a>
-        </div>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        <div class="nav">
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"leefeng.me","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Leefeng Blog">
+<meta property="og:url" content="http://leefeng.me/index.html">
+<meta property="og:site_name" content="Leefeng Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leefeng Blog">
+
+<link rel="canonical" href="http://leefeng.me/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>Leefeng Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Leefeng Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
           
-          <a href="/" class="current">
-            首页
-          </a>
-          
-          <a href="/archives" class="">
-            归档
-          </a>
-          
-          <a href="/categories" class="">
-            分类
-          </a>
-          
-          <a href="/tags" class="">
-            标签
-          </a>
-          
-          <a href="/friends" class="">
-            友链
-          </a>
-          
-          <a href="/about" class="">
-            关于
-          </a>
-          
-          <a href="#" class="search-box">
-            <span class="iconfont icon-sousuo"></span>
-          </a>
-        </div>
-        <div class="bottom">
-          <div class="follow">
+
+          <div class="content">
             
-            <a href="https://github.com/limxing" target="_block">
-              <span class="iconfont icon-github"></span>
-            </a>
-             
-            <a href="/atom.xml" target="_block">
-              <span class="iconfont icon-rss"></span>
-            </a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="container">
-      <div class="main animated bounceInRight delay-0.7s">
+
+  <div class="posts-expand">
         
-<div class="posts">
-  <ul>
-     
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/01/07/文档翻译-Kotlin协程-基本用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/" class="post-title-link" itemprop="url">文档翻译-Kotlin协程 基本用法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 17:19:10" itemprop="dateCreated datePublished" datetime="2020-01-07T17:19:10+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:45:04" itemprop="dateModified" datetime="2020-02-27T15:45:04+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
 
     
-
-  <li class="item">
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">文档翻译-Kotlin协程 基本用法</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>20/01/07</span>
-        </div>
-        
-        <div class="excerpt post-wrap"><blockquote>
+          <blockquote>
 <p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
 </blockquote>
 <h2 id="Kotlin协程的基本用法"><a href="#Kotlin协程的基本用法" class="headerlink" title="Kotlin协程的基本用法"></a>Kotlin协程的基本用法</h2><p>这一篇我们学习协同程序的基本概念。<a href="https://github.com/Kotlin/kotlinx.coroutines/blob/99b78e418796412ee739ff799af39eaa420a1a92/docs/basics.md" target="_blank" rel="noopener">查看原文</a></p>
 <h4 id="你的第一个协同程序"><a href="#你的第一个协同程序" class="headerlink" title="你的第一个协同程序"></a>你的第一个协同程序</h4><p>复制下面的代码到你的程序中并运行：</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kotlinx.coroutines.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    GlobalScope.launch &#123; <span class="comment">// 启动一个新的后台协同程序，并继续</span></span><br><span class="line">        delay(<span class="number">1000</span>L) <span class="comment">// 非阻塞的延时1秒(默认时间单位是毫秒)</span></span><br><span class="line">        println(<span class="string">"World!"</span>) <span class="comment">// 延时结束打印</span></span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">"Hello,"</span>) <span class="comment">// 协同程序结束延时后，主线程继续执行</span></span><br><span class="line">    Thread.sleep(<span class="number">2000</span>L) <span class="comment">// 阻塞主线程2秒用来保持虚拟机运行中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-basic-01.kt" target="_blank" rel="noopener">查看全部代码</a></p>
-<p>你将看到如下结果：<br></div>
+<p>你将看到如下结果：<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/文档翻译-Kotlin协程-基本用法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Kotlin">Kotlin</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2020/01/07/文档翻译-Kotlin协程-基本用法/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2020/01/07/文档翻译-Kotlin协程-基本用法/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2020/01/07/文档翻译-Kotlin协程-基本用法/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+      
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2020/01/07/文档翻译-Kotlin协程-简介/">文档翻译-Kotlin协程 简介</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>20/01/07</span>
-        </div>
         
-        <div class="excerpt post-wrap"><blockquote>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/01/07/文档翻译-Kotlin协程-简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/07/文档翻译-Kotlin协程-简介/" class="post-title-link" itemprop="url">文档翻译-Kotlin协程 简介</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 11:47:57" itemprop="dateCreated datePublished" datetime="2020-01-07T11:47:57+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:47:10" itemprop="dateModified" datetime="2020-02-27T15:47:10+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>该文档由作者自己的理解翻译，若有出入，敬请谅解。</p>
 </blockquote>
 <h2 id="Kotlin协程简介"><a href="#Kotlin协程简介" class="headerlink" title="Kotlin协程简介"></a>Kotlin协程简介</h2><p>Kotlin作为一种语言，仅仅需要提供最小等级API的标准库用于其他不同库去使用的协同程序。类似的功能（协程）不同于其他的一些语言，async 和 await不是Kotlin的关键字，也不是标准库的一部分。而且，Kotlin的挂起方法的概念是一种对于异步的操作比期望的更加安全和发生更少的错误。</p>
 <p>Kotlin的协同程序是由JetBrains为协同程序而开发的功能丰富的库。它包括一些高水平可协同的操作符，例如，launch,async 等等。</p>
 <p>本文档主要包含核心工功能的一系列kotlin协程的举例，被分成若干个部分进行阐述。</p>
-<p>为了更好的使用本文档中协程的举例，你需要先添加kotlin协程核心库依赖，可参考项目中的README。<br></div>
+<p>为了更好的使用本文档中协程的举例，你需要先添加kotlin协程核心库依赖，可参考项目中的README。<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/07/文档翻译-Kotlin协程-简介/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/kotlin">kotlin</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2020/01/07/文档翻译-Kotlin协程-简介/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2020/01/07/文档翻译-Kotlin协程-简介/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2020/01/07/文档翻译-Kotlin协程-简介/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+      
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2019/02/02/iphone6的切图如何适配Android/">iphone6的切图如何适配Android?</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>19/02/02</span>
-        </div>
         
-        <div class="excerpt post-wrap"><p>Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？</p>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2019/02/02/iphone6的切图如何适配Android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/02/02/iphone6的切图如何适配Android/" class="post-title-link" itemprop="url">iphone6的切图如何适配Android?</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-02 13:40:01" itemprop="dateCreated datePublished" datetime="2019-02-02T13:40:01+08:00">2019-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:46:21" itemprop="dateModified" datetime="2020-02-27T15:46:21+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Android 屏幕适配是Android工程师最最头疼的一件事情了。最近公司的项目中就需要引入屏幕适配的工作，但是，UI及尺寸是基于iPhone6的，那么如何做到显示效果上能够更加的接近设计图呢？</p>
 <h5 id="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"><a href="#下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍" class="headerlink" title="下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍"></a>下面我将在最小限度的不更改源代码的情况下，使用屏幕分辨率限定符的形式进行Android屏幕的适配方式的介绍</h5><h4 id="一、-将iPhone6的尺寸与Android-sw360dp-进行换算"><a href="#一、-将iPhone6的尺寸与Android-sw360dp-进行换算" class="headerlink" title="一、 将iPhone6的尺寸与Android sw360dp 进行换算"></a>一、 将iPhone6的尺寸与Android sw360dp 进行换算</h4><p>通常我们需要UI设计基于1920*1080的设计稿，宽度为360dp，将切图的三倍图放置xxhdpi，如果标注是px，那么我们自动除以3作为dp，如果直接是dp那我们直接拿来使用。</p>
 <table>
 <thead>
@@ -331,483 +393,670 @@
 <td style="text-align:center">432dp</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/02/02/iphone6的切图如何适配Android/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Android">Android</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2019/02/02/iphone6的切图如何适配Android/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2019/02/02/iphone6的切图如何适配Android/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2019/02/02/iphone6的切图如何适配Android/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+      
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2019/01/09/My-2018-And-Coming-2019/">My 2018 And Coming 2019</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>19/01/09</span>
-        </div>
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2019/01/09/My-2018-And-Coming-2019/">
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/life">life</a>
-                 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/09/My-2018-And-Coming-2019/" class="post-title-link" itemprop="url">My 2018 And Coming 2019</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
               </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2019/01/09/My-2018-And-Coming-2019/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2019/01/09/My-2018-And-Coming-2019/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2019/01/09/My-2018-And-Coming-2019/">Read More</a>
-          </div>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-01-09 14:24:35" itemprop="dateCreated datePublished" datetime="2019-01-09T14:24:35+08:00">2019-01-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-01-14 11:25:17" itemprop="dateModified" datetime="2019-01-14T11:25:17+08:00">2019-01-14</time>
+              </span>
+
+          
+
         </div>
-      </div>
-    </li>
-     
+      </header>
 
     
-
-  <li class="item">
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+          <pre><code>今天是2019年1月9号，新的一年已经到来，今天才腾出时间来总结已经过去的2018。
+</code></pre><p>2018.2.23 结婚啦。<br>2018.9.17 换新工作啦，搜狗大佬们的创业公司。<br>2018.10.28 期待的猪宝宝。</p>
+<p>2018<br>在美灿，完成IOS的独立开发及上传AppStore实践，完成Python的初步学习，基于python独立开发后台小项目，Android方面全面转向Kotlin语言的开发，So fast，I like it.<br>在葡萄智学，火力全开投入到新项目的开发上。经历了三个星期的开发，第一版项目内部上线，在经过一个月的维护后，官网各大应用商店上线，又一个月重构了一部分java代码专向kotlin，保持代码的稳定统一，终于在年末项目稳定下来，各大应用商店上线。接下来的2019年，工作中心偏向程序内部功能的编写及调整。</p>
+<p>2019<br>今年应该是一个平淡而又幸福的一年。<br>我将持续在Android领域接触更多的知识，把新技术运用到公司的项目中来。<br>迎接小baby。<br>完成北大的答辩和课程。</p>
 
       
-      <div class="describe">
-        <div class="title">
-          <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">Android 安装界面启动APP后台切前台重复创建</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>18/11/27</span>
-        </div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Android">Android</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2018/10/22/Kotlin的一些扩展函数/">Kotlin的一些扩展函数</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>18/10/22</span>
-        </div>
         
-        <div class="excerpt post-wrap"><h1 id="Kotlin的一些扩展函数"><a href="#Kotlin的一些扩展函数" class="headerlink" title="Kotlin的一些扩展函数"></a>Kotlin的一些扩展函数</h1><p>标签（空格分隔）： Android Kotlin</p>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/11/27/Android-安装界面启动APP后台切前台重复创建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/27/Android-安装界面启动APP后台切前台重复创建/" class="post-title-link" itemprop="url">Android 安装界面启动APP后台切前台重复创建</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-11-27 16:28:32 / 修改时间：16:36:10" itemprop="dateCreated datePublished" datetime="2018-11-27T16:28:32+08:00">2018-11-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在安装界面点击打开，讲app切到后台再切回前台后，重新进入欢迎页。</p>
+<p>在欢迎页或启动页onCreate后添加判断</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT != <span class="number">0</span>) &#123;</span><br><span class="line">    finish()</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="StandardKt-class-通用函数"><a href="#StandardKt-class-通用函数" class="headerlink" title="StandardKt.class 通用函数"></a>StandardKt.class 通用函数</h2><h3 id="repeat-Int"><a href="#repeat-Int" class="headerlink" title="repeat(Int){}"></a>repeat(Int){}</h3><p>代码块执行多少次<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat(<span class="number">2</span>)&#123;</span><br><span class="line">println(<span class="string">"This is <span class="variable">$it</span> time"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+<p>李利锋<a href="https://github.com/limxing" target="_blank" rel="noopener">@limxing</a><br>2018-11-27</p>
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Kotlin">Kotlin</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2018/10/22/Kotlin的一些扩展函数/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2018/10/22/Kotlin的一些扩展函数/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2018/10/22/Kotlin的一些扩展函数/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+      
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2018/08/24/Android-三个SDKVersion的含义/">Android 三个SDKVersion的含义</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>18/08/24</span>
-        </div>
         
-        <div class="excerpt post-wrap"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 27</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;online.shuzhi.app&quot;</span><br><span class="line">        minSdkVersion 15</span><br><span class="line">        targetSdkVersion 27</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-        
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/10/22/Kotlin的一些扩展函数/">
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/Android">Android</a>
-                 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/10/22/Kotlin的一些扩展函数/" class="post-title-link" itemprop="url">Kotlin的一些扩展函数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
               </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2018/08/24/Android-三个SDKVersion的含义/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2018/08/24/Android-三个SDKVersion的含义/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2018/08/24/Android-三个SDKVersion的含义/">Read More</a>
-          </div>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-10-22 10:01:18" itemprop="dateCreated datePublished" datetime="2018-10-22T10:01:18+08:00">2018-10-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 15:48:58" itemprop="dateModified" datetime="2020-02-27T15:48:58+08:00">2020-02-27</time>
+              </span>
+
+          
+
         </div>
-      </div>
-    </li>
-     
+      </header>
 
     
-
-  <li class="item">
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/">IOS移动开发:数据库orm增删改查</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>18/02/05</span>
-        </div>
+          <h1 id="Kotlin的一些扩展函数"><a href="#Kotlin的一些扩展函数" class="headerlink" title="Kotlin的一些扩展函数"></a>Kotlin的一些扩展函数</h1><p>标签（空格分隔）： Android Kotlin</p>
+<hr>
+<h2 id="StandardKt-class-通用函数"><a href="#StandardKt-class-通用函数" class="headerlink" title="StandardKt.class 通用函数"></a>StandardKt.class 通用函数</h2><h3 id="repeat-Int"><a href="#repeat-Int" class="headerlink" title="repeat(Int){}"></a>repeat(Int){}</h3><p>代码块执行多少次<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat(<span class="number">2</span>)&#123;</span><br><span class="line">println(<span class="string">"This is <span class="variable">$it</span> time"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/10/22/Kotlin的一些扩展函数/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                 
-                <a href="/tags/ios">ios</a>
-                 
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2018/02/05/IOS移动开发-数据库orm增删改查/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-     
+      
+    </div>
 
     
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-  <li class="item">
-
-      
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/11/21/Mysql数据库的迁移/">Mysql数据库的迁移</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/11/21</span>
-        </div>
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/08/24/Android-三个SDKVersion的含义/">
 
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/24/Android-三个SDKVersion的含义/" class="post-title-link" itemprop="url">Android 三个SDKVersion的含义</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
               </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/11/21/Mysql数据库的迁移/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/11/21/Mysql数据库的迁移/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/11/21/Mysql数据库的迁移/">Read More</a>
-          </div>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-24 10:27:14" itemprop="dateCreated datePublished" datetime="2018-08-24T10:27:14+08:00">2018-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 16:03:01" itemprop="dateModified" datetime="2020-02-27T16:03:01+08:00">2020-02-27</time>
+              </span>
+
+          
+
         </div>
-      </div>
-    </li>
-     
+      </header>
 
     
-
-  <li class="item">
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-      
-      <div class="describe">
-        <div class="title">
-          <a href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">Centos+python3+nginx+uwsgi+flask</a>
-        </div>
-        <div class="date">
-          <span class="iconfont icon-time-circle"></span>
-          <span>17/11/19</span>
-        </div>
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 27</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;online.shuzhi.app&quot;</span><br><span class="line">        minSdkVersion 15</span><br><span class="line">        targetSdkVersion 27</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/24/Android-三个SDKVersion的含义/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="excerpt post-wrap"><p>1、下载Python3</p>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/02/05/IOS移动开发-数据库orm增删改查/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="post-title-link" itemprop="url">IOS移动开发:数据库orm增删改查</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-02-05 15:01:26 / 修改时间：15:02:46" itemprop="dateCreated datePublished" datetime="2018-02-05T15:01:26+08:00">2018-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基于SQLite.swift的数据库orm增删改查 github:<a src="https://github.com/limxing/XMDBModel">XMDBModel</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">XMDBModel Type         SQLite.swift Type      SQLite Type</span><br><span class="line">NSNumber                 Int64(Int,Bool)         INTEGER</span><br><span class="line">NSNumber                    Double                  REAL</span><br><span class="line">String                      String                  TEXT</span><br><span class="line">nil                         nil                     NULL</span><br><span class="line">Data                      SQLite.Blob               BLOB</span><br><span class="line">Date                      Int64 (Date)             INTEGER</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h3 id="How-To-Use"><a href="#How-To-Use" class="headerlink" title="How To Use"></a>How To Use</h3><p>1、copy Source to your project</p>
+<p>2、add depend library：pod ‘SQLite.swift’, ‘~&gt; 0.11.4’</p>
+<p>3、creat Model imp：XMDBModel</p>
+<p>4、API ：demo中XMBean中有属性方法介绍，ViewController中有增删改查使用方法</p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p>ActiveSQLite</p>
+<h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>XMDBModel is available under the MIT license.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/11/21/Mysql数据库的迁移/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/21/Mysql数据库的迁移/" class="post-title-link" itemprop="url">Mysql数据库的迁移</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2017-11-21 11:24:24 / 修改时间：11:26:20" itemprop="dateCreated datePublished" datetime="2017-11-21T11:24:24+08:00">2017-11-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>备份：mysqldump -uroot -p1234 [databases name] &gt;bck.sql<br>还原：mysql -uroot -p1234 &lt;bck.sql</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/11/19/Centos-python3-nginx-uwsgi-flask/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/" class="post-title-link" itemprop="url">Centos+python3+nginx+uwsgi+flask</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-11-19 23:04:25" itemprop="dateCreated datePublished" datetime="2017-11-19T23:04:25+08:00">2017-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-27 16:02:07" itemprop="dateModified" datetime="2020-02-27T16:02:07+08:00">2020-02-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1、下载Python3</p>
 <pre><code>wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
 </code></pre><p>2、安装openssl</p>
 <pre><code>$ yum install openssl -y (-y 是遇到选择yes/no的时候默认提前yes了)
 $ yum install openssl-devel -y
-</code></pre><p>3、解压Python3<br></div>
+</code></pre><p>3、解压Python3<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-        <div class="meta">
-          <div class="l">
-            <div class="warp">
-              
-              <span class="iconfont icon-folder"></span>
-              <span class="desp">
-                
-              </span>
-              
-            </div>
-
-            
-            <div class="warp">
-              <span class="iconfont icon-tag1"></span>
-              <span class="desp">
-                
-              </span>
-            </div>
-            
-            <div class="warp">
-              <div class="share" data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">
-                <span class="iconfont icon-share"></span>
-              </div>
-              <div class="desp share" data-url="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">
-                <a href="#">分享</a>
-              </div>
-            </div>
-          </div>
-          <div class="r">
-            <a href="/2017/11/19/Centos-python3-nginx-uwsgi-flask/">Read More</a>
-          </div>
-        </div>
-      </div>
-    </li>
-    
-  </ul>
-</div>
-
-<div class="paginator">
-  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a>
-</div>
-
-        <footer>
-          <div class="copyright">
-            ©2020
-            <a href="">李利锋</a> Powered by <a href="https://hexo.io">Hexo</a><br/>
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-         <!--  
-          <div class="icp">
-             <a href="http://www.beian.miit.gov.cn/"> 京ICP备16001995号-3 </a>
-          </div>
-           -->
-        </footer>
-      </div>
+      
     </div>
-  </body>
-  
-</html>
-<script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"VnmkbK0E9LuxLYqLlol28pOY-gzGzoHsz\",\"API_KEY\":\"4oDJsdezLOaMCUlQq1K2E5sr\"},\"service_worker\":{\"open\":false}}")
-                </script> <script type="text/javascript">window.addEventListener('load', function() {
+
     
-    window.loadJs = function(d, m, a) {
-      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
-      var b = document.createElement('script')
-      b.defer = true
-      b.setAttribute('type', 'text/javascript')
-      b.setAttribute('charset', 'UTF-8')
-      b.setAttribute('async', 'true')
-      b.setAttribute('src', d)
-      m && b.setAttribute('data-main', '/scripts/app-built')
-      if (typeof a === 'function') {
-        if (window.attachEvent) {
-          b.onreadystatechange = function() {
-            var e = b.readyState
-            if (e === 'loaded' || e === 'complete') {
-              b.onreadystatechange = null
-              a()
-            }
-          }
-        } else {
-          b.onload = a
-        }
-      }
-      c.appendChild(b)
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
     }
-    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
-  })</script>  
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leefeng"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Leefeng</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/limxing" title="GitHub → https://github.com/limxing" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:leefengme@163.com" title="E-Mail → mailto:leefengme@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">京ICP备16001995号-3 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leefeng</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+</body>
+</html>
