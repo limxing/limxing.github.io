@@ -159,6 +159,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/05/15/工作总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/15/工作总结/" class="post-title-link" itemprop="url">工作总结</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-05-15 10:25:23" itemprop="dateCreated datePublished" datetime="2017-05-15T10:25:23+08:00">2017-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2017-06-05 09:05:18" itemprop="dateModified" datetime="2017-06-05T09:05:18+08:00">2017-06-05</time>
+              </span>
+
+          
+            <span id="/2017/05/15/工作总结/" class="post-meta-item leancloud_visitors" data-flag-title="工作总结" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/05/15/工作总结/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/05/15/工作总结/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="产品层面"><a href="#产品层面" class="headerlink" title="产品层面"></a>产品层面</h4><ol>
+<li>特效的运用要考虑用户的心理趋向和感受，炫的效果很酷，可能会让人产生某种心理导向。</li>
+<li>特效的运用要考虑将来功能的扩展，一味的渲染也不一定很好，可能会为后续功能带来难度。</li>
+<li>一个产品能帮助用户解决至少一个问题，那解决问题会有主流程，引导要强化，比如按钮大，颜色显眼，字体稍大，放置位置移动少。</li>
+<li>产品不能为照顾运营而偏离主题，或者严重影响美观和主要功能，聚划算妹纸儿们说广告banner曝光度不够，设计变为由轮转变为平铺，但是广告良莠不齐，视觉效果不好，并且主页list仅能显示1、2个商品，影响了主题功能。</li>
+</ol>
+<h4 id="代码方面"><a href="#代码方面" class="headerlink" title="代码方面"></a>代码方面</h4><p>代码需要审核，程序的代码需要共同学习，完善代码</p>
+<h4 id="项目方面"><a href="#项目方面" class="headerlink" title="项目方面"></a>项目方面</h4><ol>
+<li>计划进度，前紧后慢，提前实施。</li>
+<li>不拘泥与细节，不干扰整体进度。</li>
+<li>个人有担当，能者多劳，最大程度保证进度。</li>
+<li>有问题不能包着，有些项目问题不是一个人的问题，不是一人能担得住的。</li>
+<li>宝不能压在责任无关人身上，别人的资源、承诺要充分利用，但是最终还是靠自己突破。</li>
+<li>干一样活的人放在一起，沟通迅速，快速解决问题。</li>
+<li>早上碰一下，清晰任务；晚上碰一下一下，检查进度。</li>
+<li>bug先把基础性、功能性问题解决，适配、显示、兼容问题靠后。</li>
+<li>不同网络机型下的跑测，不同网络环境下的测试提前入测。</li>
+<li>写完一天代码，尽量坚持用findbugs查找潜在危险。</li>
+<li>同一版本多次发布，或多个版本发布后，记录下的crash问题如果没有版本属性就很难定位,混淆map也对应不上。发板后立即封代码，保证bug日志中的bug发生行数和源码一致。</li>
+<li>开发新功能、打包、发布过程规范化，规范减少问题发生概率。</li>
+<li>日志规范：<pre><code>1). 冗长、惯例日志打到Verbose级别，例如网络返回信息，经常携带大量的信息，会严                                    重干扰视觉；
+2). 细粒度信息打到Debug级别，对出问题时调试有帮助作用，比如某个参数的值，我并    不总想知道是多少，但某些情况我就得看一下；
+3). 粗粒度级别信息打到Info级别，比如应用业务主逻辑，运行中重要的过程或关键点；
+4). 会出现 潜在错误的信息 或者 可以接受的错误 打到Warn级别，比如某个地方我想警告一下说这里是有问题的，或者可能引出其他什么问题；
+5). 错误或者致命信息，理应放到Error级别，血红的颜色很显眼~
+</code></pre></li>
+</ol>
+<h4 id="管理方面"><a href="#管理方面" class="headerlink" title="管理方面"></a>管理方面</h4><ol>
+<li>会议总结问题，就一定要着手解决，不解决会议时间就白浪费了。</li>
+<li>对于人的期望，快速的给予回馈，帮助其向希望的方向发展。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2017/05/05/defaultConfig中ndk的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -932,86 +1048,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/05/动态设置控件的大小文本的大小/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="Leefeng">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/05/05/动态设置控件的大小文本的大小/" class="post-title-link" itemprop="url">动态设置控件的大小文本的大小</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-05-05 14:06:09 / 修改时间：14:07:04" itemprop="dateCreated datePublished" datetime="2016-05-05T14:06:09+08:00">2016-05-05</time>
-            </span>
-
-          
-            <span id="/2016/05/05/动态设置控件的大小文本的大小/" class="post-meta-item leancloud_visitors" data-flag-title="动态设置控件的大小文本的大小" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/05/05/动态设置控件的大小文本的大小/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/05/动态设置控件的大小文本的大小/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在项目中，动态的设置文本的大小，控件的大小的时候使用px2dp而不是dp2px。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1084,7 +1120,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

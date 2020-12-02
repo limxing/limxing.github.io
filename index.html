@@ -159,6 +159,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/12/01/Android-9patch图片被拉伸原因之一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/12/01/Android-9patch图片被拉伸原因之一/" class="post-title-link" itemprop="url">Android 9patch图片被拉伸原因之一</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-12-01 17:09:19 / 修改时间：17:32:32" itemprop="dateCreated datePublished" datetime="2020-12-01T17:09:19+08:00">2020-12-01</time>
+            </span>
+
+          
+            <span id="/2020/12/01/Android-9patch图片被拉伸原因之一/" class="post-meta-item leancloud_visitors" data-flag-title="Android 9patch图片被拉伸原因之一" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/12/01/Android-9patch图片被拉伸原因之一/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/01/Android-9patch图片被拉伸原因之一/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>9patch图片本就是用来防止拉伸防止局部位置也被拉伸的功能。<br>但在铺满全屏的9patch图片有个坑，尽管设置为了9patch图片点和线都已经画了，但图片还是被拉伸了一点。<br>原因：图片的宽度是比照IOS尺寸切的图，是375的倍数，而Android手机一般情况下宽度是360的倍数，如此在纵向适配的时候，高度也会按照屏幕的宽高比进行拉伸，这时的高度达不到手机屏幕的实际高度，因此再平铺的时候纵向又被一次拉伸。导致我们看到尽管使用了9patch图片仍被拉伸的效果。<br>结论：在使用9patch图片的地方让设计师出以1080为宽切图。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/05/29/自定义View之TextView疯狂的前缀/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1026,93 +1106,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2018/02/05/IOS移动开发-数据库orm增删改查/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="Leefeng">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="post-title-link" itemprop="url">IOS移动开发:数据库orm增删改查</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2018-02-05 15:01:26 / 修改时间：15:02:46" itemprop="dateCreated datePublished" datetime="2018-02-05T15:01:26+08:00">2018-02-05</time>
-            </span>
-
-          
-            <span id="/2018/02/05/IOS移动开发-数据库orm增删改查/" class="post-meta-item leancloud_visitors" data-flag-title="IOS移动开发:数据库orm增删改查" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/02/05/IOS移动开发-数据库orm增删改查/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2018/02/05/IOS移动开发-数据库orm增删改查/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于SQLite.swift的数据库orm增删改查 github:<a src="https://github.com/limxing/XMDBModel">XMDBModel</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">XMDBModel Type         SQLite.swift Type      SQLite Type</span><br><span class="line">NSNumber                 Int64(Int,Bool)         INTEGER</span><br><span class="line">NSNumber                    Double                  REAL</span><br><span class="line">String                      String                  TEXT</span><br><span class="line">nil                         nil                     NULL</span><br><span class="line">Data                      SQLite.Blob               BLOB</span><br><span class="line">Date                      Int64 (Date)             INTEGER</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-<h3 id="How-To-Use"><a href="#How-To-Use" class="headerlink" title="How To Use"></a>How To Use</h3><p>1、copy Source to your project</p>
-<p>2、add depend library：pod ‘SQLite.swift’, ‘~&gt; 0.11.4’</p>
-<p>3、creat Model imp：XMDBModel</p>
-<p>4、API ：demo中XMBean中有属性方法介绍，ViewController中有增删改查使用方法</p>
-<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p>ActiveSQLite</p>
-<h3 id="License"><a href="#License" class="headerlink" title="License"></a>License</h3><p>XMDBModel is available under the MIT license.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1185,7 +1178,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
