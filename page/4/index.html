@@ -159,6 +159,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" class="post-title-link" itemprop="url">Fragment and FragmentActivity and FragmLayout</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2016-05-06 10:00:13 / 修改时间：10:27:53" itemprop="dateCreated datePublished" datetime="2016-05-06T10:00:13+08:00">2016-05-06</time>
+            </span>
+
+          
+            <span id="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" class="post-meta-item leancloud_visitors" data-flag-title="Fragment and FragmentActivity and FragmLayout" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
+<h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
+<h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><p><b>new Fragement():</b></p>
+<p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
+<p><b>manager.remove(fragment):</b></p>
+<p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
+<p><b>manager.add(fragment):</b></p>
+<p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
+<h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/05/动态设置控件的大小文本的大小/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -897,96 +985,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/03/25/Bitmap图片占用内存大小/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="Leefeng">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/25/Bitmap图片占用内存大小/" class="post-title-link" itemprop="url">Bitmap图片占用内存大小</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-25 13:33:25 / 修改时间：14:11:43" itemprop="dateCreated datePublished" datetime="2016-03-25T13:33:25+08:00">2016-03-25</time>
-            </span>
-
-          
-            <span id="/2016/03/25/Bitmap图片占用内存大小/" class="post-meta-item leancloud_visitors" data-flag-title="Bitmap图片占用内存大小" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/03/25/Bitmap图片占用内存大小/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/25/Bitmap图片占用内存大小/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一张图片（BitMap）占用的内存=图片长度<em>图片宽度</em>单位像素占用的字节数</p>
-<p>创建一个BitMap时，其单位像素占用的字节数由其参数BitmapFactory.Options的inPreferredConfig变量决定。<br>inPreferredConfig为Bitmap.Config类型，Bitmap.Config类是个枚举类型，它可以为以下值:</p>
-<p>Bitmap.Config : ARGB_8888<br>一个像素占用4个字节，alpha(A)值，Red（R）值，Green(G)值，Blue（B）值各占8个bites<br>共32bites,即4个字节</p>
-<p>一张100<em>100的图片占用内存的大小:<br>100</em>100*4=40000字节</p>
-<p>另外，需要注意这里的图片占用内存是指在Navtive中占用的内存，当然BitMap使用的绝大多数内存就是该内存。因为我们可以简单的认为它就是BitMap所占用的内存。</p>
-<p>在Android4.0之前，Bitmap的内存是分配在Native堆中，调用recycle()可以立即释放Native内存。<br>从Android4.0开始，Bitmap的内存就是分配在dalvik堆中，即JAVA堆中的,调用recycle()并不能立即释放Native内存。但是调用recycle()也是一个良好的习惯。</p>
-<p>=================<br>资源文件中图片占用内存大小：<br>1b=8位<br>1kb=1024b<br>1mb=1024kb<br>1gb=1024mb</p>
-<p>图片占用内存大小计算公式：</p>
-<p>图片的像素长度width<br>图片的像素高度height<br>存放android手机drawable目录：dpi<br>    mdpi=160<br>    hdpi=240<br>    xhdpi=320<br>    xxhdpi=480<br>    xxxhdpi=640<br>手机像素密度：phoneDpi</p>
-<p>公式：width <em> height </em> (dpi/phoneDpi+0.5)2 * 4</p>
-<p>总结，把图片生成Bitmap则和手机像素密度无关了，<br>因此公式为：width <em> heigth </em> 4</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1059,7 +1057,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

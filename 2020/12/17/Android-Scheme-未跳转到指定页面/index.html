@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"leefeng.me","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+  <meta name="description" content="一般配置Android应用间跳转需配置Scheme,一般我们在启动Activity处增加如下配置：12345678910111213141516171819&amp;lt;activity    android:name=&amp;quot;.singleactivity.WelcomeActivity&amp;quot;    android:configChanges=&amp;quot;screenSize|orienta">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta property="og:url" content="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/index.html">
+<meta property="og:title" content="Android Scheme 未跳转到指定页面 ">
+<meta property="og:url" content="http://leefeng.me/2020/12/17/Android-Scheme-未跳转到指定页面/index.html">
 <meta property="og:site_name" content="Leefeng Blog">
-<meta property="og:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+<meta property="og:description" content="一般配置Android应用间跳转需配置Scheme,一般我们在启动Activity处增加如下配置：12345678910111213141516171819&amp;lt;activity    android:name=&amp;quot;.singleactivity.WelcomeActivity&amp;quot;    android:configChanges=&amp;quot;screenSize|orienta">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2016-05-06T02:27:53.000Z">
+<meta property="og:updated_time" content="2020-12-17T06:43:41.465Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fragment and FragmentActivity and FragmLayout">
-<meta name="twitter:description" content="Android Fragment 的认知学习由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。 Fragment 与FragmentActivityFragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作FragmentActivity是继承自Acti">
+<meta name="twitter:title" content="Android Scheme 未跳转到指定页面 ">
+<meta name="twitter:description" content="一般配置Android应用间跳转需配置Scheme,一般我们在启动Activity处增加如下配置：12345678910111213141516171819&amp;lt;activity    android:name=&amp;quot;.singleactivity.WelcomeActivity&amp;quot;    android:configChanges=&amp;quot;screenSize|orienta">
 
-<link rel="canonical" href="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
+<link rel="canonical" href="http://leefeng.me/2020/12/17/Android-Scheme-未跳转到指定页面/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Fragment and FragmentActivity and FragmLayout | Leefeng Blog</title>
+  <title>Android Scheme 未跳转到指定页面  | Leefeng Blog</title>
   
 
 
@@ -164,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2020/12/17/Android-Scheme-未跳转到指定页面/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/css/images/avatar.png">
@@ -177,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Fragment and FragmentActivity and FragmLayout
+          Android Scheme 未跳转到指定页面 
         </h1>
 
         <div class="post-meta">
@@ -188,11 +188,11 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2016-05-06 10:00:13 / 修改时间：10:27:53" itemprop="dateCreated datePublished" datetime="2016-05-06T10:00:13+08:00">2016-05-06</time>
+              <time title="创建时间：2020-12-17 14:00:29 / 修改时间：14:43:41" itemprop="dateCreated datePublished" datetime="2020-12-17T14:00:29+08:00">2020-12-17</time>
             </span>
 
           
-            <span id="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" class="post-meta-item leancloud_visitors" data-flag-title="Fragment and FragmentActivity and FragmLayout" title="阅读次数">
+            <span id="/2020/12/17/Android-Scheme-未跳转到指定页面/" class="post-meta-item leancloud_visitors" data-flag-title="Android Scheme 未跳转到指定页面 " title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -207,8 +207,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/12/17/Android-Scheme-未跳转到指定页面/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/17/Android-Scheme-未跳转到指定页面/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -223,15 +223,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Android-Fragment-的认知学习"><a href="#Android-Fragment-的认知学习" class="headerlink" title="Android Fragment 的认知学习"></a>Android Fragment 的认知学习</h2><p>由于工作中很少用到fragment 导致fragment  and fragmentActivity  and FragmLayout 的混淆，特此学习笔记一下。</p>
-<h3 id="Fragment-与FragmentActivity"><a href="#Fragment-与FragmentActivity" class="headerlink" title="Fragment 与FragmentActivity"></a>Fragment 与FragmentActivity</h3><p>Fragment是一种具有生命周期的View，能够使用Fragmentmanager进行操作<br>FragmentActivity是继承自Activity的子类，为兼容4.0以下版本使用的。4.0以上版本还是使用Activity的其他类型进行管理Fragment。</p>
-<h4 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h4><p><b>new Fragement():</b></p>
-<p>onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<p><b>manager.remove(fragment):</b></p>
-<p>onPause -&gt; onStop -&gt; onDestory -&gt; onDetach</p>
-<p><b>manager.add(fragment):</b></p>
-<p><b>manager.replace:</b><br>onPause -&gt; onStop -&gt; onDestoryView -&gt; onDestory -&gt; onDetach -&gt; (新的Fragment )onAttach -&gt; onCreate -&gt; onCreatView -&gt; onActivityCreated -&gt; onStart -&gt; onResume</p>
-<h3 id="FrameLayout"><a href="#FrameLayout" class="headerlink" title="FrameLayout"></a>FrameLayout</h3><p>是一种继承自ViewGroup的控件，能够放置很多的子控件，并且叠加在一起<br>可以作为容器被activity进行操作放置Fragment对象。</p>
+        <h4 id="一般配置"><a href="#一般配置" class="headerlink" title="一般配置"></a>一般配置</h4><p>Android应用间跳转需配置Scheme,一般我们在启动Activity处增加如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity</span><br><span class="line">    android:name=&quot;.singleactivity.WelcomeActivity&quot;</span><br><span class="line">    android:configChanges=&quot;screenSize|orientation&quot;</span><br><span class="line">    android:launchMode=&quot;singleTop&quot;</span><br><span class="line">    android:screenOrientation=&quot;behind&quot;</span><br><span class="line">    android:theme=&quot;@style/WelcomeTheme&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">    &lt;!--增加的配置--&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.BROWSABLE&quot; /&gt;</span><br><span class="line">        &lt;data android:scheme=&quot;putaoabc&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="网页或其他应用跳转配置Uri："><a href="#网页或其他应用跳转配置Uri：" class="headerlink" title="网页或其他应用跳转配置Uri："></a>网页或其他应用跳转配置Uri：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pudaoabc://?xx=xx&amp;xxx=xxx</span><br></pre></td></tr></table></figure>
+<h4 id="实际在华为pad上的表现为："><a href="#实际在华为pad上的表现为：" class="headerlink" title="实际在华为pad上的表现为："></a>实际在华为pad上的表现为：</h4><ol>
+<li>如果应用没有在后台运行，那么跳转正常会正常吊起我们的应用并且在intent中拿到data参数。正常。</li>
+<li>如果应用已经打开并在后台运行，那么跳转直接拉起APP但是并没有打开我们配置scheme的页面，因此就拿不到scheme中的数据。</li>
+</ol>
+<h5 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h5><p>理论上在原生Android上配置了scheme的页面，外部掉起时理应打开的是我们配置的页面（Activity），因此此问题应该是软件厂商优化问题。</p>
+<h4 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h4><p>由于我们设定了一个Mainactivity持久化在本地，因此把scheme设置在此页面下，那么在onCreate方法或onNewIntent中就能够拿到Scheme中的数据。</p>
+<h4 id="担忧"><a href="#担忧" class="headerlink" title="担忧"></a>担忧</h4><p>其他厂商的手机都能够正常在启动页通过Scheme的方式处理数据，如果使用此方式，那么应用跳转时（如果Main的启动模式为SIngleTask的话）会把MainActivity上的视图移除掉。</p>
+<h4 id="进一步分析"><a href="#进一步分析" class="headerlink" title="进一步分析"></a>进一步分析</h4><p>如果原方案，跳转时没有打开对应的页面，那么是否有可能在当前页面的onNewIntent中取到数据呢？不能。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此问题发生在华为EMUI9.0版本 Android 9，对比了EMUI10.0版本Android 10 没有此问题，理论上Android版本的不同不会有此问题，所以应该就是华为内部版本优化问题，如对此有异议的朋友联系我更正。<br>最后，我还是修改成在MAIN中启动的方案。Android不同系统及厂商的适配没有最完美的适配方案，只能与业务结合判断使用哪种方案更优秀。当然，如果你有更好的解决方案请联系我。</p>
 
     </div>
 
@@ -247,7 +249,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/" title="Fragment and FragmentActivity and FragmLayout">http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/</a>
+    <a href="http://leefeng.me/2020/12/17/Android-Scheme-未跳转到指定页面/" title="Android Scheme 未跳转到指定页面 ">http://leefeng.me/2020/12/17/Android-Scheme-未跳转到指定页面/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -267,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2016/05/05/动态设置控件的大小文本的大小/" rel="prev" title="动态设置控件的大小文本的大小">
-      <i class="fa fa-chevron-left"></i> 动态设置控件的大小文本的大小
+    <a href="/2020/12/01/Android-9patch图片被拉伸原因之一/" rel="prev" title="Android 9patch图片被拉伸原因之一">
+      <i class="fa fa-chevron-left"></i> Android 9patch图片被拉伸原因之一
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2016/05/06/EventBus的使用/" rel="next" title="EventBus的使用">
-      EventBus的使用 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -334,7 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Fragment-的认知学习"><span class="nav-number">1.</span> <span class="nav-text">Android Fragment 的认知学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment-与FragmentActivity"><span class="nav-number">1.1.</span> <span class="nav-text">Fragment 与FragmentActivity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期："><span class="nav-number">1.1.1.</span> <span class="nav-text">生命周期：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FrameLayout"><span class="nav-number">1.2.</span> <span class="nav-text">FrameLayout</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一般配置"><span class="nav-number">1.</span> <span class="nav-text">一般配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网页或其他应用跳转配置Uri："><span class="nav-number">2.</span> <span class="nav-text">网页或其他应用跳转配置Uri：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实际在华为pad上的表现为："><span class="nav-number">3.</span> <span class="nav-text">实际在华为pad上的表现为：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分析"><span class="nav-number">3.1.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决"><span class="nav-number">4.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#担忧"><span class="nav-number">5.</span> <span class="nav-text">担忧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进一步分析"><span class="nav-number">6.</span> <span class="nav-text">进一步分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
       </div>
       <!--/noindex-->
 
