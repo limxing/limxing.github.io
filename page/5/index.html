@@ -159,6 +159,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/03/27/自定义View仿IOS等待圈/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/03/27/自定义View仿IOS等待圈/" class="post-title-link" itemprop="url">自定义View仿IOS等待圈</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2016-03-27 15:20:23 / 修改时间：15:22:12" itemprop="dateCreated datePublished" datetime="2016-03-27T15:20:23+08:00">2016-03-27</time>
+            </span>
+
+          
+            <span id="/2016/03/27/自定义View仿IOS等待圈/" class="post-meta-item leancloud_visitors" data-flag-title="自定义View仿IOS等待圈" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/03/27/自定义View仿IOS等待圈/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/27/自定义View仿IOS等待圈/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line">* Created by limxing on 16/1/7.</span><br><span class="line">*/</span><br><span class="line">public class LoadView extends ImageView &#123;</span><br><span class="line">private float degrees = 0f;</span><br><span class="line">private Matrix max;</span><br><span class="line">private int width;</span><br><span class="line">private int height;</span><br><span class="line">private Bitmap bitmap;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context) &#123;</span><br><span class="line">super(context);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs) &#123;</span><br><span class="line">super(context, attrs);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs, int defStyleAttr) &#123;</span><br><span class="line">super(context, attrs, defStyleAttr);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Handler handler = new Handler() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">degrees += 30f;</span><br><span class="line">max.setRotate(degrees, width, height);</span><br><span class="line">setImageMatrix(max);</span><br><span class="line">if(degrees==360)&#123;</span><br><span class="line">degrees=0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">private void init() &#123;</span><br><span class="line">setScaleType(ScaleType.MATRIX);</span><br><span class="line">bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);</span><br><span class="line">setImageBitmap(bitmap);</span><br><span class="line">max = new Matrix();</span><br><span class="line"></span><br><span class="line">width = bitmap.getWidth() / 2;</span><br><span class="line">height = bitmap.getHeight() / 2;</span><br><span class="line">Timer time=new Timer();</span><br><span class="line">time.schedule(new TimerTask() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">handler.sendEmptyMessage(0);</span><br><span class="line">&#125;</span><br><span class="line">&#125;,0,80);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/03/25/Bitmap图片占用内存大小/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -565,7 +645,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -610,7 +690,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

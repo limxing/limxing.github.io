@@ -159,6 +159,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/06/EventBus的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/06/EventBus的使用/" class="post-title-link" itemprop="url">EventBus的使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2016-05-06 13:21:49 / 修改时间：13:37:49" itemprop="dateCreated datePublished" datetime="2016-05-06T13:21:49+08:00">2016-05-06</time>
+            </span>
+
+          
+            <span id="/2016/05/06/EventBus的使用/" class="post-meta-item leancloud_visitors" data-flag-title="EventBus的使用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/05/06/EventBus的使用/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/06/EventBus的使用/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><b>一年多前就出现来这个技术，但是也没有怎么去了解和使用,一直以为EventBus和广播类似呢，后来才发现，EventBus更好用，类型更明确，发送的消息可以是任何自定义的对象，因此写个简单的使用，以免忘记</b></p>
+<p>Github项目框架的地址：<a><a href="https://github.com/greenrobot/EventBus" target="_blank" rel="noopener">https://github.com/greenrobot/EventBus</a></a></p>
+<h3 id="使用步骤："><a href="#使用步骤：" class="headerlink" title="使用步骤："></a>使用步骤：</h3><p>一、创建消息类（实体），用于存放消息的内容，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class EventMessage&#123;</span><br><span class="line">    String messge;</span><br><span class="line">    public void setMessge(String message)&#123;</span><br><span class="line">        this.message=message;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getMessage()&#123;</span><br><span class="line">        return message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二、注册消息：</p>
+<p>EventBus.getDefault().register(this);</p>
+<p>三、接受消息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Subscribe(threadMode = ThreadMode.MAIN)</span><br><span class="line">public void showEventBuss(EventMessage event) &#123;</span><br><span class="line">    String msg = &quot;收到了消息：&quot; + event.getMessage();</span><br><span class="line">    Toast.makeText(this, msg, Toast.LENGTH_LONG).show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中方法名无所谓，内部运用了反射的机制，获取到方法名，进行的调用，ThreadMode有四种：<br>/**</p>
+<ul>
+<li>Subscriber will be called in the same thread, which is posting the event. This is the default. Event delivery</li>
+<li>implies the least overhead because it avoids thread switching completely. Thus this is the recommended mode for</li>
+<li>simple tasks that are known to complete is a very short time without requiring the main thread. Event handlers</li>
+<li>using this mode must return quickly to avoid blocking the posting thread, which may be the main thread.<br>*/<br>POSTING,</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>Subscriber will be called in Android’s main thread (sometimes referred to as UI thread). If the posting thread is</li>
+<li>the main thread, event handler methods will be called directly. Event handlers using this mode must return</li>
+<li>quickly to avoid blocking the main thread.<br>*/<br>MAIN,在主线程中调用执行</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>Subscriber will be called in a background thread. If posting thread is not the main thread, event handler methods</li>
+<li>will be called directly in the posting thread. If the posting thread is the main thread, EventBus uses a single</li>
+<li>background thread, that will deliver all its events sequentially. Event handlers using this mode should try to</li>
+<li>return quickly to avoid blocking the background thread.<br>*/<br>BACKGROUND,在子线程中执行</li>
+</ul>
+<p>/**</p>
+<ul>
+<li>Event handler methods are called in a separate thread. This is always independent from the posting thread and the</li>
+<li>main thread. Posting events never wait for event handler methods using this mode. Event handler methods should</li>
+<li>use this mode if their execution might take some time, e.g. for network access. Avoid triggering a large number</li>
+<li>of long running asynchronous handler methods at the same time to limit the number of concurrent threads. EventBus</li>
+<li>uses a thread pool to efficiently reuse threads from completed asynchronous event handler notifications.<br>*/<br>ASYNC</li>
+</ul>
+<p>四、注销消息：</p>
+<p>EventBus.getDefalt().unregister(this);</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/06/Fragment-and-FragmentActivity-and-FragmentLayout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -905,86 +1021,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/03/27/自定义View仿IOS等待圈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="Leefeng">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/27/自定义View仿IOS等待圈/" class="post-title-link" itemprop="url">自定义View仿IOS等待圈</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-27 15:20:23 / 修改时间：15:22:12" itemprop="dateCreated datePublished" datetime="2016-03-27T15:20:23+08:00">2016-03-27</time>
-            </span>
-
-          
-            <span id="/2016/03/27/自定义View仿IOS等待圈/" class="post-meta-item leancloud_visitors" data-flag-title="自定义View仿IOS等待圈" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/03/27/自定义View仿IOS等待圈/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/27/自定义View仿IOS等待圈/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line">* Created by limxing on 16/1/7.</span><br><span class="line">*/</span><br><span class="line">public class LoadView extends ImageView &#123;</span><br><span class="line">private float degrees = 0f;</span><br><span class="line">private Matrix max;</span><br><span class="line">private int width;</span><br><span class="line">private int height;</span><br><span class="line">private Bitmap bitmap;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context) &#123;</span><br><span class="line">super(context);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs) &#123;</span><br><span class="line">super(context, attrs);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public LoadView(Context context, AttributeSet attrs, int defStyleAttr) &#123;</span><br><span class="line">super(context, attrs, defStyleAttr);</span><br><span class="line">init();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Handler handler = new Handler() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void handleMessage(Message msg) &#123;</span><br><span class="line">degrees += 30f;</span><br><span class="line">max.setRotate(degrees, width, height);</span><br><span class="line">setImageMatrix(max);</span><br><span class="line">if(degrees==360)&#123;</span><br><span class="line">degrees=0;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">private void init() &#123;</span><br><span class="line">setScaleType(ScaleType.MATRIX);</span><br><span class="line">bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);</span><br><span class="line">setImageBitmap(bitmap);</span><br><span class="line">max = new Matrix();</span><br><span class="line"></span><br><span class="line">width = bitmap.getWidth() / 2;</span><br><span class="line">height = bitmap.getHeight() / 2;</span><br><span class="line">Timer time=new Timer();</span><br><span class="line">time.schedule(new TimerTask() &#123;</span><br><span class="line">@Override</span><br><span class="line">public void run() &#123;</span><br><span class="line">handler.sendEmptyMessage(0);</span><br><span class="line">&#125;</span><br><span class="line">&#125;,0,80);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1057,7 +1093,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1102,7 +1138,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
