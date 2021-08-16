@@ -159,6 +159,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/13/Android-ViewPager左右滑动取消的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="Leefeng">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leefeng Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/05/13/Android-ViewPager左右滑动取消的方法/" class="post-title-link" itemprop="url">Android ViewPager左右滑动取消的方法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2016-05-13 17:30:14 / 修改时间：17:31:01" itemprop="dateCreated datePublished" datetime="2016-05-13T17:30:14+08:00">2016-05-13</time>
+            </span>
+
+          
+            <span id="/2016/05/13/Android-ViewPager左右滑动取消的方法/" class="post-meta-item leancloud_visitors" data-flag-title="Android ViewPager左右滑动取消的方法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/05/13/Android-ViewPager左右滑动取消的方法/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/05/13/Android-ViewPager左右滑动取消的方法/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Android ViewPager左右滑动取消的方法是重写子View<br>实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public boolean onInterceptTouchEvent(MotionEvent ev) &#123;</span><br><span class="line">if (getScrollX()&lt;0) &#123;</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &lt;= 0&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(false);</span><br><span class="line">return false;</span><br><span class="line">&#125; else if (getScrollX() &gt;= computeHorizontalScrollRange()) &#123;  //- getWidth()</span><br><span class="line">LogUtils.w(&quot;WifiCustomWebView---&gt; getScrollX &gt;= computeHorizontalScrollRange()&quot;);</span><br><span class="line">return false;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">LogUtils.w(computeHorizontalScrollRange()+&quot;--&quot;+getScrollX()+&quot;==&quot;+&quot;WifiCustomWebView---&gt; true&quot;);</span><br><span class="line">getParent().requestDisallowInterceptTouchEvent(true);  //子view中,可以中断pager获取到事件</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">//        return super.onInterceptTouchEvent(ev);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/05/06/EventBus的使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -939,88 +1019,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://leefeng.me/2016/03/28/Fragment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/css/images/avatar.png">
-      <meta itemprop="name" content="Leefeng">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leefeng Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/03/28/Fragment/" class="post-title-link" itemprop="url">Fragment</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2016-03-28 10:39:05 / 修改时间：14:31:53" itemprop="dateCreated datePublished" datetime="2016-03-28T10:39:05+08:00">2016-03-28</time>
-            </span>
-
-          
-            <span id="/2016/03/28/Fragment/" class="post-meta-item leancloud_visitors" data-flag-title="Fragment" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/03/28/Fragment/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/03/28/Fragment/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="FragmentActivity与Activity"><a href="#FragmentActivity与Activity" class="headerlink" title="FragmentActivity与Activity"></a>FragmentActivity与Activity</h4><pre><code>FragmentActivity是为兼容4.0一下系统而需要的Activity类
-</code></pre><h4 id="Fragment类的生命周期"><a href="#Fragment类的生命周期" class="headerlink" title="Fragment类的生命周期"></a>Fragment类的生命周期</h4><p>new：onAttach()–&gt;onCreat()–&gt;onCreatView()–&gt;onStart()–&gt;onresume<br>remove:onPause()–&gt;onStop()–&gt;onDestoryView()–&gt;onDestory()–&gt;onDetach()</p>
-<p>使用：再Activity或FragmentActivity中获取FragmentManager</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1093,7 +1091,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
